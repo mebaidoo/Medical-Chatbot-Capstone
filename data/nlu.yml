@@ -6,9 +6,6 @@ nlu:
     - hey
     - hello
     - hi
-    - hi there
-    - how are you
-    - is anyone there
     - hello there
     - good morning
     - good evening
@@ -31,8 +28,6 @@ nlu:
     - goodbye
     - have a nice day
     - see you around
-    - nice chatting to you, bye
-    - till next time
     - bye bye
     - see you later
 
@@ -44,9 +39,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-    - yep
-    - yah
-    - ya
 
 - intent: deny
   examples: |
@@ -57,9 +49,6 @@ nlu:
     - don't like that
     - no way
     - not really
-    - nope
-    - nah
-    - naah
 
 - intent: mood_great
   examples: |
@@ -102,10 +91,50 @@ nlu:
     - feeling nauseous
     - feeling feverish
 
-_ intent: medical_terms
+- intent: medical_terms
   examples: |
-    - what is the meaning of [category]?
+    - what is the meaning of [BMI](bmi)?
 
+- intent: thanks
+  exmamples: |
+    - thanks
+    - thank you
+    - that's helpful
+    - awesome, thanks
+    - thanks for helping me
+
+- intent: adverse_drug
+  exmamples: |
+    - how to check Adverse drug reaction?
+    - Open adverse drugs module
+    - give me a list of drugs causing adverse behavior
+    - list all drugs suitable for patient with adverse reaction
+    - which drugs dont have adverse reaction?
+
+- intent: blood_pressure
+  exmamples: |
+    - open blood pressure module
+    - task related to blood pressure
+    - blood pressure data entry
+    - I want to log blood pressure results
+    - blood pressure data management
+
+  - intent: blood_pressure_search
+  exmamples: |
+    - I want to search for blood pressure result history
+    - blood pressure for patient
+    - load patient blood pressure result
+    - show blood pressure results for patients
+    - find blood pressure results by id
+
+
+- intent: hospital_search
+  exmamples: |
+    - lookup for hospital
+    - searching for hospital to transfer patient
+    - I want to search hospital data
+    - hospital lookup for patient
+    - looking up hospital details
 
 - intent: bot_challenge
   examples: |
