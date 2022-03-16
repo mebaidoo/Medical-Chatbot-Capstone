@@ -2,29 +2,44 @@ version: "3.0"
 
 stories:
 
-- story: happy path
+- story: good health 1
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: good_health
+  - action: utter_good_health
+  - checkpoint: good_health_greet
 
-- story: sad path 1
+- story: good health 2
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - checkpoint: good_health_greet
+  - intent: goodbye
   - action: utter_goodbye
+
+story: good health 3
+  steps:
+  - checkpoint: good_health_greet
+  - intent: thanks
+  - action: utter_thanks 
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: bad health 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bad_health
+  - action: utter_cheer_up
+  - action: utter_bad_health
+  - intent: symptoms
+
+- story: bad health 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bad_health
+  - action: utter_cheer_up
+  - action: utter_bad_health
+  - intent: thanks
+  - intent: symptoms
+  - action: utter_thanks

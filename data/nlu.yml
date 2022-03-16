@@ -50,7 +50,7 @@ nlu:
     - no way
     - not really
 
-- intent: mood_great
+- intent: good_health
   examples: |
     - perfect
     - great
@@ -66,25 +66,10 @@ nlu:
     - so so perfect
     - so good
     - so perfect
+    - feeling better
+    - I have recovered
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
-- intent: health
+- intent: bad_health
   examples: |
     - I am [sick](sick)
     - not feeling well
@@ -95,6 +80,10 @@ nlu:
     - not so good
     - sick
     - I'm [ill](sick)
+    - I don't feel very well
+    - not good
+    - not very good
+    - I'm unwell
 
 - intent: options
   examples: |
@@ -104,6 +93,32 @@ nlu:
     - how you can be helpful?
     - what [support](help) is offered
     - what can you do for me?
+
+- intent: symptoms
+  examples: |
+    - cold
+    - nausea
+    - nauseous
+    - headache
+    - aches
+    - pain
+    - fever
+    - toothache
+    - stomach upset
+    - diarrhoea
+    - loss of taste
+    - weak
+    - nasal congestion
+    - catarrh
+    - loss of appetite
+    - eye problems
+    - seizure
+    - blood pressure
+    - hypertension
+    - hypotension
+    - anaemia
+    - high temperature
+    - dizzy
 
 - intent: pharmacy_search
   examples: |
@@ -143,8 +158,8 @@ nlu:
     - blood pressure data entry
     - I want to log blood pressure results
     - blood pressure data management
-
-  - intent: blood_pressure_search
+    
+- intent: blood_pressure_search
   examples: |
     - I want to search for blood pressure result history
     - blood pressure for patient
