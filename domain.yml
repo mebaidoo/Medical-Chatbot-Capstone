@@ -10,6 +10,9 @@ intents:
   - bot_challenge
   - health
   - medical_terms
+  - options
+  - pharmacy_search
+
 
 responses:
   utter_greet:
@@ -30,6 +33,23 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_check_health:
+  - text: "How is your health today?"
+
+  utter_options:
+  - text: "I can provide medical information about disease symptoms, diagnostics, available treatments, and support for adverse drug reaction, directions to medical facilities, and interpretation to some medical terms you do not understand 😊"
+
+  utter_pharmacy_search:
+  - text: "Click on your preferred one."
+  buttons:
+    - title: "Kendicks"
+    payload: "utter_drug_type"
+    - title: "McKay"
+    payload: "utter_drug_type"
+
+  utter_drug_type:
+  -text: "What drug would you like to purchase?"
 
 session_config:
   session_expiration_time: 60
