@@ -1,5 +1,4 @@
 version: "3.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,8 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
-
 - intent: goodbye
   examples: |
     - cu
@@ -30,7 +27,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +35,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -49,7 +44,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: good_health
   examples: |
     - perfect
@@ -57,7 +51,7 @@ nlu:
     - amazing
     - feeling like a king
     - wonderful
-    - I am feeling very good
+    - I am feeling very [good](good)
     - I am great
     - I am amazing
     - I am going to save the world
@@ -68,7 +62,7 @@ nlu:
     - so perfect
     - feeling better
     - I have recovered
-
+    - I'm good
 - intent: bad_health
   examples: |
     - I am [sick](sick)
@@ -84,7 +78,7 @@ nlu:
     - not good
     - not very good
     - I'm unwell
-
+    - I'm [sick](sick)
 - intent: options
   examples: |
     - how you could [help](help) me?
@@ -93,7 +87,6 @@ nlu:
     - how you can be helpful?
     - what [support](help) is offered
     - what can you do for me?
-
 - intent: symptoms
   examples: |
     - cold
@@ -119,7 +112,6 @@ nlu:
     - anaemia
     - high temperature
     - dizzy
-
 - intent: pharmacy_search
   examples: |
     - find me a [pharmacy](pharmacy)
@@ -130,11 +122,9 @@ nlu:
     - is there a nearby [pharm](pharmacy)?
     - find me a [drug store](pharmacy)
     - find me a [dispensary](pharmacy)
-
 - intent: medical_terms
   examples: |
     - what is the meaning of [BMI](bmi)?
-
 - intent: thanks
   examples: |
     - thanks
@@ -142,7 +132,7 @@ nlu:
     - that's helpful
     - awesome, thanks
     - thanks for helping me
-
+    - Thanks
 - intent: adverse_drug
   examples: |
     - how to check Adverse drug reaction?
@@ -150,7 +140,6 @@ nlu:
     - give me a list of drugs causing adverse behavior
     - list all drugs suitable for patient with adverse reaction
     - which drugs dont have adverse reaction?
-
 - intent: blood_pressure
   examples: |
     - open blood pressure module
@@ -158,7 +147,6 @@ nlu:
     - blood pressure data entry
     - I want to log blood pressure results
     - blood pressure data management
-    
 - intent: blood_pressure_search
   examples: |
     - I want to search for blood pressure result history
@@ -166,8 +154,6 @@ nlu:
     - load patient blood pressure result
     - show blood pressure results for patients
     - find blood pressure results by id
-
-
 - intent: hospital_search
   examples: |
     - lookup for hospital
@@ -175,7 +161,6 @@ nlu:
     - I want to search hospital data
     - hospital lookup for patient
     - looking up hospital details
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
