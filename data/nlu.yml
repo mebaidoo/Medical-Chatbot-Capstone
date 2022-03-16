@@ -6,6 +6,9 @@ nlu:
     - hey
     - hello
     - hi
+    - hi there
+    - how are you
+    - is anyone there
     - hello there
     - good morning
     - good evening
@@ -27,6 +30,8 @@ nlu:
     - goodbye
     - have a nice day
     - see you around
+    - nice chatting to you, bye
+    - till next time
     - bye bye
     - see you later
 
@@ -38,6 +43,9 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - yep
+    - yah
+    - ya
 
 - intent: deny
   examples: |
@@ -48,6 +56,9 @@ nlu:
     - don't like that
     - no way
     - not really
+    - nope
+    - nah
+    - naah
 
 - intent: mood_great
   examples: |
