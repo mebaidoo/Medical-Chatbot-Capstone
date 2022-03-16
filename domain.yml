@@ -10,9 +10,13 @@ intents:
   - bot_challenge
   - health
   - medical_terms
+  - thanks
+  - adverse_drug
+  - blood_pressure
+  - blood_pressure_search
+  - hospital_search
   - options
   - pharmacy_search
-
 
 responses:
   utter_greet:
@@ -33,6 +37,21 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_thanks:
+  - text: "My pleasure"
+  
+  utter_adverse:
+  - text: "Navigating to Adverse drug reaction module"
+
+  utter_blood_pressure:
+  - text: "Navigating to Blood Pressure module"
+
+  utter_blood_pressure_search:
+  - text: "Please provide Patient ID"
+
+  utter_hospital_search:
+  - text: "Please provide hospital name or location"
 
   utter_check_health:
   - text: "How is your health today?"
