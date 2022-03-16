@@ -158,7 +158,7 @@ nlu:
     - blood pressure data entry
     - I want to log blood pressure results
     - blood pressure data management
-
+    
 - intent: blood_pressure_search
   examples: |
     - I want to search for blood pressure result history
