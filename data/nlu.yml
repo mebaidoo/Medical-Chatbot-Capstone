@@ -97,12 +97,38 @@ nlu:
 
 - intent: health
   examples: |
-    - I am sick
-    - Not feeling well
+    - I am [sick](sick)
+    - not feeling well
     - feeling nauseous
     - feeling feverish
+    - I'm very sick
+    - I'm [dying](sick)
+    - not so good
+    - sick
+    - I'm [ill](sick)
 
-_ intent: medical_terms
+- intent: options
+  examples: |
+    - how you could [help](help) me?
+    - what you can do?
+    - what help you provide?
+    - how you can be helpful?
+    - what [support](help) is offered
+    - what can you do for me?
+
+- intent: pharmacy_search
+  examples: |
+    - find me a [pharmacy](pharmacy)
+    - find pharmacy
+    - list of [pharmacies](pharmacy) nearby
+    - locate pharmacy
+    - search pharmacy
+    - is there a nearby [pharm](pharmacy)?
+    - find me a [drug store](pharmacy)
+    - find me a [dispensary](pharmacy)
+
+
+- intent: medical_terms
   examples: |
     - what is the meaning of [category]?
 
