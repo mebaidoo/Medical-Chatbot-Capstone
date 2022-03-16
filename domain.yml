@@ -61,14 +61,14 @@ responses:
 
   utter_pharmacy_search:
   - text: "Click on your preferred one."
-  buttons:
-    - title: "Kendicks"
-    payload: "utter_drug_type"
-    - title: "McKay"
-    payload: "utter_drug_type"
+  # buttons:
+  #   - title: "Kendicks"
+  #   payload: "utter_drug_type"
+  #   - title: "McKay"
+  #   payload: "utter_drug_type"
 
   utter_drug_type:
-  -text: "What drug would you like to purchase?"
+  - text: "What drug would you like to purchase?"
 
 session_config:
   session_expiration_time: 60

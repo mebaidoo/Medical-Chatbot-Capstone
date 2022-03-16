@@ -121,7 +121,7 @@ nlu:
     - what is the meaning of [BMI](bmi)?
 
 - intent: thanks
-  exmamples: |
+  examples: |
     - thanks
     - thank you
     - that's helpful
@@ -129,7 +129,7 @@ nlu:
     - thanks for helping me
 
 - intent: adverse_drug
-  exmamples: |
+  examples: |
     - how to check Adverse drug reaction?
     - Open adverse drugs module
     - give me a list of drugs causing adverse behavior
@@ -137,15 +137,15 @@ nlu:
     - which drugs dont have adverse reaction?
 
 - intent: blood_pressure
-  exmamples: |
+  examples: |
     - open blood pressure module
     - task related to blood pressure
     - blood pressure data entry
     - I want to log blood pressure results
     - blood pressure data management
 
-  - intent: blood_pressure_search
-  exmamples: |
+- intent: blood_pressure_search
+  examples: |
     - I want to search for blood pressure result history
     - blood pressure for patient
     - load patient blood pressure result
@@ -154,7 +154,7 @@ nlu:
 
 
 - intent: hospital_search
-  exmamples: |
+  examples: |
     - lookup for hospital
     - searching for hospital to transfer patient
     - I want to search hospital data
