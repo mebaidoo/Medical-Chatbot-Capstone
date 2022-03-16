@@ -130,7 +130,7 @@ nlu:
 
 - intent: adverse_drug
   exmamples: |
-    - how to check Adverse drug reaction?
+    - how to check adverse drug reaction?
     - Open adverse drugs module
     - give me a list of drugs causing adverse behavior
     - list all drugs suitable for patient with adverse reaction
