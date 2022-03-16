@@ -20,6 +20,7 @@ nlu:
     - goodevening
     - good afternoon
 
+
 - intent: goodbye
   examples: |
     - cu
@@ -93,6 +94,18 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+
+- intent: health
+  examples: |
+    - I am sick
+    - Not feeling well
+    - feeling nauseous
+    - feeling feverish
+
+_ intent: medical_terms
+  examples: |
+    - what is the meaning of [category]?
+
 
 - intent: bot_challenge
   examples: |
