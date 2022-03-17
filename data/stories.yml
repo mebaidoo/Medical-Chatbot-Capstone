@@ -62,3 +62,4 @@ stories:
   - action: utter_cheer_up
   - action: utter_bad_health
   - intent: symptoms
+  

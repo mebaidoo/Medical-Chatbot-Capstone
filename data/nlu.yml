@@ -63,6 +63,7 @@ nlu:
     - feeling better
     - I have recovered
     - I'm good
+    
 - intent: bad_health
   examples: |
     - I am [sick](sick)
@@ -77,8 +78,8 @@ nlu:
     - I don't feel very well
     - not good
     - not very good
-    - I'm unwell
-    - I'm [sick](sick)
+    - I'm [unwell](sick)
+
 - intent: options
   examples: |
     - how you could [help](help) me?
