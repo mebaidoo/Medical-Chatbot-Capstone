@@ -43,3 +43,23 @@ stories:
   - intent: thanks
   - intent: symptoms
   - action: utter_thanks
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: good_health
+  - action: utter_good_health
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: greet
+  - action: utter_greet
+  - intent: bad_health
+    entities:
+    - sick: sick
+  - action: utter_cheer_up
+  - action: utter_bad_health
+  - intent: symptoms
+  
