@@ -2,64 +2,166 @@ version: "3.0"
 
 stories:
 
-- story: good health 1
+- story: good mood 1
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: good_health
-  - action: utter_good_health
-  - checkpoint: good_health_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - checkpoint: quest_asked
 
-- story: good health 2
+story: good mood 2
   steps:
-  - checkpoint: good_health_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
   - intent: goodbye
   - action: utter_goodbye
 
-- story: good health 3
+- story: bad mood 1
   steps:
-  - checkpoint: good_health_greet
-  - intent: thanks
-  - action: utter_thanks 
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
+  - action: utter_mood_bad
+  - action: utter_ask_quest
+  - checkpoint: quest_asked
+
+- story: bad mood 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
+  - action: utter_mood_bad
+  - action: utter_ask_quest
   - intent: goodbye
   - action: utter_goodbye
 
-- story: bad health 1
+- story: locate kendicks
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: bad_health
-  - action: utter_cheer_up
-  - action: utter_bad_health
-  - intent: symptoms
-
-- story: bad health 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: bad_health
-  - action: utter_cheer_up
-  - action: utter_bad_health
+  - checkpoint: quest_asked
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_pharm
+  - action: utter_pharm
+  - intent: locate_kendicks
+  - action: utter_kendicks
   - intent: thanks
-  - intent: symptoms
   - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
 
-- story: interactive_story_1
+- story: locate day
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: good_health
-  - action: utter_good_health
+  - checkpoint: quest_asked
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_pharm
+  - action: utter_pharm
+  - intent: locate_day
+  - action: utter_day
   - intent: thanks
   - action: utter_thanks
   - intent: goodbye
   - action: utter_goodbye
-  - intent: greet
-  - action: utter_greet
-  - intent: bad_health
-    entities:
-    - sick: sick
-  - action: utter_cheer_up
-  - action: utter_bad_health
-  - intent: symptoms
-  
+
+- story: locate abuakwa
+  steps:
+  - checkpoint: quest_asked
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_pharm
+  - action: utter_pharm
+  - intent: locate_abuakwa
+  - action: utter_abuakwa
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: locate bethel
+  steps:
+  - checkpoint: quest_asked
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_hosp
+  - action: utter_hosp
+  - intent: locate_bethel
+  - action: utter_bethel
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: locate effia
+  steps:
+  - checkpoint: quest_asked
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_hosp
+  - action: utter_hosp
+  - intent: locate_effia
+  - action: utter_effia
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: locate sda
+  steps:
+  - checkpoint: quest_asked
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_hosp
+  - action: utter_hosp
+  - intent: locate_sda
+  - action: utter_sda
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: locate mediwest
+  steps:
+  - checkpoint: quest_asked
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_lab
+  - action: utter_lab
+  - intent: locate_mediwest
+  - action: utter_mediwest
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: locate oasis
+  steps:
+  - checkpoint: quest_asked
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_lab
+  - action: utter_lab
+  - intent: locate_oasis
+  - action: utter_oasis
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: locate solar
+  steps:
+  - checkpoint: quest_asked
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_lab
+  - action: utter_lab
+  - intent: locate_solar
+  - action: utter_solar
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
