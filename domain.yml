@@ -51,9 +51,9 @@ responses:
 
   utter_ask_quest:
   - text: What can I do for you today? Would you like to
-    1. Locate a pharmacy/hospital/lab
-    2. Get medical information
-    3. Get your medical history
+    Locate a pharmacy/hospital/lab (1)
+    Get medical information (2)
+    Get your medical history (3)
 
     Enter 1, 2, or 3.
     channel: "whatsapp"
