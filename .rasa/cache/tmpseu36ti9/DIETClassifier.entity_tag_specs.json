@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-bmi",
+      "2": "I-bmi",
+      "3": "L-bmi",
+      "4": "U-bmi",
+      "5": "B-good",
+      "6": "I-good",
+      "7": "L-good",
+      "8": "U-good",
+      "9": "B-help",
+      "10": "I-help",
+      "11": "L-help",
+      "12": "U-help",
+      "13": "B-pharmacy",
+      "14": "I-pharmacy",
+      "15": "L-pharmacy",
+      "16": "U-pharmacy",
+      "17": "B-sick",
+      "18": "I-sick",
+      "19": "L-sick",
+      "20": "U-sick",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-bmi": 1,
+      "I-bmi": 2,
+      "L-bmi": 3,
+      "U-bmi": 4,
+      "B-good": 5,
+      "I-good": 6,
+      "L-good": 7,
+      "U-good": 8,
+      "B-help": 9,
+      "I-help": 10,
+      "L-help": 11,
+      "U-help": 12,
+      "B-pharmacy": 13,
+      "I-pharmacy": 14,
+      "L-pharmacy": 15,
+      "U-pharmacy": 16,
+      "B-sick": 17,
+      "I-sick": 18,
+      "L-sick": 19,
+      "U-sick": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]
