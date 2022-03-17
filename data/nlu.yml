@@ -17,7 +17,6 @@ nlu:
     - goodevening
     - good afternoon
 
-
 - intent: goodbye
   examples: |
     - cu
@@ -57,7 +56,7 @@ nlu:
     - amazing
     - feeling like a king
     - wonderful
-    - I am feeling very good
+    - I am feeling very [good](good)
     - I am great
     - I am amazing
     - I am going to save the world
@@ -68,7 +67,8 @@ nlu:
     - so perfect
     - feeling better
     - I have recovered
-
+    - I'm good
+    
 - intent: bad_health
   examples: |
     - I am [sick](sick)
@@ -83,7 +83,7 @@ nlu:
     - I don't feel very well
     - not good
     - not very good
-    - I'm unwell
+    - I'm [unwell](sick)
 
 - intent: options
   examples: |
@@ -142,6 +142,7 @@ nlu:
     - that's helpful
     - awesome, thanks
     - thanks for helping me
+    - Thanks
 
 - intent: adverse_drug
   examples: |
@@ -158,7 +159,7 @@ nlu:
     - blood pressure data entry
     - I want to log blood pressure results
     - blood pressure data management
-    
+
 - intent: blood_pressure_search
   examples: |
     - I want to search for blood pressure result history
@@ -167,7 +168,6 @@ nlu:
     - show blood pressure results for patients
     - find blood pressure results by id
 
-
 - intent: hospital_search
   examples: |
     - lookup for hospital
@@ -175,7 +175,7 @@ nlu:
     - I want to search hospital data
     - hospital lookup for patient
     - looking up hospital details
-
+    
 - intent: bot_challenge
   examples: |
     - are you a bot?
