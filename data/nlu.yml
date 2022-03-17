@@ -1,4 +1,5 @@
 version: "3.0"
+
 nlu:
 - intent: greet
   examples: |
@@ -15,6 +16,8 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+    - good day
+
 - intent: goodbye
   examples: |
     - cu
@@ -27,6 +30,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
+
 - intent: affirm
   examples: |
     - yes
@@ -35,6 +39,11 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - alright
+    - okay
+    - okay
+    - o.k
+
 - intent: deny
   examples: |
     - no
@@ -44,7 +53,8 @@ nlu:
     - don't like that
     - no way
     - not really
-- intent: good_health
+
+- intent: mood_great
   examples: |
     - perfect
     - great
@@ -63,22 +73,135 @@ nlu:
     - feeling better
     - I have recovered
     - I'm good
-- intent: bad_health
+    - [wonderful](good)
+    - [extraordinary](good)
+    
+- intent: mood_bad
   examples: |
-    - I am [sick](sick)
+    - I am [sick](bad)
     - not feeling well
     - feeling nauseous
     - feeling feverish
     - I'm very sick
-    - I'm [dying](sick)
-    - not so good
+    - I'm [dying](bad)
+    - [not](bad) so good
     - sick
-    - I'm [ill](sick)
-    - I don't feel very well
+    - I'm [ill](bad)
+    - I [don't](bad) feel very well
     - not good
     - not very good
-    - I'm unwell
-    - I'm [sick](sick)
+    - I'm [unwell](bad)
+    - [bad](bad)
+    - very bad
+
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - that's helpful
+    - awesome, thanks
+    - thanks for helping me
+    - Thanks
+  
+- intent: locate
+  examples: |
+    - Locate a pharmacy/hospital/lab
+    - 1
+    - I need a location
+    - I need to locate a place
+
+- intent: med_info
+  examples: |
+    - Get medical information
+    - 2
+    - Get medical advice
+    - Get medical advise
+    - Get medical info
+
+- intent: med_history
+  examples: |
+    - Get your medical history
+    - 3
+    - Get my medical history
+
+- intent: locate_pharm
+  examples: |
+    - Pharmacy
+    - p
+    - pharm
+    - pharmacy
+
+- intent: locate_hosp
+  examples: |
+    - Hospital
+    - h
+    - hospital
+
+- intent: locate_lab
+  examples: |
+    - Lab
+    - l
+    - lab
+
+- intent: locate_kendicks
+  examples: |
+    - Kendicks Pharmacy
+    - Kendicks
+    - kendicks
+  
+- intent: locate_day
+  examples: |
+    - Day by Day Pharmacy
+    - Day
+    - day
+
+- intent: locate_abuakwa
+  examples: |
+    - Abuakwa Pharmacy
+    - Abuakwa
+    - abuakwa
+
+- intent: locate_bethel
+  examples: |
+    - Bethel Hospital
+    - Bethel
+    - bethel
+    - bethel hospital
+
+- intent: locate_effia
+  examples: |
+    - Effia Nkwanta Hospital
+    - Effia
+    - effia
+
+- intent: locate_sda
+  examples: |
+    - S.D.A Hospital
+    - SDA
+    - sda
+    - s.d.a
+    - S.D.A
+
+- intent: locate_mediwest
+  examples: |
+    - Mediwest Lab
+    - Mediwest
+    - mediwest lab
+    - mediwest
+
+- intent: locate_oasis
+  examples: |
+    - Oasis Medical Consult
+    - Oasis
+    - oasis
+
+- intent: locate_solar
+  examples: |
+    - Solar Medical Lab
+    - Solar
+    - solar
+    - solar lab
+
 - intent: options
   examples: |
     - how you could [help](help) me?
@@ -87,31 +210,7 @@ nlu:
     - how you can be helpful?
     - what [support](help) is offered
     - what can you do for me?
-- intent: symptoms
-  examples: |
-    - cold
-    - nausea
-    - nauseous
-    - headache
-    - aches
-    - pain
-    - fever
-    - toothache
-    - stomach upset
-    - diarrhoea
-    - loss of taste
-    - weak
-    - nasal congestion
-    - catarrh
-    - loss of appetite
-    - eye problems
-    - seizure
-    - blood pressure
-    - hypertension
-    - hypotension
-    - anaemia
-    - high temperature
-    - dizzy
+
 - intent: pharmacy_search
   examples: |
     - find me a [pharmacy](pharmacy)
@@ -122,17 +221,11 @@ nlu:
     - is there a nearby [pharm](pharmacy)?
     - find me a [drug store](pharmacy)
     - find me a [dispensary](pharmacy)
+
 - intent: medical_terms
   examples: |
     - what is the meaning of [BMI](bmi)?
-- intent: thanks
-  examples: |
-    - thanks
-    - thank you
-    - that's helpful
-    - awesome, thanks
-    - thanks for helping me
-    - Thanks
+
 - intent: adverse_drug
   examples: |
     - how to check Adverse drug reaction?
@@ -140,6 +233,7 @@ nlu:
     - give me a list of drugs causing adverse behavior
     - list all drugs suitable for patient with adverse reaction
     - which drugs dont have adverse reaction?
+
 - intent: blood_pressure
   examples: |
     - open blood pressure module
@@ -147,6 +241,7 @@ nlu:
     - blood pressure data entry
     - I want to log blood pressure results
     - blood pressure data management
+
 - intent: blood_pressure_search
   examples: |
     - I want to search for blood pressure result history
@@ -154,6 +249,7 @@ nlu:
     - load patient blood pressure result
     - show blood pressure results for patients
     - find blood pressure results by id
+
 - intent: hospital_search
   examples: |
     - lookup for hospital
@@ -161,6 +257,7 @@ nlu:
     - I want to search hospital data
     - hospital lookup for patient
     - looking up hospital details
+    
 - intent: bot_challenge
   examples: |
     - are you a bot?

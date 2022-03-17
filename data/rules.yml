@@ -2,12 +2,28 @@ version: "3.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: rule good mood 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+
+- rule: rule bad mood 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
+  - action: utter_mood_bad
+  - action: utter_ask_quest
+
+- rule: rule goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: rule thanks
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: thanks
+  - action: utter_thanks
