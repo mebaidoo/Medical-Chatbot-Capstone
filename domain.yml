@@ -50,12 +50,7 @@ responses:
   - text: My pleasure
 
   utter_ask_quest:
-  - text: What can I do for you today? Would you like to
-    Locate a pharmacy/hospital/lab (1)
-    Get medical information (2)
-    Get your medical history (3)
-
-    Enter 1, 2, or 3.
+  - text: What can I do for you today? Would you like to locate a pharmacy/hospital/lab (1), get medical information (2), or get your medical history (3). Enter 1, 2, or 3.
     channel: "whatsapp"
 
   - text: What can I do for you today?
@@ -68,12 +63,7 @@ responses:
       payload: "/med_history"
 
   utter_locate:
-  - text: Which of these places would you like to locate?
-    Pharmacy (p)
-    Hospital (h)
-    Lab (l)
-
-    Enter p, h, or l.
+  - text: Which of these places would you like to locate? Pharmacy (p), Hospital (h) or Lab (l). Enter p, h, or l.
     channel: "whatsapp" 
 
   - text: Which of these places would you like to locate?
@@ -86,12 +76,7 @@ responses:
       payload: "/locate_lab"
 
   utter_pharm:
-  - text: Which of these pharmacies would you like to locate?
-    Kendicks Pharmacy
-    Day by Day Pharmacy
-    Abuakwa Pharmacy
-
-    Enter Kendicks, Day or Abuakwa
+  - text: Which of these pharmacies would you like to locate? Kendicks Pharmacy, Day by Day Pharmacy or Abuakwa Pharmacy. Enter Kendicks, Day or Abuakwa.
     channel: "whatsapp" 
 
   - text: Which of these pharmacies would you like to locate?
@@ -104,12 +89,7 @@ responses:
       payload: "/locate_abuakwa"
     
   utter_hosp:
-  - text: Which of these hospitals would you like to locate?
-    Bethel Hospital
-    Effia Nkwanta Hospital
-    S.D.A Hospital
-
-    Enter Bethel, Effia or SDA
+  - text: Which of these hospitals would you like to locate? Bethel Hospital, Effia Nkwanta Hospital or S.D.A Hospital. Enter Bethel, Effia or SDA.
     channel: "whatsapp" 
 
   - text: Which of these hospitals would you like to locate?
@@ -122,12 +102,7 @@ responses:
       payload: "/locate_sda"
 
   utter_lab:
-  - text: Which of these labs would you like to locate?
-    Mediwest Lab
-    Oasis Medical Consult
-    Solar Medical Lab
-
-    Enter Mediwest, Oasis or Solar
+  - text: Which of these labs would you like to locate? Mediwest Lab, Oasis Medical Consult or Solar Medical Lab. Enter Mediwest, Oasis or Solar.
     channel: "whatsapp" 
 
   - text: Which of these labs would you like to locate?
