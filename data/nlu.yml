@@ -83,7 +83,7 @@ nlu:
     - I don't feel very well
     - not good
     - not very good
-    - I'm unwell
+    - I'm [unwell](sick)
 
 - intent: options
   examples: |

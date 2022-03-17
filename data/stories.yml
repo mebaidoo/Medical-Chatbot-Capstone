@@ -16,7 +16,7 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-story: good health 3
+- story: good health 3
   steps:
   - checkpoint: good_health_greet
   - intent: thanks

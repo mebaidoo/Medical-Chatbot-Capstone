@@ -18,6 +18,12 @@ intents:
   - options
   - pharmacy_search
 
+entities:
+  - sick
+  - help
+  - pharmacy
+  - bmi
+
 responses:
   utter_greet:
   - text: "Hey! how is your health like today?"
