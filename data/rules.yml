@@ -2,22 +2,6 @@ version: "3.0"
 
 rules:
 
-- rule: rule good mood 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-
-- rule: rule bad mood 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_bad
-  - action: utter_mood_bad
-  - action: utter_ask_quest
-
 - rule: rule goodbye
   steps:
   - intent: goodbye
