@@ -35,6 +35,15 @@ intents:
 entities:
 - bad
 - good
+- help
+- pharmacy
+- terms
+
+# slots partition
+slots:
+  terms: 
+    type: text
+
 
 responses:
   utter_greet:
