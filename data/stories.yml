@@ -11,7 +11,7 @@ stories:
   - action: utter_ask_quest
   - checkpoint: quest_asked
 
-story: good mood 2
+- story: good mood 2
   steps:
   - intent: greet
   - action: utter_greet
@@ -165,3 +165,8 @@ story: good mood 2
   - action: utter_thanks
   - intent: goodbye
   - action: utter_goodbye
+
+- story: terminology
+  steps:
+  - checkpoint: quest_asked
+  - intent: medical_terms

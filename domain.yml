@@ -35,6 +35,15 @@ intents:
 entities:
 - bad
 - good
+- help
+- pharmacy
+- terms
+
+# slots partition
+slots:
+  terms: 
+    type: text
+
 
 responses:
   utter_greet:
@@ -50,12 +59,7 @@ responses:
   - text: My pleasure
 
   utter_ask_quest:
-  - text: What can I do for you today? Would you like to
-    1. Locate a pharmacy/hospital/lab
-    2. Get medical information
-    3. Get your medical history
-
-    Enter 1, 2, or 3.
+  - text: What can I do for you today? Would you like to locate a pharmacy/hospital/lab (1), get medical information (2), or get your medical history (3). Enter 1, 2, or 3.
     channel: "whatsapp"
 
   - text: What can I do for you today?
@@ -68,12 +72,7 @@ responses:
       payload: "/med_history"
 
   utter_locate:
-  - text: Which of these places would you like to locate?
-    Pharmacy (p)
-    Hospital (h)
-    Lab (l)
-
-    Enter p, h, or l.
+  - text: Which of these places would you like to locate? Pharmacy (p), Hospital (h) or Lab (l). Enter p, h, or l.
     channel: "whatsapp" 
 
   - text: Which of these places would you like to locate?
@@ -86,12 +85,7 @@ responses:
       payload: "/locate_lab"
 
   utter_pharm:
-  - text: Which of these pharmacies would you like to locate?
-    Kendicks Pharmacy
-    Day by Day Pharmacy
-    Abuakwa Pharmacy
-
-    Enter Kendicks, Day or Abuakwa
+  - text: Which of these pharmacies would you like to locate? Kendicks Pharmacy, Day by Day Pharmacy or Abuakwa Pharmacy. Enter Kendicks, Day or Abuakwa.
     channel: "whatsapp" 
 
   - text: Which of these pharmacies would you like to locate?
@@ -104,12 +98,7 @@ responses:
       payload: "/locate_abuakwa"
     
   utter_hosp:
-  - text: Which of these hospitals would you like to locate?
-    Bethel Hospital
-    Effia Nkwanta Hospital
-    S.D.A Hospital
-
-    Enter Bethel, Effia or SDA
+  - text: Which of these hospitals would you like to locate? Bethel Hospital, Effia Nkwanta Hospital or S.D.A Hospital. Enter Bethel, Effia or SDA.
     channel: "whatsapp" 
 
   - text: Which of these hospitals would you like to locate?
@@ -122,12 +111,7 @@ responses:
       payload: "/locate_sda"
 
   utter_lab:
-  - text: Which of these labs would you like to locate?
-    Mediwest Lab
-    Oasis Medical Consult
-    Solar Medical Lab
-
-    Enter Mediwest, Oasis or Solar
+  - text: Which of these labs would you like to locate? Mediwest Lab, Oasis Medical Consult or Solar Medical Lab. Enter Mediwest, Oasis or Solar.
     channel: "whatsapp" 
 
   - text: Which of these labs would you like to locate?
@@ -140,49 +124,31 @@ responses:
       payload: "/locate_solar"
 
   utter_kendicks:
-  - text: This is the link to the google map location of Kendicks Pharmacy.
-    https://goo.gl/maps/xhMWmHbL7mcuDDU16
-    Hope you find what you need.
+  - text: This is the link to the google map location of Kendicks Pharmacy:https://goo.gl/maps/xhMWmHbL7mcuDDU16. Hope you find what you need.
 
   utter_day:
-  - text: This is the link to the google map location of Day by Day Pharmacy.
-    https://goo.gl/maps/ZcPS4oNmrXzTsyxj8
-    Hope you find what you need.
+  - text: This is the link to the google map location of Day by Day Pharmacy:https://goo.gl/maps/ZcPS4oNmrXzTsyxj8. Hope you find what you need.
 
   utter_abuakwa:
-  - text: This is the link to the google map location of Day by Day Pharmacy.
-    https://goo.gl/maps/LewXHicXxgst1fhQ7
-    Hope you find what you need.
+  - text: This is the link to the google map location of Day by Day Pharmacy:https://goo.gl/maps/LewXHicXxgst1fhQ7. Hope you find what you need.
 
   utter_bethel:
-  - text: This is the link to the google map location of Bethel Hospital.
-    https://goo.gl/maps/34PqV76PXChWRHm37
-    Hope you get what you need.
+  - text: This is the link to the google map location of Bethel Hospital:https://goo.gl/maps/34PqV76PXChWRHm37. Hope you get what you need.
 
   utter_effia:
-  - text: This is the link to the google map location of Effia Nkwanta Hospital.
-    https://goo.gl/maps/229Sgfbdj78pEDgn9
-    Hope you get what you need.
+  - text: This is the link to the google map location of Effia Nkwanta Hospital:https://goo.gl/maps/229Sgfbdj78pEDgn9. Hope you get what you need.
   
   utter_sda:
-  - text: This is the link to the google map location of S.D.A Hospital.
-    https://goo.gl/maps/GH9CC8AHHHqx5Es9A
-    Hope you get what you need.
+  - text: This is the link to the google map location of S.D.A Hospital:https://goo.gl/maps/GH9CC8AHHHqx5Es9A. Hope you get what you need.
 
   utter_mediwest:
-  - text: This is the link to the google map location of Mediwest Lab.
-    https://goo.gl/maps/fuEydnvG3DjAgfQw8
-    Hope you get what you need.
+  - text: This is the link to the google map location of Mediwest Lab:https://goo.gl/maps/fuEydnvG3DjAgfQw8. Hope you get what you need.
 
   utter_oasis:
-  - text: This is the link to the google map location of Mediwest Lab.
-    https://goo.gl/maps/SSBdPPNFyRHheLTp7
-    Hope you get what you need.
+  - text: This is the link to the google map location of Mediwest Lab:https://goo.gl/maps/SSBdPPNFyRHheLTp7. Hope you get what you need.
 
   utter_solar:
-  - text: This is the link to the google map location of Mediwest Lab.
-    https://goo.gl/maps/mo1NU27Qy623Nr1w8
-    Hope you get what you need.
+  - text: This is the link to the google map location of Mediwest Lab:https://goo.gl/maps/mo1NU27Qy623Nr1w8. Hope you get what you need.
 
   utter_goodbye:
   - text: Bye, have a nice day.
@@ -266,4 +232,5 @@ actions:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
 
