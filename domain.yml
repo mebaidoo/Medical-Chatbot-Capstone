@@ -214,6 +214,29 @@ responses:
   utter_drug_type:
   - text: What drug would you like to purchase?
 
+  utter_which_info:
+  - text: What medical information would you like to get?
+    General terms
+    Diseases information
+
+    Enter p, h, or l.
+    channel: "whatsapp" 
+
+  - text: Which of these places would you like to locate?
+    buttons:
+    - title: "Pharmacy"
+      payload: "/locate_pharm"
+    - title: "Hospital"
+      payload: "/locate_hosp"
+    - title: "Lab"
+      payload: "/locate_lab"
+
+  utter_term:
+  - text: What medical term would you like to learn more about?
+
+  utter_definition:
+  - text: "{term} is {definition}"
+
 actions:
 - utter_greet
 - utter_mood_great
@@ -235,7 +258,9 @@ actions:
 - utter_solar
 - utter_goodbye
 - utter_iamabot
-
+- utter_term
+- utter_definition
+- action_term_api
 
 
 session_config:
