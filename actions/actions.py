@@ -25,7 +25,7 @@ class TermsAndDefinitions(Action):
         
         term = tracker.latest_message['text']
         definition = str(Terms(term))
-        dispatcher.utter_message("utter_definition", tracker, term = term, definition = definition)
+        dispatcher.utter_template("utter_definition", tracker, term = term, definition = definition)
 
         return []
 

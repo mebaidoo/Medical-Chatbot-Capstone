@@ -181,24 +181,17 @@ responses:
   - text: What drug would you like to purchase?
 
   utter_which_info:
-  - text: What medical information would you like to get?
-    General terms
-    Diseases information
-
-    Enter p, h, or l.
+  - text: What medical information would you like to get? Information on general terms or diseases? Enter general or disease.
     channel: "whatsapp" 
-
-  - text: Which of these places would you like to locate?
+  - text: What medical information would you like to get?
     buttons:
-    - title: "Pharmacy"
-      payload: "/locate_pharm"
-    - title: "Hospital"
-      payload: "/locate_hosp"
-    - title: "Lab"
-      payload: "/locate_lab"
+    - title: "General Terms"
+      payload: "/gen_terms"
+    - title: "Diseases Info"
+      payload: "/diseases_info"
 
   utter_term:
-  - text: What medical term would you like to learn more about?
+  - text: What medical term would you like to learn more about? e.g. systolic
 
   utter_definition:
   - text: "{term} is {definition}"
