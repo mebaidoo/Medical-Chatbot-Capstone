@@ -225,9 +225,22 @@ nlu:
     - find me a [drug store](pharmacy)
     - find me a [dispensary](pharmacy)
 
-- intent: medical_terms
+- intent: gen_terms
   examples: |
-    - what is the meaning of [BMI](terms)?
+    - General Terms
+    - general
+
+- intent: diseases_info
+  examples: |
+    - Diseases Info
+    - disease
+    - diseases
+
+- intent: term
+  examples: |
+    - I would like to learn more about [systolic](term)
+    - [systolic](term)
+    - about [systolic](term)
 
 - intent: adverse_drug
   examples: |
