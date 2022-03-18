@@ -227,7 +227,7 @@ nlu:
 
 - intent: medical_terms
   examples: |
-    - what is the meaning of [BMI](bmi)?
+    - what is the meaning of [BMI](terms)?
 
 - intent: adverse_drug
   examples: |

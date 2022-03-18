@@ -165,3 +165,8 @@ stories:
   - action: utter_thanks
   - intent: goodbye
   - action: utter_goodbye
+
+- story: terminology
+  steps:
+  - checkpoint: quest_asked
+  - intent: medical_terms
