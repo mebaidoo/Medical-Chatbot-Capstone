@@ -166,7 +166,7 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: get term definition
+- story: get term definition 1
   steps:
   - checkpoint: quest_asked
   - intent: med_info
@@ -176,6 +176,32 @@ stories:
   - intent: terms
   - action: action_term_api
 
+- story: get term definition 2
+  steps:
+  - checkpoint: quest_asked
+  - intent: med_info
+  - action: utter_which_info
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+  - action: action_term_api
+  - intent: terms
+  - action: action_term_api
+
+- story: get term definition 3
+  steps:
+  - checkpoint: quest_asked
+  - intent: med_info
+  - action: utter_which_info
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+  - action: action_term_api
+  - intent: terms
+  - action: action_term_api
+  - intent: terms
+  - action: action_term_api
+  
 - story: interactive_story_1
   steps:
   - intent: greet
