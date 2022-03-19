@@ -166,7 +166,12 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: terminology
+- story: get term definition
   steps:
   - checkpoint: quest_asked
-  - intent: medical_terms
+  - intent: med_info
+  - action: utter_which_info
+  - intent: gen_terms
+  - action: utter_term
+  - intent: term
+  - action: action_term_api
