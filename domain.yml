@@ -1,15 +1,19 @@
-version: "3.0"
-
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
 - greet
+- med_info
+- mood_great
+- terms
+- gen_terms
 - goodbye
 - affirm
 - deny
-- mood_great
 - mood_bad
 - thanks
 - locate
-- med_info
 - med_history
 - locate_pharm
 - locate_hosp
@@ -31,199 +35,154 @@ intents:
 - hospital_search
 - options
 - pharmacy_search
+- diseases_info
 
 entities:
 - bad
 - good
 - help
 - pharmacy
-- terms
-
-# slots partition
-slots:
-  terms: 
-    type: text
-
 
 responses:
   utter_greet:
   - text: Hey! how are you today?
-
   utter_mood_great:
   - text: That's good to hear!
-
   utter_mood_bad:
   - text: Sorry, I am here to help.
-
   utter_thanks:
   - text: My pleasure
-
   utter_ask_quest:
   - text: What can I do for you today? Would you like to locate a pharmacy/hospital/lab (1), get medical information (2), or get your medical history (3). Enter 1, 2, or 3.
-    channel: "whatsapp"
-
+    channel: whatsapp
   - text: What can I do for you today?
     buttons:
-    - title: "Locate a pharmacy/hospital/lab"
-      payload: "/locate"
-    - title: "Get medical information"
-      payload: "/med_info"
-    - title: "Get your medical history"
-      payload: "/med_history"
-
+    - title: Locate a pharmacy/hospital/lab
+      payload: /locate
+    - title: Get medical information
+      payload: /med_info
+    - title: Get your medical history
+      payload: /med_history
   utter_locate:
   - text: Which of these places would you like to locate? Pharmacy (p), Hospital (h) or Lab (l). Enter p, h, or l.
-    channel: "whatsapp" 
-
+    channel: whatsapp
   - text: Which of these places would you like to locate?
     buttons:
-    - title: "Pharmacy"
-      payload: "/locate_pharm"
-    - title: "Hospital"
-      payload: "/locate_hosp"
-    - title: "Lab"
-      payload: "/locate_lab"
-
+    - title: Pharmacy
+      payload: /locate_pharm
+    - title: Hospital
+      payload: /locate_hosp
+    - title: Lab
+      payload: /locate_lab
   utter_pharm:
   - text: Which of these pharmacies would you like to locate? Kendicks Pharmacy, Day by Day Pharmacy or Abuakwa Pharmacy. Enter Kendicks, Day or Abuakwa.
-    channel: "whatsapp" 
-
+    channel: whatsapp
   - text: Which of these pharmacies would you like to locate?
     buttons:
-    - title: "Kendicks Pharmacy"
-      payload: "/locate_kendicks"
-    - title: "Day by Day Pharmacy"
-      payload: "/locate_day"
-    - title: "Abuakwa Pharmacy"
-      payload: "/locate_abuakwa"
-    
+    - title: Kendicks Pharmacy
+      payload: /locate_kendicks
+    - title: Day by Day Pharmacy
+      payload: /locate_day
+    - title: Abuakwa Pharmacy
+      payload: /locate_abuakwa
   utter_hosp:
   - text: Which of these hospitals would you like to locate? Bethel Hospital, Effia Nkwanta Hospital or S.D.A Hospital. Enter Bethel, Effia or SDA.
-    channel: "whatsapp" 
-
+    channel: whatsapp
   - text: Which of these hospitals would you like to locate?
     buttons:
-    - title: "Bethel Hospital"
-      payload: "/locate_bethel"
-    - title: "Effia Nkwanta Hospital"
-      payload: "/locate_effia"
-    - title: "S.D.A Hospital"
-      payload: "/locate_sda"
-
+    - title: Bethel Hospital
+      payload: /locate_bethel
+    - title: Effia Nkwanta Hospital
+      payload: /locate_effia
+    - title: S.D.A Hospital
+      payload: /locate_sda
   utter_lab:
   - text: Which of these labs would you like to locate? Mediwest Lab, Oasis Medical Consult or Solar Medical Lab. Enter Mediwest, Oasis or Solar.
-    channel: "whatsapp" 
-
+    channel: whatsapp
   - text: Which of these labs would you like to locate?
     buttons:
-    - title: "Mediwest Lab"
-      payload: "/locate_mediwest"
-    - title: "Oasis Medical Consult"
-      payload: "/locate_oasis"
-    - title: "Solar Medical Lab"
-      payload: "/locate_solar"
-
+    - title: Mediwest Lab
+      payload: /locate_mediwest
+    - title: Oasis Medical Consult
+      payload: /locate_oasis
+    - title: Solar Medical Lab
+      payload: /locate_solar
   utter_kendicks:
   - text: This is the link to the google map location of Kendicks Pharmacy:https://goo.gl/maps/xhMWmHbL7mcuDDU16. Hope you find what you need.
-
   utter_day:
   - text: This is the link to the google map location of Day by Day Pharmacy:https://goo.gl/maps/ZcPS4oNmrXzTsyxj8. Hope you find what you need.
-
   utter_abuakwa:
   - text: This is the link to the google map location of Day by Day Pharmacy:https://goo.gl/maps/LewXHicXxgst1fhQ7. Hope you find what you need.
-
   utter_bethel:
   - text: This is the link to the google map location of Bethel Hospital:https://goo.gl/maps/34PqV76PXChWRHm37. Hope you get what you need.
-
   utter_effia:
   - text: This is the link to the google map location of Effia Nkwanta Hospital:https://goo.gl/maps/229Sgfbdj78pEDgn9. Hope you get what you need.
-  
   utter_sda:
   - text: This is the link to the google map location of S.D.A Hospital:https://goo.gl/maps/GH9CC8AHHHqx5Es9A. Hope you get what you need.
-
   utter_mediwest:
   - text: This is the link to the google map location of Mediwest Lab:https://goo.gl/maps/fuEydnvG3DjAgfQw8. Hope you get what you need.
-
   utter_oasis:
   - text: This is the link to the google map location of Mediwest Lab:https://goo.gl/maps/SSBdPPNFyRHheLTp7. Hope you get what you need.
-
   utter_solar:
   - text: This is the link to the google map location of Mediwest Lab:https://goo.gl/maps/mo1NU27Qy623Nr1w8. Hope you get what you need.
-
   utter_goodbye:
   - text: Bye, have a nice day.
-
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-
   utter_adverse:
   - text: Navigating to Adverse drug reaction module
-
   utter_blood_pressure:
   - text: Navigating to Blood Pressure module
-
   utter_blood_pressure_search:
   - text: Please provide Patient ID
-
   utter_hospital_search:
   - text: Please provide hospital name or location
-
   utter_check_health:
   - text: How is your health today?
-
   utter_options:
   - text: I can provide medical information about disease symptoms, diagnostics, available treatments, and support for adverse drug reaction, directions to medical facilities, and interpretation to some medical terms you do not understand 😊
-
   utter_pharmacy_search:
   - text: Click on your preferred one.
-  
   utter_drug_type:
   - text: What drug would you like to purchase?
-
   utter_which_info:
   - text: What medical information would you like to get? Information on general terms or diseases? Enter general or disease.
-    channel: "whatsapp" 
+    channel: whatsapp
   - text: What medical information would you like to get?
     buttons:
-    - title: "General Terms"
-      payload: "/gen_terms"
-    - title: "Diseases Info"
-      payload: "/diseases_info"
-
+    - title: General Terms
+      payload: /gen_terms
+    - title: Diseases Info
+      payload: /diseases_info
   utter_term:
   - text: What medical term would you like to learn more about? e.g. systolic
-
   utter_definition:
-  - text: "{term} is {definition}"
-
+  - text: '{term} is {definition}'
+  utter_no_term:
+  - text: There is no medical term like {term}. Please try again.
 actions:
-- utter_greet
-- utter_mood_great
-- utter_mood_bad
-- utter_thanks
-- utter_ask_quest
-- utter_locate
-- utter_pharm
-- utter_hosp
-- utter_lab
-- utter_kendicks
-- utter_day
-- utter_abuakwa
-- utter_bethel
-- utter_effia
-- utter_sda
-- utter_mediwest
-- utter_oasis
-- utter_solar
-- utter_goodbye
-- utter_iamabot
-- utter_term
-- utter_definition
 - action_term_api
-
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
-
-
+- utter_abuakwa
+- utter_ask_quest
+- utter_bethel
+- utter_day
+- utter_definition
+- utter_effia
+- utter_goodbye
+- utter_greet
+- utter_hosp
+- utter_iamabot
+- utter_kendicks
+- utter_lab
+- utter_locate
+- utter_mediwest
+- utter_mood_bad
+- utter_mood_great
+- utter_oasis
+- utter_pharm
+- utter_sda
+- utter_solar
+- utter_term
+- utter_thanks
+- utter_which_info
+- utter_no_term
