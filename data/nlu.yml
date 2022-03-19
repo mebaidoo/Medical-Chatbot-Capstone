@@ -38,6 +38,7 @@ nlu:
     - correct
     - alright
     - okay
+    - ok
     - o.k
 - intent: deny
   examples: |
@@ -210,63 +211,12 @@ nlu:
     - diseases
 - intent: terms
   examples: |
-    - I would like to learn more about [systolic](term_name)
-    - [systolic](term_name)
-    - about [systolic](term_name)
-- lookup: term_name
+    - I would like to learn more about [/systolic](term_name)
+    - [/systolic](term_name)
+    - about [/systolic](term_name)
+- regex: term_name
   examples: |
-    - BMI
-    - bmi
-    - body mass index
-    - benign
-    - malignant
-    - hypertension
-    - anti-inflammatory
-    - anti inflammatory
-    - biopsy
-    - hypotension
-    - lesion
-    - noninvasive
-    - non-invasive
-    - outpatient
-    - inpatient
-    - in remission
-    - membrane
-    - acute
-    - angina
-    - gastroesophageal reflux disease
-    - GERD
-    - gerd
-    - cellulitis
-    - epidermis
-    - neutrophils
-    - edema
-    - embolism
-    - embolus
-    - sutures
-    - suture
-    - polyp
-    - compound fracture
-    - comminuted fracture
-    - observation
-    - critical
-    - abrasion
-    - abscess
-    - aneurysm
-    - aortic dissection
-    - chronic
-    - contusion
-    - diagnosis
-    - cyanosis
-    - edema
-    - thrombosis
-    - fracture
-    - atrial fibrillation
-    - cancer
-    - ischemia
-    - normal sinus rhythm
-    - tumor
-    
+    - /.+
 - intent: adverse_drug
   examples: |
     - how to check Adverse drug reaction?

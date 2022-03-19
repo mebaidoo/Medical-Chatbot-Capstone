@@ -1,0 +1,6 @@
+[
+  {
+    "name": "term_name",
+    "pattern": "(\\bBMI\\b|\\bbmi\\b|\\bbody\\ mass\\ index\\b|\\bbenign\\b|\\bmalignant\\b|\\bhypertension\\b|\\banti\\-inflammatory\\b|\\banti\\ inflammatory\\b|\\bbiopsy\\b|\\bhypotension\\b|\\blesion\\b|\\bnoninvasive\\b|\\bnon\\-invasive\\b|\\boutpatient\\b|\\binpatient\\b|\\bin\\ remission\\b|\\bmembrane\\b|\\bacute\\b|\\bangina\\b|\\bgastroesophageal\\ reflux\\ disease\\b|\\bGERD\\b|\\bgerd\\b|\\bcellulitis\\b|\\bepidermis\\b|\\bneutrophils\\b|\\bedema\\b|\\bembolism\\b|\\bembolus\\b|\\bsutures\\b|\\bsuture\\b|\\bpolyp\\b|\\bcompound\\ fracture\\b|\\bcomminuted\\ fracture\\b|\\bobservation\\b|\\bcritical\\b|\\babrasion\\b|\\babscess\\b|\\baneurysm\\b|\\baortic\\ dissection\\b|\\bchronic\\b|\\bcontusion\\b|\\bdiagnosis\\b|\\bcyanosis\\b|\\bedema\\b|\\bthrombosis\\b|\\bfracture\\b|\\batrial\\ fibrillation\\b|\\bcancer\\b|\\bischemia\\b|\\bnormal\\ sinus\\ rhythm\\b|\\btumor\\b)"
+  }
+]
