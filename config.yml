@@ -1,4 +1,4 @@
-h# The config recipe.
+# The config recipe.
 # https://rasa.com/docs/rasa/model-configuration/
 recipe: default.v1
 
