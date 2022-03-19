@@ -42,6 +42,7 @@ entities:
 - good
 - help
 - pharmacy
+- term_name
 
 responses:
   utter_greet:
@@ -158,8 +159,8 @@ responses:
   - text: What medical term would you like to learn more about? e.g. systolic
   utter_definition:
   - text: '{term} is {definition}'
-  utter_no_term:
-  - text: There is no medical term like {term}. Please try again.
+  utter_simple_term:
+  - text: Try a more common medical term, and make sure it is correctly spelled.
 actions:
 - action_term_api
 - utter_abuakwa
@@ -185,4 +186,4 @@ actions:
 - utter_term
 - utter_thanks
 - utter_which_info
-- utter_no_term
+- utter_simple_term
