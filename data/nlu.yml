@@ -38,6 +38,7 @@ nlu:
     - correct
     - alright
     - okay
+    - ok
     - o.k
 - intent: deny
   examples: |
@@ -210,10 +211,12 @@ nlu:
     - diseases
 - intent: terms
   examples: |
-    - I would like to learn more about systolic
-    - systolic
-    - about systolic
-    - systolic
+    - I would like to learn more about [/systolic](term_name)
+    - [/systolic](term_name)
+    - about [/systolic](term_name)
+- regex: term_name
+  examples: |
+    - /.+
 - intent: adverse_drug
   examples: |
     - how to check Adverse drug reaction?

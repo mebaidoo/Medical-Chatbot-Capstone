@@ -42,6 +42,7 @@ entities:
 - good
 - help
 - pharmacy
+- term_name
 
 responses:
   utter_greet:
@@ -155,11 +156,13 @@ responses:
     - title: Diseases Info
       payload: /diseases_info
   utter_term:
-  - text: What medical term would you like to learn more about? e.g. systolic
+  - text: What medical term would you like to learn more about? Please add / before the term. e.g. /systolic
   utter_definition:
   - text: '{term} is {definition}'
-  utter_no_term:
-  - text: There is no medical term like {term}. Please try again.
+  utter_correct_term:
+  - text: Sorry, no such medical term. Kindly check your spelling. Would you like to try again?
+  utter_anything_next:
+  - text: Would you like to return to the menu options or quit :(?
 actions:
 - action_term_api
 - utter_abuakwa
@@ -185,4 +188,5 @@ actions:
 - utter_term
 - utter_thanks
 - utter_which_info
-- utter_no_term
+- utter_correct_term
+- utter_anything_next
