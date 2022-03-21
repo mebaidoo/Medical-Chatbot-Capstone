@@ -23,12 +23,13 @@ class TermsAndDefinitions(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        term = tracker.get_latest_entity_values("term_name")[0]
+        term = next(tracker.get_latest_entity_values("term_name"), None)
+        term = term[1:] #Taking out the slash/ character
         definition = str(Terms(term))
-        if term != None and definition:
+        if definition:
             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
-        elif term == None:
-            dispatcher.utter_message(response="utter_simple_term")
+        else:
+            dispatcher.utter_message(response="utter_correct_term")
 
         return []
 
