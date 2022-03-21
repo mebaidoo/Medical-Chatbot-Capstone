@@ -33,3 +33,24 @@ class TermsAndDefinitions(Action):
 
         return []
 
+########################################################################################
+#  DISEASES CLASS                                                                      #
+########################################################################################
+# class TermsAndDefinitions(Action):
+
+#     def name(self) -> Text:
+#         return "disease_checker"
+
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+#         df = next(tracker.get_latest_entity_values("term_name"), None)
+#         term = term[1:] #Taking out the slash/ character
+#         definition = str(Terms(term))
+#         if definition:
+#             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
+#         else:
+#             dispatcher.utter_message(response="utter_correct_term")
+
+#         return []
