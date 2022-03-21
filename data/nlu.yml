@@ -211,12 +211,12 @@ nlu:
     - diseases
 - intent: terms
   examples: |
-    - I would like to learn more about [/systolic](term_name)
-    - [/systolic](term_name)
-    - about [/systolic](term_name)
-- regex: term_name
-  examples: |
-    - /.+
+    - I would like to learn more about [@systolic](term_name)
+    - @systolic
+    - about [@systolic](term_name)
+    - [@systolic](term_name)
+    - [@fght](term_name)
+    - [@chronic](term_name)
 - intent: adverse_drug
   examples: |
     - how to check Adverse drug reaction?
@@ -251,3 +251,6 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- regex: term_name
+  examples: |
+    - @.+
