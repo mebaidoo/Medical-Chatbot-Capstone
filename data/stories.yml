@@ -175,29 +175,46 @@ stories:
   - action: utter_term
   - intent: terms
   - action: action_term_api
-
-- story: get term definition 2
+  - intent: deny
+  - action: utter_anything_next
+- story: interactive_story_1
   steps:
-  - checkpoint: quest_asked
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
   - intent: med_info
   - action: utter_which_info
   - intent: gen_terms
   - action: utter_term
   - intent: terms
+    entities:
+    - term_name: '@systolic'
+  - action: action_term_api
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: med_info
+  - action: utter_which_info
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@fght'
   - action: action_term_api
   - intent: affirm
   - action: utter_term
   - intent: terms
+    entities:
+    - term_name: '@chronic'
   - action: action_term_api
-
-- story: get term definition 3
-  steps:
-  - checkpoint: quest_asked
-  - intent: med_info
-  - action: utter_which_info
-  - intent: gen_terms
-  - action: utter_term
-  - intent: terms
-  - action: action_term_api
-  - intent: deny
-  - action: utter_anything_next
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
