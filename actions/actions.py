@@ -26,9 +26,9 @@ class TermsAndDefinitions(Action):
         term = next(tracker.get_latest_entity_values("term_name"), None)
         term = term[1:] #Taking out the slash/ character
         definition = str(Terms(term))
-        if definition:
+        try:
             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
-        else:
+        except TypeError:
             dispatcher.utter_message(response="utter_correct_term")
 
         return []
