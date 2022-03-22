@@ -17,16 +17,10 @@ intents:
 - med_history
 - locate_pharm
 - locate_hosp
+- hospital_name
+- pharmacy_name
+- lab_name
 - locate_lab
-- locate_kendicks
-- locate_day
-- locate_abuakwa
-- locate_bethel
-- locate_effia
-- locate_sda
-- locate_mediwest
-- locate_oasis
-- locate_solar
 - bot_challenge
 - medical_terms
 - adverse_drug
@@ -40,7 +34,6 @@ entities:
 - bad
 - good
 - help
-- pharmacy
 - term_name
 responses:
   utter_greet:
@@ -69,61 +62,10 @@ responses:
     buttons:
     - title: Pharmacy
       payload: /locate_pharm
-    - title: Hospital
+    - title: Health Centre
       payload: /locate_hosp
     - title: Lab
       payload: /locate_lab
-  utter_pharm:
-  - text: Which of these pharmacies would you like to locate? Kendicks Pharmacy, Day by Day Pharmacy or Abuakwa Pharmacy. Enter Kendicks, Day or Abuakwa.
-    channel: whatsapp
-  - text: Which of these pharmacies would you like to locate?
-    buttons:
-    - title: Kendicks Pharmacy
-      payload: /locate_kendicks
-    - title: Day by Day Pharmacy
-      payload: /locate_day
-    - title: Abuakwa Pharmacy
-      payload: /locate_abuakwa
-  utter_hosp:
-  - text: Which of these hospitals would you like to locate? Bethel Hospital, Effia Nkwanta Hospital or S.D.A Hospital. Enter Bethel, Effia or SDA.
-    channel: whatsapp
-  - text: Which of these hospitals would you like to locate?
-    buttons:
-    - title: Bethel Hospital
-      payload: /locate_bethel
-    - title: Effia Nkwanta Hospital
-      payload: /locate_effia
-    - title: S.D.A Hospital
-      payload: /locate_sda
-  utter_lab:
-  - text: Which of these labs would you like to locate? Mediwest Lab, Oasis Medical Consult or Solar Medical Lab. Enter Mediwest, Oasis or Solar.
-    channel: whatsapp
-  - text: Which of these labs would you like to locate?
-    buttons:
-    - title: Mediwest Lab
-      payload: /locate_mediwest
-    - title: Oasis Medical Consult
-      payload: /locate_oasis
-    - title: Solar Medical Lab
-      payload: /locate_solar
-  utter_kendicks:
-  - text: This is the link to the google map location of Kendicks Pharmacy:https://goo.gl/maps/xhMWmHbL7mcuDDU16. Hope you find what you need.
-  utter_day:
-  - text: This is the link to the google map location of Day by Day Pharmacy:https://goo.gl/maps/ZcPS4oNmrXzTsyxj8. Hope you find what you need.
-  utter_abuakwa:
-  - text: This is the link to the google map location of Day by Day Pharmacy:https://goo.gl/maps/LewXHicXxgst1fhQ7. Hope you find what you need.
-  utter_bethel:
-  - text: This is the link to the google map location of Bethel Hospital:https://goo.gl/maps/34PqV76PXChWRHm37. Hope you get what you need.
-  utter_effia:
-  - text: This is the link to the google map location of Effia Nkwanta Hospital:https://goo.gl/maps/229Sgfbdj78pEDgn9. Hope you get what you need.
-  utter_sda:
-  - text: This is the link to the google map location of S.D.A Hospital:https://goo.gl/maps/GH9CC8AHHHqx5Es9A. Hope you get what you need.
-  utter_mediwest:
-  - text: This is the link to the google map location of Mediwest Lab:https://goo.gl/maps/fuEydnvG3DjAgfQw8. Hope you get what you need.
-  utter_oasis:
-  - text: This is the link to the google map location of Mediwest Lab:https://goo.gl/maps/SSBdPPNFyRHheLTp7. Hope you get what you need.
-  utter_solar:
-  - text: This is the link to the google map location of Mediwest Lab:https://goo.gl/maps/mo1NU27Qy623Nr1w8. Hope you get what you need.
   utter_goodbye:
   - text: Bye, have a nice day.
   utter_iamabot:
@@ -161,30 +103,42 @@ responses:
   - text: Sorry, no such medical term. Kindly check your spelling. Would you like to try again?
   utter_anything_next:
   - text: Would you like to return to the menu options or quit :(?
+  utter_hospitals:
+  - text: |
+    Find below a list of hospitals and enter the name of the one you'd like to locate based on the attached areas and your location.
+    {hospitals}
+  utter_pharmacies:
+  - text: |
+    Find below a list of pharmacies and enter the name of the one you'd like to locate based on the attached areas and your location.
+    {pharmacies}
+  utter_labs:
+  - text: |
+    Find below a list of labs and enter the name of the one you'd like to locate based on the attached areas and your location.
+    {labs}
+  utter_map_location:
+  - text: |
+    This is a link to the google map location of {place_name}. Hope you get what you're looking for.
+    {map_link}
+  utter_correct_name
+  - text: Please enter the correct name as you see above.
 actions:
 - action_term_api
-- utter_abuakwa
 - utter_anything_next
 - utter_ask_quest
-- utter_bethel
 - utter_correct_term
-- utter_day
 - utter_definition
-- utter_effia
 - utter_goodbye
 - utter_greet
-- utter_hosp
 - utter_iamabot
-- utter_kendicks
-- utter_lab
 - utter_locate
-- utter_mediwest
 - utter_mood_bad
 - utter_mood_great
-- utter_oasis
-- utter_pharm
-- utter_sda
-- utter_solar
 - utter_term
 - utter_thanks
 - utter_which_info
+- utter_hospitals
+- action_places_list
+- utter_pharmacies
+- utter_labs
+- action_map_location
+- utter_correct_name
