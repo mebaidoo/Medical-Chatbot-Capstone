@@ -3,16 +3,16 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
 - med_info
+- greet
 - mood_great
-- terms
 - gen_terms
+- thanks
 - goodbye
+- terms
 - affirm
 - deny
 - mood_bad
-- thanks
 - locate
 - med_history
 - locate_pharm
@@ -36,7 +36,6 @@ intents:
 - options
 - pharmacy_search
 - diseases_info
-
 entities:
 - bad
 - good
@@ -44,7 +43,6 @@ entities:
 - pharmacy
 - term_name
 - disease
-
 responses:
   utter_greet:
   - text: Hey! how are you today?
@@ -157,7 +155,7 @@ responses:
     - title: Diseases Info
       payload: /diseases_info
   utter_term:
-  - text: What medical term would you like to learn more about? Please add / before the term. e.g. /systolic
+  - text: What medical term would you like to learn more about? Please add @ before the term. e.g. @systolic
   utter_definition:
   - text: '{term} is {definition}'
   utter_correct_term:
@@ -173,8 +171,10 @@ responses:
 
 - action_term_api
 - utter_abuakwa
+- utter_anything_next
 - utter_ask_quest
 - utter_bethel
+- utter_correct_term
 - utter_day
 - utter_definition
 - utter_effia

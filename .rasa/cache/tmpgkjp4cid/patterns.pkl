@@ -1,0 +1,6 @@
+[
+  {
+    "name": "term_name",
+    "pattern": "#.+"
+  }
+]

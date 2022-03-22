@@ -24,11 +24,11 @@ class TermsAndDefinitions(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         term = next(tracker.get_latest_entity_values("term_name"), None)
-        term = term[1:] #Taking out the slash/ character
-        definition = str(Terms(term))
-        if definition:
+        term = term[1:] #Taking out the @ character
+        try:
+            definition = str(Terms(term))
             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
-        else:
+        except:
             dispatcher.utter_message(response="utter_correct_term")
 
         return []
