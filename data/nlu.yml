@@ -108,18 +108,6 @@ nlu:
     - 1
     - I need a location
     - I need to locate a place
-- intent: med_info
-  examples: |
-    - Get medical information
-    - 2
-    - Get medical advice
-    - Get medical advise
-    - Get medical info
-- intent: med_history
-  examples: |
-    - Get your medical history
-    - 3
-    - Get my medical history
 - intent: locate_pharm
   examples: |
     - Pharmacy
@@ -165,35 +153,16 @@ nlu:
     - Oasis Medical Centre
     - Blue Waves Diagnostic Centre
     - Diascan Centre
-- intent: options
-  examples: |
-    - how you could [help](help) me?
-    - what you can do?
-    - what help you provide?
-    - how you can be helpful?
-    - what [support](help) is offered
-    - what can you do for me?
-- intent: pharmacy_search
-  examples: |
-    - find me a [pharmacy](pharmacy)
-    - find pharmacy
-    - list of [pharmacies](pharmacy) nearby
-    - locate pharmacy
-    - search pharmacy
-    - is there a nearby [pharm](pharmacy)?
-    - find me a [drug store](pharmacy)
-    - find me a [dispensary](pharmacy)
 - intent: gen_terms
   examples: |
+    - Get definitions to medical terms
     - General Terms
-    - general
-- intent: diseases_enquiry
-  examples: |
-    - diseases and ailments
-    - what symptoms
-    - disease symptoms
-    
+    - general terms
+    - get definitions
 - intent: diseases_info
+  examples: |
+    - Get information on diseases
+- intent: diseases
   examples: |
     - i want to know about [Baby acne](disease)
     - [malaria](disease)
@@ -202,39 +171,8 @@ nlu:
 - intent: terms
   examples: |
     - I would like to learn more about [@systolic](term_name)
-    - @systolic
     - about [@systolic](term_name)
     - [@systolic](term_name)
-    - [@fght](term_name)
-    - [@chronic](term_name)
-- intent: adverse_drug
-  examples: |
-    - how to check Adverse drug reaction?
-    - Open adverse drugs module
-    - give me a list of drugs causing adverse behavior
-    - list all drugs suitable for patient with adverse reaction
-    - which drugs dont have adverse reaction?
-- intent: blood_pressure
-  examples: |
-    - open blood pressure module
-    - task related to blood pressure
-    - blood pressure data entry
-    - I want to log blood pressure results
-    - blood pressure data management
-- intent: blood_pressure_search
-  examples: |
-    - I want to search for blood pressure result history
-    - blood pressure for patient
-    - load patient blood pressure result
-    - show blood pressure results for patients
-    - find blood pressure results by id
-- intent: hospital_search
-  examples: |
-    - lookup for hospital
-    - searching for hospital to transfer patient
-    - I want to search hospital data
-    - hospital lookup for patient
-    - looking up hospital details
 - intent: bot_challenge
   examples: |
     - are you a bot?

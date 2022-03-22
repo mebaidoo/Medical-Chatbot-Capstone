@@ -40,127 +40,43 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: locate kendicks
-  steps:
-  - checkpoint: quest_asked
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: utter_pharm
-  - intent: locate_kendicks
-  - action: utter_kendicks
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: locate day
-  steps:
-  - checkpoint: quest_asked
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: utter_pharm
-  - intent: locate_day
-  - action: utter_day
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: locate abuakwa
-  steps:
-  - checkpoint: quest_asked
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: utter_pharm
-  - intent: locate_abuakwa
-  - action: utter_abuakwa
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: locate bethel
+- story: locate hospital
   steps:
   - checkpoint: quest_asked
   - intent: locate
   - action: utter_locate
   - intent: locate_hosp
-  - action: utter_hosp
-  - intent: locate_bethel
-  - action: utter_bethel
+  - action: action_places_list
+  - intent: hospital_name
+  - action: action_map_location
   - intent: thanks
   - action: utter_thanks
   - intent: goodbye
   - action: utter_goodbye
 
-- story: locate effia
+- story: locate pharmacy
   steps:
   - checkpoint: quest_asked
   - intent: locate
   - action: utter_locate
-  - intent: locate_hosp
-  - action: utter_hosp
-  - intent: locate_effia
-  - action: utter_effia
+  - intent: locate_pharm
+  - action: action_places_list
+  - intent: pharmacy_name
+  - action: action_map_location
   - intent: thanks
   - action: utter_thanks
   - intent: goodbye
   - action: utter_goodbye
 
-- story: locate sda
-  steps:
-  - checkpoint: quest_asked
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: utter_hosp
-  - intent: locate_sda
-  - action: utter_sda
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: locate mediwest
+- story: locate lab
   steps:
   - checkpoint: quest_asked
   - intent: locate
   - action: utter_locate
   - intent: locate_lab
-  - action: utter_lab
-  - intent: locate_mediwest
-  - action: utter_mediwest
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: locate oasis
-  steps:
-  - checkpoint: quest_asked
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: utter_lab
-  - intent: locate_oasis
-  - action: utter_oasis
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
-
-- story: locate solar
-  steps:
-  - checkpoint: quest_asked
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: utter_lab
-  - intent: locate_solar
-  - action: utter_solar
+  - action: action_places_list
+  - intent: lab_name
+  - action: action_map_location
   - intent: thanks
   - action: utter_thanks
   - intent: goodbye
@@ -169,50 +85,9 @@ stories:
 - story: get term definition 1
   steps:
   - checkpoint: quest_asked
-  - intent: med_info
-  - action: utter_which_info
   - intent: gen_terms
   - action: utter_term
   - intent: terms
-  - action: action_term_api
-  - intent: deny
-  - action: utter_anything_next
-- story: interactive_story_1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: med_info
-  - action: utter_which_info
-  - intent: gen_terms
-  - action: utter_term
-  - intent: terms
-    entities:
-    - term_name: '@systolic'
-  - action: action_term_api
-
-- story: interactive_story_2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: med_info
-  - action: utter_which_info
-  - intent: gen_terms
-  - action: utter_term
-  - intent: terms
-    entities:
-    - term_name: '@fght'
-  - action: action_term_api
-  - intent: affirm
-  - action: utter_term
-  - intent: terms
-    entities:
-    - term_name: '@chronic'
   - action: action_term_api
   - intent: thanks
   - action: utter_thanks
@@ -221,13 +96,12 @@ stories:
 
 - story: get_diseases
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: med_info
-  - action: utter_which_info
-  - intent: gen_terms
-  - action: utter_term
-  - intent: terms
+  - checkpoint: quest_asked
+  - intent: diseases_info
+  - action: utter_what_disease
+  - intent: diseases
+  - action: utter_disease_checker
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
