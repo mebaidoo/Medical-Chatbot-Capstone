@@ -15,6 +15,8 @@ from terms import Terms
 from locations import hospitals, pharmacies, labs
 
 #Action for returning the medical terms definitions
+from diseases import disease_repo
+
 class TermsAndDefinitions(Action):
 
     def name(self) -> Text:
@@ -33,6 +35,25 @@ class TermsAndDefinitions(Action):
             dispatcher.utter_message(response="utter_correct_term")
 
         return []
+########################################################################################
+#  DISEASES CLASS                                                                      #
+########################################################################################
+class DiseasesAndSymptoms(Action):
+
+    def name(self) -> Text:
+        return "disease_checker"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        disease_name = next(tracker.get_latest_entity_values("disease"), None)
+        data = disease_repo()
+        if data['name'].str.contains(disease_name).any():
+            data= data[data.name == disease_name]
+            dispatcher.utter_message(response="utter_disease", data=data)
+        else:
+            dispatcher.utter_message(response="utter_correct_term")
 
 #Action for returning a list of hospitals/pharmacies/labs
 class ListOfPlaces(Action):

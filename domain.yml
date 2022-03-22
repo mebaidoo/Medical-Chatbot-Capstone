@@ -35,6 +35,7 @@ entities:
 - good
 - help
 - term_name
+- disease
 responses:
   utter_greet:
   - text: Hey! how are you today?
@@ -119,8 +120,13 @@ responses:
   - text: |
     This is a link to the google map location of {place_name}. Hope you get what you're looking for.
     {map_link}
-  utter_correct_name
+  utter_correct_name:
   - text: Please enter the correct name as you see above.
+  utter_disease:
+    - text: '{disease_name} is {}'
+  utter_no_disease:
+    - text: '{disease_name} was not found in my database, please check your spelling!'
+
 actions:
 - action_term_api
 - utter_anything_next
@@ -142,3 +148,6 @@ actions:
 - utter_labs
 - action_map_location
 - utter_correct_name
+- utter_correct_term
+- utter_anything_next
+- disease_checke
