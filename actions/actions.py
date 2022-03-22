@@ -8,6 +8,7 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
+from aiormq import DuplicateConsumerTag
 
 from rasa_sdk import Action, Tracker, ValidationAction, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
@@ -51,9 +52,9 @@ class DiseasesAndSymptoms(Action):
         data = disease_repo()
         if data['name'].str.contains(disease_name).any():
             data= data[data.name == disease_name]
-            dispatcher.utter_message(response="utter_disease", data=data)
+            dispatcher.utter_message(response="utter_disease", data=data, disease_name=disease_name)
         else:
-            dispatcher.utter_message(response="utter_correct_term")
+            dispatcher.utter_message(response="utter_no_disease")
 
 #Action for returning a list of hospitals/pharmacies/labs
 class ListOfPlaces(Action):
