@@ -218,3 +218,16 @@ stories:
   - action: utter_thanks
   - intent: goodbye
   - action: utter_goodbye
+
+- story: get_diseases
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: med_info
+  - action: utter_which_info
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms

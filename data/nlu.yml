@@ -187,6 +187,12 @@ nlu:
   examples: |
     - General Terms
     - general
+- intent: diseases_enquiry
+  examples: |
+    - diseases and ailments
+    - what symptoms
+    - disease symptoms
+    
 - intent: diseases_info
   examples: |
     - i want to know about [Baby acne](disease)

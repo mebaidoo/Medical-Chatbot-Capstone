@@ -30,6 +30,7 @@ intents:
 - options
 - pharmacy_search
 - diseases_info
+- diseases_enquiry
 entities:
 - bad
 - good
@@ -123,7 +124,7 @@ responses:
   utter_correct_name:
   - text: Please enter the correct name as you see above.
   utter_disease:
-    - text: '{disease_name} is {}'
+    - text: '{disease_name} is {data}'
   utter_no_disease:
     - text: '{disease_name} was not found in my database, please check your spelling!'
 
@@ -150,4 +151,6 @@ actions:
 - utter_correct_name
 - utter_correct_term
 - utter_anything_next
-- disease_checke
+- disease_checker
+- utter_disease
+- utter_no_disease
