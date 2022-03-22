@@ -36,6 +36,7 @@ intents:
 - options
 - pharmacy_search
 - diseases_info
+- diseases_enquiry
 entities:
 - bad
 - good
@@ -161,14 +162,14 @@ responses:
   utter_correct_term:
   - text: Sorry, no such medical term. Kindly check your spelling. Would you like to try again?
   utter_anything_next:
-#   - text: Would you like to return to the menu options or quit :(?
-# actions:
+  - text: Would you like to return to the menu options or quit :(?
+
   utter_disease:
-    - text: '{disease_name} is {}'
+    - text: '{disease_name} is {data}'
   utter_no_disease:
     - text: '{disease_name} was not found in my database, please check your spelling!'
 
-
+actions:
 - action_term_api
 - utter_abuakwa
 - utter_anything_next
@@ -198,3 +199,5 @@ responses:
 - utter_correct_term
 - utter_anything_next
 - disease_checker
+- utter_disease
+- utter_no_disease

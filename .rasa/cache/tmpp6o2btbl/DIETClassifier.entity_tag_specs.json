@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-bad",
+      "2": "I-bad",
+      "3": "L-bad",
+      "4": "U-bad",
+      "5": "B-disease",
+      "6": "I-disease",
+      "7": "L-disease",
+      "8": "U-disease",
+      "9": "B-good",
+      "10": "I-good",
+      "11": "L-good",
+      "12": "U-good",
+      "13": "B-help",
+      "14": "I-help",
+      "15": "L-help",
+      "16": "U-help",
+      "17": "B-pharmacy",
+      "18": "I-pharmacy",
+      "19": "L-pharmacy",
+      "20": "U-pharmacy",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-bad": 1,
+      "I-bad": 2,
+      "L-bad": 3,
+      "U-bad": 4,
+      "B-disease": 5,
+      "I-disease": 6,
+      "L-disease": 7,
+      "U-disease": 8,
+      "B-good": 9,
+      "I-good": 10,
+      "L-good": 11,
+      "U-good": 12,
+      "B-help": 13,
+      "I-help": 14,
+      "L-help": 15,
+      "U-help": 16,
+      "B-pharmacy": 17,
+      "I-pharmacy": 18,
+      "L-pharmacy": 19,
+      "U-pharmacy": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]
