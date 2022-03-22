@@ -43,6 +43,7 @@ entities:
 - help
 - pharmacy
 - term_name
+- disease
 
 responses:
   utter_greet:
@@ -162,8 +163,14 @@ responses:
   utter_correct_term:
   - text: Sorry, no such medical term. Kindly check your spelling. Would you like to try again?
   utter_anything_next:
-  - text: Would you like to return to the menu options or quit :(?
-actions:
+#   - text: Would you like to return to the menu options or quit :(?
+# actions:
+  utter_disease:
+    - text: '{disease_name} is {}'
+  utter_no_disease:
+    - text: '{disease_name} was not found in my database, please check your spelling!'
+
+
 - action_term_api
 - utter_abuakwa
 - utter_ask_quest
@@ -190,3 +197,4 @@ actions:
 - utter_which_info
 - utter_correct_term
 - utter_anything_next
+- disease_checker
