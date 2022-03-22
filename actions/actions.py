@@ -42,7 +42,7 @@ class TermsAndDefinitions(Action):
 class DiseasesAndSymptoms(Action):
 
     def name(self) -> Text:
-        return "disease_checker"
+        return "action_disease_checker"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -54,7 +54,7 @@ class DiseasesAndSymptoms(Action):
             data= data[data.name == disease_name]
             dispatcher.utter_message(response="utter_disease", data=data, disease_name=disease_name)
         else:
-            dispatcher.utter_message(response="utter_no_disease")
+            dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
 
 #Action for returning a list of hospitals/pharmacies/labs
 class ListOfPlaces(Action):
