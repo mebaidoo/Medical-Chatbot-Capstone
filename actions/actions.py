@@ -12,7 +12,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from terms import Terms
-
+from diseases import disease_repo
 
 class TermsAndDefinitions(Action):
 
@@ -32,25 +32,24 @@ class TermsAndDefinitions(Action):
             dispatcher.utter_message(response="utter_correct_term")
 
         return []
-
 ########################################################################################
 #  DISEASES CLASS                                                                      #
 ########################################################################################
-# class TermsAndDefinitions(Action):
+class DiseasesAndSymptoms(Action):
 
-#     def name(self) -> Text:
-#         return "disease_checker"
+    def name(self) -> Text:
+        return "disease_checker"
 
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-#         df = next(tracker.get_latest_entity_values("term_name"), None)
-#         term = term[1:] #Taking out the slash/ character
-#         definition = str(Terms(term))
-#         if definition:
-#             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
-#         else:
-#             dispatcher.utter_message(response="utter_correct_term")
+        disease_name = next(tracker.get_latest_entity_values("disease"), None)
+        data = disease_repo()
+        if data['name'].str.contains(disease_name).any():
+            data= data[data.name == disease_name]
+            dispatcher.utter_message(response="utter_disease", data=data)
+        else:
+            dispatcher.utter_message(response="utter_correct_term")
 
-#         return []
+        return []

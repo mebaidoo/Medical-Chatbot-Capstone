@@ -1,5 +1,9 @@
 version: "3.0"
 nlu:
+
+
+
+
 - intent: greet
   examples: |
     - hey
@@ -206,9 +210,10 @@ nlu:
     - general
 - intent: diseases_info
   examples: |
-    - Diseases Info
-    - disease
-    - diseases
+    - i want to know about [Baby acne](disease)
+    - [malaria](disease)
+    - i am suffering from [malaria](disease)
+    - symptom of [malaria](disease)
 - intent: terms
   examples: |
     - I would like to learn more about [@systolic](term_name)
@@ -251,6 +256,169 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- lookup: disease
+  examples: |
+    - Acanthosis nigricans 
+    - Achalasia - Achilles tendon rupture 
+    - Acute coronary syndrome 
+    - Adenomyosis - Adjustment disorders 
+    - Adnexal tumors - Adrenal cancer 
+    - Adrenoleukodystrophy 
+    - Adult Still's disease 
+    - Agoraphobia - Alcohol intolerance 
+    - Alcohol use disorder 
+    - Alcoholic hepatitis 
+    - Allergies 
+    - Alpha-gal syndrome 
+    - Ambiguous genitalia 
+    - Ameloblastoma 
+    - Amenorrhea 
+    - Amnestic syndrome (See: Amnesia) 
+    - Amniotic fluid embolism 
+    - Ampullary cancer 
+    - Amyloidosis 
+    - Anal fissure 
+    - Anal fistula 
+    - Anaphylaxis 
+    - Anemia 
+    - Aneurysm 
+    - abdominal 
+    - Aneurysms 
+    - Angelman syndrome 
+    - Angiosarcoma 
+    - Ankylosing spondylitis 
+    - Anorgasmia 
+    - Anterior cruciate 
+    - Anthrax 
+    - Antiphospholipid syndrome 
+    - Anxiety disorders 
+    - Aortic aneurysm 
+    - Aortic valve disease 
+    - Aphasia 
+    - Aplastic anemia 
+    - Appendicitis 
+    - ARDS 
+    - Arteriovenous fistula 
+    - Arteriovenous malformation 
+    - Arthritis 
+    - Asbestosis 
+    - Ascariasis 
+    - Aspergillosis 
+    - Asthma 
+    - Asthma attack 
+    - Astigmatism 
+    - Astrocytoma 
+    - Ataxia 
+    - Atrial fibrillation 
+    - Atrial flutter 
+    - Atrial tachycardia 
+    - Attention-deficit/hyperactivity disorder (ADHD) in children 
+    - Attention-deficit/hyperactivity disorder in adults 
+    - Atypical depression 
+    - Atypical hyperplasia of the breast 
+    - Autism spectrum disorder - Autoimmune pancreatitis 
+    - AVNRT (See: Atrioventricular nodal reentry tachycardia (AVNRT)) 
+    - Baby acne 
+    - Back pain 
+    - Bacterial vaginosis 
+    - Balance problems 
+    - Barotrauma (See: Airplane ear) 
+    - Barrett's esophagus - Bedbugs 
+    - Behcet's disease - Benign adrenal tumors 
+    - Benign peripheral nerve tumor 
+    - Bicuspid aortic valve 
+    - Binge drinking (See: Alcohol poisoning) 
+    - Bladder exstrophy 
+    - Bladder stones 
+    - Blastocystis hominis 
+    - Blocked tear duct 
+    - Body dysmorphic disorder 
+    - Bone metastasis 
+    - Botulism 
+    - Brachial plexus injury 
+    - Brain AVM - Brain tumor 
+    - Breast cysts 
+    - Broken ankle 
+    - Broken collarbone 
+    - Broken toe 
+    - Bronchiolitis 
+    - Bronchitis 
+    - Brucellosis 
+    - Brugada syndrome 
+    - Bullous pemphigoid 
+    - Bundle branch block 
+    - Bunions - Burns 
+    - Bursitis 
+    - C. difficile infection 
+    - Calciphylaxis 
+    - Cancer 
+    - Cancer, anal (See: Anal cancer) 
+    - Cancer, basal cell (See: Basal cell carcinoma) 
+    - Cancer, bladder (See: Bladder cancer) 
+    - Cancer, breast (See: Breast cancer) 
+    - Carbon monoxide poisoning 
+    - Carbuncles and boils (See: Boils and carbuncles) 
+    - Carcinoid syndrome 
+    - Carcinoid tumors 
+    - Carcinoma of unknown primary 
+    - Cardiogenic shock 
+    - Cardiomyopathy 
+    - Carotid artery disease 
+    - Carpal tunnel syndrome 
+    - Cataracts 
+    - Cavernous malformations 
+    - Cellulite 
+    - Cellulitis 
+    - Central nervous system vascular malformations 
+    - Cerebral aneurysm (See: Brain aneurysm) 
+    - Cervical cancer 
+    - Cervicitis 
+    - Chiari malformation 
+    - Child maltreatment (See: Child abuse) 
+    - Childhood apraxia of speech 
+    - Childhood asthma 
+    - Chlamydia trachomatis 
+    - Cholangiocarcinoma (bile duct cancer) 
+    - Cholera 
+    - Chondrosarcoma 
+    - Chordoma 
+    - Choroid plexus carcinoma 
+    - Chronic fatigue syndrome 
+    - Chronic granulomatous disease 
+    - Chronic traumatic encephalopathy 
+    - Cirrhosis 
+    - Claudication 
+    - Cleft lip and cleft palate 
+    - Clubfoot 
+    - Coarctation of the aorta 
+    - Cold urticaria 
+    - Colic 
+    - Colorblindness (See: Color blindness) 
+    - Colorectal cancer (See: Colon cancer) 
+    - Common cold - Common cold in babies 
+    - Common variable immunodeficiency  (See: Common variable immunodeficiency) 
+    - Compartment syndrome, chronic exertional (See: Chronic exertional compartment syndrome) 
+    - Concussion 
+    - Congenital adrenal hyperplasia 
+    - Congenital heart defects in children 
+    - Congenital mitral valve anomalies 
+    - Congenital myasthenic syndromes 
+    - Congenital myopathies 
+    - Conjoined twins 
+    - Constipation 
+    - Constipation in children 
+    - COPD - Corns and calluses 
+    - Coronary artery disease 
+    - Corticobasal degeneration 
+    - Costosternal syndrome (See: Costochondritis) 
+    - Cough, chronic (See: Chronic cough) 
+    - Cradle cap 
+    - Craniopharyngioma 
+    - Crohn's disease 
+    - Croup 
+    - CRPS (See: Complex regional pain syndrome) 
+    - Cryoglobulinemia 
+    - Cryptosporidium infection 
 - regex: term_name
   examples: |
     - @.+
