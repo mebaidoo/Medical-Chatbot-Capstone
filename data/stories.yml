@@ -75,7 +75,7 @@ stories:
   - action: utter_locate
   - intent: locate_lab
   - action: action_places_list
-  - intent: lab_name
+  - intent: laboratory_name
   - action: action_map_location
   - intent: thanks
   - action: utter_thanks
