@@ -18,7 +18,7 @@ intents:
 - locate_hosp
 - hospital_name
 - pharmacy_name
-- lab_name
+- laboratory_name
 - locate_lab
 - gen_terms
 - terms
@@ -30,6 +30,8 @@ entities:
 - good
 - help
 - term_name
+- disease
+- place_name
 responses:
   utter_greet:
   - text: Hey! how are you today?
@@ -122,3 +124,12 @@ actions:
 - utter_term
 - utter_thanks
 - utter_what_disease
+- utter_hospitals
+- action_places_list
+- utter_pharmacies
+- utter_labs
+- action_map_location
+- utter_correct_name
+- action_disease_checker
+- utter_disease
+- utter_no_disease
