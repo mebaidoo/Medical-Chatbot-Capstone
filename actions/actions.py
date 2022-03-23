@@ -107,7 +107,8 @@ class MapLocations(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        place = tracker.latest_message['Text']
+        place = next(tracker.get_latest_entity_values("place_name"), None)
+        place = next(tracker.get_latest_entity_values().latest_message)
         place = place.title() #ensuring name matches format in dataframe
 
         if place in hospitals['name'].to_list():
