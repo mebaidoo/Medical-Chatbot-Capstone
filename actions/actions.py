@@ -52,9 +52,10 @@ class DiseasesAndSymptoms(Action):
         data = disease_repo()
         if data['name'].str.contains(disease_name).any():
             data= data[data.name == disease_name]
-            dispatcher.utter_message(response="utter_disease", data=data, disease_name=disease_name)
+            dispatcher.utter_message(response="utter_disease", data=data.to_json(), disease_name=disease_name)
         else:
             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
+        return []
 
 #Action for returning a list of hospitals/pharmacies/labs
 class ListOfPlaces(Action):

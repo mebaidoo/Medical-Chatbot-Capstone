@@ -4,10 +4,12 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - greet
+- diseases
+- diseases_info
+- affirm
 - mood_great
 - thanks
 - goodbye
-- affirm
 - deny
 - mood_bad
 - locate
@@ -21,15 +23,13 @@ intents:
 - gen_terms
 - terms
 - medical_terms
-- diseases_info
-- diseases
 - bot_challenge
 entities:
 - bad
+- disease
 - good
 - help
 - term_name
-- disease
 responses:
   utter_greet:
   - text: Hey! how are you today?
@@ -94,30 +94,31 @@ responses:
   utter_what_disease:
   - text: What disease would you like to learn more about?
   utter_disease:
-    - text: '{disease_name} is {data}'
+  - text: '{disease_name} is {data}'
   utter_no_disease:
-    - text: '{disease_name} was not found in my database, please check your spelling!'
-
+  - text: '{disease_name} was not found in my database, please check your spelling!'
 actions:
+- action_disease_checker
+- action_map_location
+- action_places_list
 - action_term_api
 - utter_anything_next
 - utter_ask_quest
+- utter_correct_name
 - utter_correct_term
 - utter_definition
+- utter_disease
+- utter_disease_checker
 - utter_goodbye
 - utter_greet
+- utter_hospitals
 - utter_iamabot
+- utter_labs
 - utter_locate
 - utter_mood_bad
 - utter_mood_great
+- utter_no_disease
+- utter_pharmacies
 - utter_term
 - utter_thanks
-- utter_hospitals
-- action_places_list
-- utter_pharmacies
-- utter_labs
-- action_map_location
-- utter_correct_name
-- utter_disease_checker
-- utter_disease
-- utter_no_disease
+- utter_what_disease

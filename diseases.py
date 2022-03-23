@@ -7,6 +7,4 @@ def disease_repo():
     #print(df)
     return df
 
-print(disease_repo().astype(str))
-
-
+print(disease_repo())
