@@ -127,30 +127,40 @@ nlu:
     - lab
 - intent: hospital_name
   examples: |
+    - Takoradi [Hospital](place_name)
+    - takoradi [hospital](place_name)
+    - GPHA [Clinic](place_name)
+    - GPHA [clinic](place_name)
+- intent: pharmacy_name
+  examples: |
+    - Kendicks [Pharmacy](place_name)
+    - kendicks [pharmacy](place_name)
+    - Akan [Chemist](place_name)
+    - akan [chemist](place_name)
+- intent: laboratory_name
+  examples: |
+    - Mediwest [Laboratory](place_name)
+    - Mediwest [laboratory](place_name)
+    - Oasis Medical [Centre](place_name)
+    - Oasis Medical [centre](place_name)
+    - Oasis Medical [Center](place_name)
+    - Oasis Medical [center](place_name)
+- lookup: place_name
+  examples: |
     - SDA Hospital
-    - Takoradi Hospital
     - Effia Nkwanta Hospital
     - Kwesimintsim Hospital
     - Grace Spring Mission Hospital
     - Takoradi Family Health Specialist Hospital
     - Jemima Crentsil Hospital
-    - GPHA Clinic
     - End Point Homeopathic Clinic
-    - Bethel Methodist Medical Hospital'
-- intent: pharmacy_name
-  examples: |
-    - Kendicks Pharmacy
+    - Bethel Methodist Medical Hospital
     - Day By Day Pharmacy
     - Medrugs Pharmacy
     - Abuakwa Pharmacy
     - A.A.A. Mens Pharmacy
-    - Akan Chemist
     - Eff-Ess Pharmacy
-- intent: lab_name
-  examples: |
-    - Mediwest Laboratory
     - Solar Medical Laboratory
-    - Oasis Medical Centre
     - Blue Waves Diagnostic Centre
     - Diascan Centre
 - intent: gen_terms
@@ -162,6 +172,7 @@ nlu:
 - intent: diseases_info
   examples: |
     - Get information on diseases
+    - info on diseases
 - intent: diseases
   examples: |
     - i want to know about [Baby acne](disease)
