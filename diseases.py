@@ -6,5 +6,3 @@ def disease_repo():
     df= df[["name","symptoms","treatment"]]
     #print(df)
     return df
-
-print(disease_repo())
