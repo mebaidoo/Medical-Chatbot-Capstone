@@ -127,42 +127,29 @@ nlu:
     - lab
 - intent: hospital_name
   examples: |
-    - Takoradi [Hospital](place_name)
-    - takoradi [hospital](place_name)
-    - GPHA [Clinic](place_name)
-    - GPHA [clinic](place_name)
+    - [takoradi hospital](place_name)
+    - [g.p.h.a clinic](place_name)
 - intent: pharmacy_name
   examples: |
-    - Kendicks [Pharmacy](place_name)
-    - kendicks [pharmacy](place_name)
-    - Akan [Chemist](place_name)
-    - akan [chemist](place_name)
+    - [kendicks pharmacy](place_name)
+    - [akan chemist](place_name)
 - intent: laboratory_name
   examples: |
-    - Mediwest [Laboratory](place_name)
-    - Mediwest [laboratory](place_name)
-    - Oasis Medical [Centre](place_name)
-    - Oasis Medical [centre](place_name)
-    - Oasis Medical [Center](place_name)
-    - Oasis Medical [center](place_name)
-- lookup: place_name
+    - [mediwest laboratory](place_name)
+    - [oasis medical centre](place_name)
+    - [oasis medical center](place_name)
+- regex: place_name
   examples: |
-    - SDA Hospital
-    - Effia Nkwanta Hospital
-    - Kwesimintsim Hospital
-    - Grace Spring Mission Hospital
-    - Takoradi Family Health Specialist Hospital
-    - Jemima Crentsil Hospital
-    - End Point Homeopathic Clinic
-    - Bethel Methodist Medical Hospital
-    - Day By Day Pharmacy
-    - Medrugs Pharmacy
-    - Abuakwa Pharmacy
-    - A.A.A. Mens Pharmacy
-    - Eff-Ess Pharmacy
-    - Solar Medical Laboratory
-    - Blue Waves Diagnostic Centre
-    - Diascan Centre
+    - .+hospital
+    - .+Hospital
+    - .+clinic
+    - .+Clinic
+    - .+pharmacy
+    - .+Pharmacy
+    - .+chemist
+    - .+Chemist
+    - .+laboratory
+    - .+Laboratory
 - intent: gen_terms
   examples: |
     - Get definitions to medical terms

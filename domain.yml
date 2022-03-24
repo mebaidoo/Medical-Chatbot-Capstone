@@ -91,7 +91,7 @@ responses:
       This is a link to the google map location of {place_name}. Hope you get what you're looking for.
       {map_link}
   utter_correct_name:
-  - text: Please enter the correct name as you see above.
+  - text: Please enter the correct name.
   utter_what_disease:
   - text: What disease would you like to learn more about?
   utter_disease:
