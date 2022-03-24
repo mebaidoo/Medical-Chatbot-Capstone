@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-bad",
+      "2": "I-bad",
+      "3": "L-bad",
+      "4": "U-bad",
+      "5": "B-disease",
+      "6": "I-disease",
+      "7": "L-disease",
+      "8": "U-disease",
+      "9": "B-good",
+      "10": "I-good",
+      "11": "L-good",
+      "12": "U-good",
+      "13": "B-term_name",
+      "14": "I-term_name",
+      "15": "L-term_name",
+      "16": "U-term_name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-bad": 1,
+      "I-bad": 2,
+      "L-bad": 3,
+      "U-bad": 4,
+      "B-disease": 5,
+      "I-disease": 6,
+      "L-disease": 7,
+      "U-disease": 8,
+      "B-good": 9,
+      "I-good": 10,
+      "L-good": 11,
+      "U-good": 12,
+      "B-term_name": 13,
+      "I-term_name": 14,
+      "L-term_name": 15,
+      "U-term_name": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

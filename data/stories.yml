@@ -105,3 +105,32 @@ stories:
   - action: utter_thanks
   - intent: goodbye
   - action: utter_goodbye
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: diseases_info
+  - action: utter_what_disease
+  - intent: diseases
+    entities:
+    - disease: malaria
+  - action: action_disease_checker
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: diseases_info
+  - action: utter_what_disease
+  - intent: diseases
+    entities:
+    - disease: Baby acne
+    - disease: Baby acne
+  - action: action_disease_checker
+  - intent: affirm
