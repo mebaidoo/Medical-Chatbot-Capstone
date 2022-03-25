@@ -161,6 +161,29 @@ nlu:
     - I want [mediwest laboratory](lab_name)
     - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
     - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}][laboratory](lab_name)
+- intent: out_of_scope
+  examples: |
+    - asdf 
+    - blablabla
+    - alsdfkja
+    - where are you
+    - what else can you do
+    - whats the weather like
+    - im sleeping
+    
+- regex: place_name
+  examples: |
+    - .+hospital
+    - .+Hospital
+    - .+clinic
+    - .+Clinic
+    - .+pharmacy
+    - .+Pharmacy
+    - .+chemist
+    - .+Chemist
+    - .+laboratory
+    - .+Laboratory
+    - I want [mediwest laboratory](place_name)
 - intent: gen_terms
   examples: |
     - Get definitions to medical terms
@@ -189,6 +212,16 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- intent: out_of_scope
+  examples: |
+    - blablabla
+    - asdf
+    - jkl
+    - asldfk 
+    - where are you
+    - weather update
+    - i'm sleeping
+    - im sleeping
 - regex: hosp_name
   examples: |
     - .+Clinic

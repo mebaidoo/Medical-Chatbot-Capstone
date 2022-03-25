@@ -6,3 +6,6 @@ def disease_repo():
     df= df[["name","symptoms","treatment"]]
     #print(df)
     return df
+
+gh = disease_repo()
+print()
