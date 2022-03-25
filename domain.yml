@@ -3,35 +3,37 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- quit_bot
+- mood_great
+- locate_lab
+- laboratory_name
 - greet
+- locate
 - hospital_name
 - locate_hosp
-- mood_great
-- locate
+- pharmacy_name
+- thanks
+- locate_pharm
+- return_main_menu
 - diseases
 - diseases_info
 - affirm
-- thanks
 - goodbye
 - deny
 - mood_bad
 - med_history
-- locate_pharm
-- pharmacy_name
-- laboratory_name
-- locate_lab
 - gen_terms
 - terms
 - medical_terms
 - bot_challenge
-- return_main_menu
-- quit_bot
 entities:
 - bad
 - disease
 - good
 - help
-- place_name
+- hosp_name
+- lab_name
+- pharm_name
 - term_name
 responses:
   utter_greet:
@@ -107,6 +109,7 @@ actions:
 - action_map_location
 - action_places_list
 - action_term_api
+- utter_alright
 - utter_anything_next
 - utter_ask_quest
 - utter_correct_name
@@ -126,4 +129,3 @@ actions:
 - utter_term
 - utter_thanks
 - utter_what_disease
-- utter_alright

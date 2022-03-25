@@ -107,24 +107,29 @@ class MapLocations(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        place = next(tracker.get_latest_entity_values("place_name"), None)
-        place = place.title() #ensuring name matches format in dataframe
+        place_type = tracker.get_intent_of_latest_message()
 
-        if place in hospitals['name'].to_list():
-            map = hospitals.map_location[hospitals['name'] == place]
-            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[1])
+        if place_type == "hospital_name":
+            place = next(tracker.get_latest_entity_values("hosp_name"), None)
+            place = place.title() #ensuring name matches format in dataframe
+            map = hospitals.map_location[hospitals['name'] == place].to_list()
+            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
             dispatcher.utter_message(response="utter_anything_next")
 
-        elif place in pharmacies['name'].to_list():
-            map = pharmacies.map_location[pharmacies['name'] == place]
-            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[1])
+        elif place_type == "pharmacy_name":
+            place = next(tracker.get_latest_entity_values("pharm_name"), None)
+            place = place.title()
+            map = pharmacies.map_location[pharmacies['name'] == place].to_list()
+            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
             dispatcher.utter_message(response="utter_anything_next")
 
-        elif place in labs['name'].to_list():
-            map = labs.map_location[labs['name'] == place]
-            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[1])
+        elif place_type == "laboratory_name":
+            place = next(tracker.get_latest_entity_values("lab_name"), None)
+            place = place.title()
+            map = labs.map_location[labs['name'] == place].to_list()
+            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
             dispatcher.utter_message(response="utter_anything_next")
-            
+
         else:
             dispatcher.utter_message(response="utter_correct_name")
 
