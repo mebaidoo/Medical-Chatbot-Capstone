@@ -11,3 +11,9 @@ rules:
   steps:
   - intent: thanks
   - action: utter_thanks
+
+rules:
+- rule: fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_my_fallback

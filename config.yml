@@ -42,9 +42,7 @@ policies:
     max_history: 5
     epochs: 100
   - name: RulePolicy
-  # - name: FallbackPolicy
-    nlu_threshold: 0.4
-    core_threshold: 0.4
-    ambiguity_threshold: 0.1
-    fallback_action_name: action_my_fallback
+    core_fallback_threshold: 0.4
+    core_fallback_action_name: "action_my_fallback"
+    enable_fallback_prediction: True
 

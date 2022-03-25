@@ -156,15 +156,6 @@ nlu:
     - [mediwest laboratory](lab_name)
     - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
     - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}][laboratory](lab_name)
-- intent: out_of_scope
-  examples: |
-    - asdf 
-    - blablabla
-    - alsdfkja
-    - where are you
-    - what else can you do
-    - whats the weather like
-    - im sleeping
 - regex: hosp_name
   examples: |
     - .+hospital
