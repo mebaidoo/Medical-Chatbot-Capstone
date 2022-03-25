@@ -112,8 +112,19 @@ class MapLocations(Action):
 
         if place in hospitals['name'].to_list():
             map = hospitals.map_location[hospitals['name'] == place]
-            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
-        
+            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[1])
+            dispatcher.utter_message(response="utter_anything_next")
+
+        elif place in pharmacies['name'].to_list():
+            map = pharmacies.map_location[pharmacies['name'] == place]
+            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[1])
+            dispatcher.utter_message(response="utter_anything_next")
+
+        elif place in labs['name'].to_list():
+            map = labs.map_location[labs['name'] == place]
+            dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[1])
+            dispatcher.utter_message(response="utter_anything_next")
+            
         else:
             dispatcher.utter_message(response="utter_correct_name")
 
