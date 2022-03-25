@@ -182,6 +182,16 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- intent: out_of_scope
+  examples: |
+    - blablabla
+    - asdf
+    - jkl
+    - asldfk 
+    - where are you
+    - weather update
+    - i'm sleeping
+    - im sleeping
 - regex: place_name
   examples: |
     - .+Chemist
