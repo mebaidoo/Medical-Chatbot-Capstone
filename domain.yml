@@ -3,7 +3,6 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- quit_bot
 - mood_great
 - locate_lab
 - laboratory_name
@@ -14,7 +13,6 @@ intents:
 - pharmacy_name
 - thanks
 - locate_pharm
-- return_main_menu
 - diseases
 - diseases_info
 - affirm
@@ -28,7 +26,7 @@ intents:
 - bot_challenge
 - return_main_menu
 - quit_bot
-- out_of_scope
+- nlu_fallback
 entities:
 - bad
 - disease
@@ -107,14 +105,13 @@ responses:
   - text: '{disease_name} is {data}'
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
-  utter_fallback:
-  - text: Sorry! I did not get that! Please select one of the following options. 
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
 actions:
 - action_disease_checker
 - action_map_location
 - action_places_list
 - action_term_api
-- utter_alright
 - utter_anything_next
 - utter_ask_quest
 - utter_correct_name
@@ -135,5 +132,4 @@ actions:
 - utter_thanks
 - utter_what_disease
 - utter_alright
-- utter_fallback
-- action_my_fallback
+- utter_default
