@@ -153,6 +153,30 @@ nlu:
 - intent: laboratory_name
   examples: |
     - [mediwest laboratory](place_name)
+    - [oasis medical centre](place_name)
+    - [oasis medical center](place_name)
+- intent: out_of_scope
+  examples: |
+    - asdf 
+    - blablabla
+    - alsdfkja
+    - where are you
+    - what else can you do
+    - whats the weather like
+    - im sleeping
+    
+- regex: place_name
+  examples: |
+    - .+hospital
+    - .+Hospital
+    - .+clinic
+    - .+Clinic
+    - .+pharmacy
+    - .+Pharmacy
+    - .+chemist
+    - .+Chemist
+    - .+laboratory
+    - .+Laboratory
     - I want [mediwest laboratory](place_name)
 - intent: gen_terms
   examples: |

@@ -143,3 +143,4 @@ class MyFallback(Action):
         dispatcher.utter_message(template="utter_fallback")
 
         return []
+
