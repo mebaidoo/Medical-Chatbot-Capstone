@@ -155,7 +155,7 @@ nlu:
   examples: |
     - [mediwest laboratory](lab_name)
     - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
-    - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}][laboratory](lab_name)
+    - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}]
 - regex: hosp_name
   examples: |
     - .+hospital
@@ -200,16 +200,6 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-- intent: out_of_scope
-  examples: |
-    - blablabla
-    - asdf
-    - jkl
-    - asldfk 
-    - where are you
-    - weather update
-    - i'm sleeping
-    - im sleeping
 - regex: hosp_name
   examples: |
     - .+Clinic

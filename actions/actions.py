@@ -136,16 +136,16 @@ class MapLocations(Action):
         return []
 
 # Fallback action
-class MyFallback(Action):
+# class MyFallback(Action):
+    
+#     def name(self) -> Text:
+#         return "action_my_fallback"
 
-    def name(self) -> Text:
-        return "action_my_fallback"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        dispatcher.utter_message(template="utter_fallback")
+#         dispatcher.utter_message(template="utter_fallback")
 
-        return []
+#         return []
 
