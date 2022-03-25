@@ -26,6 +26,7 @@ intents:
 - bot_challenge
 - return_main_menu
 - quit_bot
+- out_of_scope
 entities:
 - bad
 - disease
@@ -103,14 +104,14 @@ responses:
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
   utter_fallback:
-  buttons:
+    buttons:
     - title: Locate a pharmacy/hospital/lab
       payload: /locate
     - title: Get definitions to medical terms
       payload: /gen_terms
     - title: Get information on diseases
       payload: /diseases_info
-  - text: Sorry! I did not get that! Please select one of the following options.
+  - text: Sorry! I did not get that! Please select one of the following options.  
 actions:
 - action_disease_checker
 - action_map_location

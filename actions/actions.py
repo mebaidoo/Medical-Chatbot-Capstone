@@ -140,7 +140,7 @@ class MyFallback(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-            dispatcher.utter_message(template="utter_fallback")
+        dispatcher.utter_message(template="utter_fallback")
 
         return []
 
