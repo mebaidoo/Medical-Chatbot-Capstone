@@ -134,3 +134,147 @@ stories:
     - disease: Baby acne
   - action: action_disease_checker
   - intent: affirm
+
+- story: anything next 1
+  steps:
+  - action: utter_anything_next
+  - intent: return_main_menu
+  - action: utter_ask_quest
+
+- story: anything next 2
+  steps:
+  - action: utter_anything_next
+  - intent: quit_bot
+  - action: utter_alright
+
+- story: interactive_story_pharmacy
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_pharm
+  - action: action_places_list
+  - intent: pharmacy_name
+    entities:
+    - pharm_name: kendicks pharmacy
+    - pharm_name: kendicks pharmacy
+    - pharm_name: kendicks pharmacy
+  - action: action_map_location
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: locate
+
+- story: interactive_story_hospital
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_hosp
+  - action: action_places_list
+  - intent: hospital_name
+    entities:
+    - hosp_name: end point homeopathic clinic
+    - hosp_name: end point homeopathic clinic
+    - hosp_name: end point homeopathic clinic
+  - action: action_map_location
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+
+- story: interactive_story_lab
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_lab
+  - action: action_places_list
+  - intent: laboratory_name
+    entities:
+    - lab_name: mediwest laboratory
+    - lab_name: mediwest laboratory
+    - lab_name: mediwest laboratory
+  - action: action_map_location
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+
+- story: interactive_story_pharmacy_quit
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_pharm
+  - action: action_places_list
+  - intent: pharmacy_name
+    entities:
+    - pharm_name: kendicks pharmacy
+    - pharm_name: kendicks pharmacy
+    - pharm_name: kendicks pharmacy
+  - action: action_map_location
+  - intent: quit_bot
+  - action: utter_alright
+  - intent: thanks
+  - action: utter_thanks
+
+- story: interactive_story_hospital_quit
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_hosp
+  - action: action_places_list
+  - intent: hospital_name
+    entities:
+    - hosp_name: takoradi hospital
+    - hosp_name: takoradi hospital
+    - hosp_name: takoradi hospital
+  - action: action_map_location
+  - intent: quit_bot
+  - action: utter_alright
+
+- story: interactive_story_lab_quit
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_lab
+  - action: action_places_list
+  - intent: laboratory_name
+    entities:
+    - lab_name: solar medical laboratory
+    - lab_name: solar medical laboratory
+    - lab_name: laboratory
+  - action: action_map_location
+  - intent: quit_bot
+  - action: utter_alright
+
+- story: out_of_scope_intent
+  steps:
+  - intent: out_of_scope
+  - action: action_my_fallback

@@ -99,6 +99,23 @@ nlu:
     - awesome, thanks
     - thanks for helping me
     - Thanks
+- intent: return_main_menu
+  examples: |
+    - return
+    - return to main menu
+    - I would like to return to main menu
+    - I want to return to main menu
+    - I will like to return to main menu
+    - continue
+    - main menu
+- intent: quit_bot
+  examples: |
+    - quit
+    - I would like to quit
+    - I will like to quit
+    - I want to quit
+    - finish
+    - end
 - intent: locate
   examples: |
     - Locate a pharmacy/hospital/lab
@@ -124,27 +141,44 @@ nlu:
     - lab
 - intent: hospital_name
   examples: |
-    - [takoradi hospital](place_name)
-    - [g.p.h.a clinic](place_name)
+    - [takoradi hospital](hosp_name)
+    - [g.p.h.a clinic](hosp_name)
+    - [end point homeopathic clinic](hosp_name)
+    - [end point homeopathic clinic][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
+    - [takoradi hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
 - intent: pharmacy_name
   examples: |
-    - [kendicks pharmacy](place_name)
-    - [akan chemist](place_name)
+    - [kendicks pharmacy](pharm_name)
+    - [akan chemist](pharm_name)
+    - [kendicks pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
 - intent: laboratory_name
   examples: |
-    - [mediwest laboratory](place_name)
-    - [oasis medical centre](place_name)
-    - [oasis medical center](place_name)
-- regex: place_name
+    - [mediwest laboratory](lab_name)
+    - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
+    - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}][laboratory](lab_name)
+- intent: out_of_scope
+  examples: |
+    - asdf 
+    - blablabla
+    - alsdfkja
+    - where are you
+    - what else can you do
+    - whats the weather like
+    - im sleeping
+- regex: hosp_name
   examples: |
     - .+hospital
     - .+Hospital
     - .+clinic
     - .+Clinic
+- regex: pharm_name
+  examples: |
     - .+pharmacy
     - .+Pharmacy
     - .+chemist
     - .+Chemist
+- regex: lab_name
+  examples: |
     - .+laboratory
     - .+Laboratory
 - intent: gen_terms
@@ -175,6 +209,32 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- intent: out_of_scope
+  examples: |
+    - blablabla
+    - asdf
+    - jkl
+    - asldfk 
+    - where are you
+    - weather update
+    - i'm sleeping
+    - im sleeping
+- regex: hosp_name
+  examples: |
+    - .+Clinic
+    - .+Hospital
+    - .+clinic
+    - .+hospital
+- regex: lab_name
+  examples: |
+    - .+Laboratory
+    - .+laboratory
+- regex: pharm_name
+  examples: |
+    - .+Chemist
+    - .+Pharmacy
+    - .+chemist
+    - .+pharmacy
 - regex: term_name
   examples: |
     - @.+
@@ -341,1001 +401,1001 @@ nlu:
     - CRPS (See: Complex regional pain syndrome)
     - Cryoglobulinemia
     - Cryptosporidium infection
-    - Cutaneous B-cell lymphoma 
-    - Cutaneous T-cell lymphoma 
-    - Cyclic vomiting syndrome 
-    - Cyclospora infection 
-    - Cyclothymic disorder (See: Cyclothymia (cyclothymic disorder)) 
-    - Cyst, Bartholin's (See: Bartholin's cyst) 
-    - Cystitis 
-    - Cytomegalovirus infection (See: Cytomegalovirus (CMV) infection) 
-    - Dandruff 
-    - Delayed ejaculation 
-    - Delirium 
-    - Dementia 
-    - Dementia, Alzheimer's disease (See: Alzheimer's disease) 
-    - Dengue hemorrhagic fever (See: Dengue fever) 
-    - Depersonalization-derealization disorder 
+    - Cutaneous B-cell lymphoma
+    - Cutaneous T-cell lymphoma
+    - Cyclic vomiting syndrome
+    - Cyclospora infection
+    - Cyclothymic disorder (See: Cyclothymia (cyclothymic disorder))
+    - Cyst, Bartholin's (See: Bartholin's cyst)
+    - Cystitis
+    - Cytomegalovirus infection (See: Cytomegalovirus (CMV) infection)
+    - Dandruff
+    - Delayed ejaculation
+    - Delirium
+    - Dementia
+    - Dementia, Alzheimer's disease (See: Alzheimer's disease)
+    - Dengue hemorrhagic fever (See: Dengue fever)
+    - Depersonalization-derealization disorder
     - Dermatitis
-    - Dermatographia 
-    - Dermatomyositis 
-    - Desmoid tumors 
-    - Deviated septum 
-    - DFSP (See: Dermatofibrosarcoma protuberans) 
-    - Diabetes 
-    - Diabetes insipidus 
-    - Diabetic coma 
-    - Diabetic hyperosmolar syndrome 
-    - Diabetic nephropathy 
-    - Diaper rash - Diarrhea 
-    - Diarrhea, antibiotic-associated (See: Antibiotic-associated diarrhea) 
-    - Diffuse idiopathic skeletal hyperostosis (DISH) 
-    - Dilated cardiomyopathy 
-    - Diphtheria 
-    - Dislocated elbow 
-    - Dissecting aneurysm (See: Aortic dissection) 
-    - Diverticulitis 
-    - Dizziness 
-    - Double-outlet right ventricle 
-    - Drug addiction (substance use disorder) 
-    - Drug allergy 
-    - Dry socket 
-    - DSPS (See: Delayed sleep phase) 
-    - DSRCT (See: Desmoplastic small round cell tumors) 
-    - Dupuytren's contracture 
-    - Dural arteriovenous fistulas 
-    - Dust mite allergy 
-    - DVT (See: Deep vein thrombosis) 
-    - Dwarfism 
-    - Dysarthria 
-    - Dystonia 
-    - E. coli 
-    - Earwax blockage 
-    - Eating disorders 
-    - Eating disorders, anorexia (See: Anorexia nervosa) 
-    - Eating disorders, binge eating (See: Binge-eating disorder) 
-    - Eating disorders, bulimia (See: Bulimia nervosa) 
-    - Ebstein anomaly 
-    - Ectopic pregnancy 
-    - Ectropion 
-    - Eczema (See: Atopic dermatitis (eczema)) 
-    - Edema 
-    - Ehlers-Danlos syndrome 
-    - Ehrlichiosis 
-    - Eisenmenger syndrome 
-    - Elevated blood pressure 
-    - Embryonal tumors 
-    - Emphysema 
-    - Encephalitis 
-    - Endocarditis 
-    - Endometriosis 
-    - End-stage renal disease 
-    - Enlarged breasts in men (gynecomastia) 
-    - Enlarged heart 
-    - Entropion 
-    - Eosinophilic esophagitis 
-    - Eosinophilic granulomatosis with polyangiitis  (See: Churg-Strauss syndrome) 
-    - Ependymoma 
-    - Epidermolysis bullosa 
-    - Epididymitis 
-    - Epiglottitis 
-    - Epithelioid sarcoma 
-    - Esophageal cancer 
-    - Esophageal spasms 
-    - Esophagitis 
-    - Essential tremor 
-    - Ewing sarcoma 
-    - Exercise-induced asthma 
-    - Eye focusing (See: Convergence insufficiency) 
-    - Eyelid inflammation (See: Blepharitis) 
-    - Eyestrain 
-    - Factitious disorder 
-    - Factor V Leiden 
-    - Familial paroxysmal peritonitis (See: Familial Mediterranean fever) 
-    - FAP (See: Familial adenomatous polyposis) 
-    - Fetal alcohol syndrome 
-    - Fetal macrosomia 
-    - Fever 
-    - Fever blister (See: Cold sore) 
-    - Fibroadenoma 
-    - Fibrocystic breasts 
-    - Fibromuscular dysplasia 
-    - Fibromyalgia 
-    - Fibrosis, cystic (See: Cystic fibrosis) 
-    - Fibrous dysplasia 
-    - Floaters (See: Eye floaters) 
-    - Floor of the mouth cancer 
-    - Food allergy 
-    - Food allergy, egg (See: Egg allergy) 
-    - Food-borne illness (See: Food poisoning) 
-    - Foot drop 
-    - Foot fracture (See: Broken foot) 
-    - Fracture, arm (See: Broken arm) 
-    - Frontal lobe seizures 
-    - Frostbite 
-    - Frozen shoulder 
-    - FSGS (See: Focal segmental glomerulosclerosis (FSGS)) 
-    - Fuchs' dystrophy 
-    - Functional neurologic disorders/conversion disorder 
-    - Galactorrhea 
-    - Gallbladder cancer 
-    - Gallbladder inflammation (See: Cholecystitis) 
-    - Gallstones 
-    - Ganglion cyst 
-    - Gangrene 
-    - Gas and gas pains 
-    - Gastritis 
-    - Gastrointestinal bleeding 
-    - Gastrointestinal stromal tumor (GIST) 
-    - Gastroparesis 
-    - Gender identity disorder (See: Gender dysphoria) 
-    - Generalized anxiety disorder 
-    - Geographic tongue 
-    - Germ cell tumors 
-    - Gestational diabetes 
-    - Giant lymph node hyperplasia (See: Castleman disease) 
-    - Giardia infection (giardiasis) 
-    - Gilbert's syndrome 
-    - Glaucoma 
-    - Glioblastoma 
-    - Glioma 
-    - Glomerulonephritis 
-    - Glucocerebrosidase deficiency (See: Gaucher disease) 
-    - Gonorrhea 
-    - Gout 
-    - Granuloma annulare 
-    - Graves' disease 
-    - Group B strep disease 
-    - Growing pains 
-    - Growth hormone excess (See: Acromegaly) 
-    - Growth plate fractures 
-    - Guillain-Barré syndrome 
-    - Hair loss 
-    - Hairy tongue (See: Black hairy tongue) 
-    - Halitosis (See: Bad breath) 
-    - Hamstring injury 
-    - Hand fracture (See: Broken hand) 
-    - Hand-foot-and-mouth disease 
-    - Hangovers 
-    - Hardening of the arteries (See: Arteriosclerosis / atherosclerosis) 
-    - Head and neck cancers 
-    - Headache, chronic daily (See: Chronic daily headaches) 
-    - Headache, cluster (See: Cluster headache) 
-    - Headache, exercise (See: Exercise headaches) 
-    - Headache, external compression (See: External compression headaches) 
-    - Headache, primary cough (See: Cough headaches) 
-    - Headaches in children 
-    - Heart arrhythmias 
-    - Heart defects in adults (See: Congenital heart disease in adults) 
-    - Heart disease 
-    - Heart failure 
-    - Heart murmurs 
-    - Heartburn 
-    - Heat exhaustion 
-    - Heatstroke 
-    - Helicobacter pylori (H. pylori) infection 
-    - Hemifacial spasm 
-    - Hemolytic uremic syndrome (HUS) 
-    - Hemophilia 
-    - Hepatitis A 
-    - Hepatitis B 
-    - Hepatitis C 
-    - Hepatitis, autoimmune (See: Autoimmune hepatitis) 
-    - Hepatocellular carcinoma 
-    - Hepatopulmonary syndrome 
-    - Hereditary hemorrhagic telangiectasia 
-    - Herpes, genital (See: Genital herpes) 
-    - Hiatal hernia 
-    - Hiccups 
-    - Hidradenitis suppurativa 
-    - High blood pressure in children 
-    - Hip dysplasia 
-    - Hip fracture 
-    - Hip impingement 
-    - Hip labral tear 
-    - Hirsutism 
-    - Histoplasmosis 
-    - Hoarding disorder 
-    - Hot flashes 
-    - Human immunodeficiency virus (See: HIV/AIDS) 
-    - Human papillomavirus infection (See: HPV infection) 
-    - Huntington's disease 
-    - Hydrocele 
-    - Hydrocephalus 
-    - Hydronephrosis 
-    - Hypercalcemia 
-    - Hypercholesterolemia (See: High cholesterol) 
-    - Hypercholesterolemia, familial (See: Familial hypercholesterolemia) 
-    - Hypercortisolism (See: Cushing syndrome) 
-    - Hypereosinophilic syndrome 
-    - Hyperglycemia in diabetes 
-    - Hyperopia (See: Farsightedness) 
-    - Hyperoxaluria and oxalosis 
-    - Hyperparathyroidism 
-    - Hypertension (See: High blood pressure (hypertension)) 
-    - Hypertrophic cardiomyopathy 
-    - Hypoglycemia, diabetic (See: Diabetic hypoglycemia) 
-    - Hypohidrosis (See: Anhidrosis) 
-    - Hypohydration (See: Dehydration) 
-    - Hyponatremia 
-    - Hypoparathyroidism 
-    - Hypoplastic left heart syndrome 
-    - Hypospadias 
-    - Ice cream headaches 
-    - Ichthyosis vulgaris 
-    - Idiopathic hypersomnia 
-    - IgA nephropathy (Berger's disease) 
-    - IgA vasculitis (See: Henoch-Schonlein purpura) 
-    - Illness anxiety disorder 
-    - Impetigo 
-    - Impotence (See: Erectile dysfunction) 
-    - Incompetent cervix 
-    - Incomplete fracture (See: Greenstick fractures) 
-    - Incontinence, fecal (See: Fecal incontinence) 
-    - Infant jaundice 
-    - Infant reflux 
-    - Infectious diseases 
-    - Infertility, female (See: Female infertility) 
-    - Inflammatory bowel disease (IBD) 
-    - Inflammatory breast cancer 
-    - Influenza (flu) 
-    - Influenza, avian (See: Bird flu (avian influenza)) 
-    - Ingrown hair 
-    - Ingrown toenails 
-    - Inguinal hernia 
-    - Inherited metabolic disorders 
-    - Intestinal obstruction 
-    - Intracranial venous malformations 
-    - Intraductal carcinoma (See: Ductal carcinoma in situ (DCIS)) 
-    - Intussusception 
-    - Invasive lobular carcinoma 
-    - Iritis 
-    - Iron deficiency anemia 
-    - Iron overload (See: Hemochromatosis) 
-    - Irritable bowel syndrome 
-    - Ischemia, intestinal (See: Intestinal ischemia) 
-    - Ischemic colitis 
-    - ITP (See: Immune thrombocytopenia (ITP)) 
-    - Jet lag disorder 
-    - Joint dislocation (See: Dislocation) 
-    - Juvenile fibromyalgia 
-    - Juvenile rheumatoid arthritis (See: Juvenile idiopathic arthritis) 
-    - Kaposi's sarcoma 
-    - Keratitis 
-    - Keratoconus 
-    - Ketoacidosis, diabetic (See: Diabetic ketoacidosis) 
-    - Kidney cysts 
-    - Kidney failure, chronic (See: Chronic kidney disease) 
-    - Klatskin tumor (See: Hilar cholangiocarcinoma) 
-    - Klinefelter syndrome 
-    - Klippel-Trenaunay syndrome 
-    - Knee bursitis 
-    - Knee pain 
-    - KP (See: Keratosis pilaris) 
-    - Krabbe disease 
-    - Laryngitis 
-    - Latex allergy 
-    - Lazy eye (amblyopia) 
-    - Lead poisoning 
-    - Left ventricular hypertrophy 
-    - Leg fracture (See: Broken leg) 
-    - Legg-Calve-Perthes disease 
-    - Legionnaires' disease 
-    - Leiomyosarcoma 
-    - Leukemia, acute lymphocytic (See: Acute lymphocytic leukemia) 
-    - Leukemia, acute myelogenous (See: Acute myelogenous leukemia) 
-    - Leukemia, chronic lymphocytic (See: Chronic lymphocytic leukemia) 
-    - Leukemia, chronic myelogenous (See: Chronic myelogenous leukemia) 
-    - Leukemia, general (See: Leukemia) 
-    - Leukemia, hairy cell (See: Hairy cell leukemia) 
-    - Leukoplakia 
-    - Lewy body dementia 
-    - Lice 
-    - Lice, body (See: Body lice) 
-    - Lichen nitidus 
-    - Lichen planus 
-    - Lichen sclerosus 
-    - Lip cancer 
-    - Lipoma 
-    - Liposarcoma 
-    - Listeriosis (See: Listeria infection) 
-    - Liver cancer 
-    - Liver disease 
-    - Liver failure, acute (See: Acute liver failure) 
-    - Liver hemangioma 
-    - Liver, enlarged (See: Enlarged liver) 
-    - Lobular carcinoma in situ (LCIS) 
-    - Long QT syndrome 
-    - Low blood pressure (hypotension) 
-    - Low blood sugar (See: Hypoglycemia) 
-    - Low body temperature (See: Hypothermia) 
-    - Low sex drive in women 
-    - Low sperm count 
-    - Lung cancer 
-    - Lung collapse (See: Atelectasis) 
-    - Lung disease, interstitial (See: Interstitial lung disease) 
-    - Lupus nephritis 
-    - Lyme disease 
-    - Lymphedema 
-    - Lymphoma 
-    - Lymphoma, Hodgkin's (See: Hodgkin's lymphoma (Hodgkin's disease)) 
-    - Lynch syndrome 
-    - Macular degeneration, dry 
-    - Macular degeneration, wet 
-    - Major depressive disorder (See: Depression (major depressive disorder)) 
-    - Malaria 
-    - Male breast cancer 
-    - Male infertility 
-    - Malignant hyperthermia 
-    - Malignant peripheral nerve sheath tumors 
-    - Mallet toe and hammertoe (See: Hammertoe and mallet toe) 
-    - Mammary duct ectasia 
-    - Manic-depressive illness (See: Bipolar disorder) 
-    - Marburg virus (See: Ebola virus and Marburg virus) 
-    - Marfan syndrome 
-    - Mastalgia (See: Breast pain) 
-    - Mastitis - MCAD deficiency 
-    - Medial epicondylitis (See: Golfer's elbow) 
-    - Medulloblastoma 
-    - Megacolon (See: Hirschsprung's disease) 
-    - Membranous nephropathy 
-    - Meniere's disease 
-    - Meningioma 
-    - Meningitis 
-    - Menopause 
-    - Menstrual bleeding, excessive (See: Menorrhagia) 
-    - Mental illness 
-    - Meralgia paresthetica 
-    - Mesenteric ischemia 
-    - Mesenteric lymphadenitis 
-    - Mesothelioma 
-    - Metachromatic leukodystrophy 
-    - Metatarsalgia 
-    - Microcephaly 
-    - Microscopic colitis 
-    - Migraine 
-    - Migraine with aura 
-    - Mild cognitive impairment (MCI) 
-    - Milia - Milk allergy 
-    - Milk intolerance (See: Lactose intolerance) 
-    - Miscarriage 
-    - Mitral valve disease 
-    - Mittelschmerz 
-    - Mixed connective tissue disease 
-    - Molar pregnancy 
-    - Mold allergy 
-    - Molluscum contagiosum 
-    - Monoclonal gammopathy of undetermined significance (MGUS) 
-    - Mononucleosis 
-    - Mood disorders 
-    - Morning sickness 
-    - Morphea 
-    - Mosquito bites 
-    - Movement disorders 
-    - Moyamoya disease 
-    - MRSA infection 
-    - Mucocutaneous lymph node syndrome (See: Kawasaki disease) 
-    - Mucopolysaccharidosis type II (See: Hunter syndrome) 
-    - Multiple myeloma 
-    - Multiple personality disorder (See: Dissociative disorders) 
-    - Mumps 
-    - Muscle cramp 
-    - Muscle strains 
-    - Muscular dystrophy 
-    - Myasthenia gravis 
-    - Myelodysplastic syndromes 
-    - Myelofibrosis 
-    - Myocardial infarction (See: Heart attack) 
-    - Myocardial ischemia 
-    - Myocarditis 
-    - Myoclonus 
-    - Myofascial pain syndrome 
-    - Myxofibrosarcoma 
-    - Naegleria infection 
-    - Nasal and paranasal tumors 
-    - Nasopharyngeal carcinoma 
-    - Nearsightedness 
-    - Neck pain 
-    - Nephrogenic systemic fibrosis 
-    - Nephrotic syndrome 
-    - Neuroblastoma 
-    - Neurodermatitis 
-    - Neuroendocrine carcinoma of the skin (See: Merkel cell carcinoma) 
-    - Neuroendocrine tumors 
-    - Neurofibroma 
-    - Neurofibromatosis 
-    - Neuromyelitis optica 
-    - Neuropathy, autonomic (See: Autonomic neuropathy) 
-    - Neuropathy, diabetic (See: Diabetic neuropathy) 
-    - Nevus (See: Moles) 
-    - Nickel allergy 
-    - Nicotine dependence 
-    - Niemann-Pick 
-    - Nightmare disorder 
-    - Noctural enuresis (See: Bed-wetting) 
-    - Nonalcoholic fatty liver disease 
-    - Non-Hodgkin's lymphoma 
-    - Nonmelanoma skin cancer 
-    - Nontropical sprue (See: Celiac disease) 
-    - Noonan syndrome 
-    - Norovirus infection 
-    - Nose fracture (See: Broken nose) 
-    - Obesity, childhood (See: Childhood obesity) 
-    - Obstetric cholestasis (See: Cholestasis of pregnancy) 
-    - Occupational asthma 
-    - OCD (See: Obsessive-compulsive disorder (OCD)) 
-    - Ocular rosacea 
-    - Oculocutaneous albinism (See: Albinism) 
-    - Oculosympathetic palsy (See: Horner syndrome) 
-    - Odontogenic tumors and cysts (See: Jaw tumors and cysts) 
-    - Olfactory neuroblastoma (See: Esthesioneuroblastoma) 
-    - Oligodendroglioma 
-    - Oppositional defiant disorder (ODD) 
-    - Optic neuritis 
-    - Oral cancer (See: Mouth cancer) 
-    - Oral lichen planus 
-    - Orchitis 
-    - Osgood-Schlatter disease 
-    - Osteoarthritis 
-    - Osteochondritis dissecans 
-    - Osteomalacia 
-    - Osteomyelitis 
-    - Osteonecrosis (See: Avascular necrosis) 
-    - Osteophytes (See: Bone spurs) 
-    - Osteoporosis 
-    - Osteosarcoma 
-    - Otitis media (See: Ear infection (middle ear)) 
-    - Ovarian cancer 
-    - Ovarian cysts 
-    - Ovarian hyperstimulation syndrome 
-    - Overactive bladder 
-    - Oxyphil cell carcinoma (See: Hurthle cell cancer) 
-    - Paget's disease of bone 
-    - Paget's disease of the nipple (See: Paget's disease of the breast) 
-    - Pain, chest (See: Chest pain) 
-    - Painful bladder syndrome (See: Interstitial cystitis) 
-    - Painful intercourse (dyspareunia) 
-    - Painful periods (See: Menstrual cramps) 
-    - Palsy, cerebral (See: Cerebral palsy) 
-    - Palsy, facial (See: Bell's palsy) 
-    - Pancreatic cancer 
-    - Pancreatic cysts 
-    - Pancreatic neuroendocrine tumors 
-    - Pancreatitis 
-    - Panic attacks and panic disorder 
-    - Paraganglioma 
-    - Paraneoplastic syndromes of the nervous system 
-    - Parkinson's disease 
-    - Parotid tumors 
-    - Partial anomalous pulmonary venous return 
-    - Patent foramen ovale 
-    - Pathological gambling (See: Compulsive gambling) 
-    - Pathological stealing (See: Kleptomania) 
-    - PDA (See: Patent ductus arteriosus (PDA)) 
-    - Peanut allergy - Pectus carinatum 
-    - Pediatric brain tumors 
-    - Pediculosis capitis (See: Head lice) 
-    - Pelvic organ prolapse 
-    - Pelvic pain, chronic (See: Chronic pelvic pain in women) 
-    - Pemphigus 
-    - Penicillin allergy 
-    - Pericardial effusion 
-    - Pericarditis 
-    - Perimenopause 
-    - Periodontal disease, gingivitis (See: Gingivitis) 
-    - Periodontitis 
+    - Dermatographia
+    - Dermatomyositis
+    - Desmoid tumors
+    - Deviated septum
+    - DFSP (See: Dermatofibrosarcoma protuberans)
+    - Diabetes
+    - Diabetes insipidus
+    - Diabetic coma
+    - Diabetic hyperosmolar syndrome
+    - Diabetic nephropathy
+    - Diaper rash - Diarrhea
+    - Diarrhea, antibiotic-associated (See: Antibiotic-associated diarrhea)
+    - Diffuse idiopathic skeletal hyperostosis (DISH)
+    - Dilated cardiomyopathy
+    - Diphtheria
+    - Dislocated elbow
+    - Dissecting aneurysm (See: Aortic dissection)
+    - Diverticulitis
+    - Dizziness
+    - Double-outlet right ventricle
+    - Drug addiction (substance use disorder)
+    - Drug allergy
+    - Dry socket
+    - DSPS (See: Delayed sleep phase)
+    - DSRCT (See: Desmoplastic small round cell tumors)
+    - Dupuytren's contracture
+    - Dural arteriovenous fistulas
+    - Dust mite allergy
+    - DVT (See: Deep vein thrombosis)
+    - Dwarfism
+    - Dysarthria
+    - Dystonia
+    - E. coli
+    - Earwax blockage
+    - Eating disorders
+    - Eating disorders, anorexia (See: Anorexia nervosa)
+    - Eating disorders, binge eating (See: Binge-eating disorder)
+    - Eating disorders, bulimia (See: Bulimia nervosa)
+    - Ebstein anomaly
+    - Ectopic pregnancy
+    - Ectropion
+    - Eczema (See: Atopic dermatitis (eczema))
+    - Edema
+    - Ehlers-Danlos syndrome
+    - Ehrlichiosis
+    - Eisenmenger syndrome
+    - Elevated blood pressure
+    - Embryonal tumors
+    - Emphysema
+    - Encephalitis
+    - Endocarditis
+    - Endometriosis
+    - End-stage renal disease
+    - Enlarged breasts in men (gynecomastia)
+    - Enlarged heart
+    - Entropion
+    - Eosinophilic esophagitis
+    - Eosinophilic granulomatosis with polyangiitis  (See: Churg-Strauss syndrome)
+    - Ependymoma
+    - Epidermolysis bullosa
+    - Epididymitis
+    - Epiglottitis
+    - Epithelioid sarcoma
+    - Esophageal cancer
+    - Esophageal spasms
+    - Esophagitis
+    - Essential tremor
+    - Ewing sarcoma
+    - Exercise-induced asthma
+    - Eye focusing (See: Convergence insufficiency)
+    - Eyelid inflammation (See: Blepharitis)
+    - Eyestrain
+    - Factitious disorder
+    - Factor V Leiden
+    - Familial paroxysmal peritonitis (See: Familial Mediterranean fever)
+    - FAP (See: Familial adenomatous polyposis)
+    - Fetal alcohol syndrome
+    - Fetal macrosomia
+    - Fever
+    - Fever blister (See: Cold sore)
+    - Fibroadenoma
+    - Fibrocystic breasts
+    - Fibromuscular dysplasia
+    - Fibromyalgia
+    - Fibrosis, cystic (See: Cystic fibrosis)
+    - Fibrous dysplasia
+    - Floaters (See: Eye floaters)
+    - Floor of the mouth cancer
+    - Food allergy
+    - Food allergy, egg (See: Egg allergy)
+    - Food-borne illness (See: Food poisoning)
+    - Foot drop
+    - Foot fracture (See: Broken foot)
+    - Fracture, arm (See: Broken arm)
+    - Frontal lobe seizures
+    - Frostbite
+    - Frozen shoulder
+    - FSGS (See: Focal segmental glomerulosclerosis (FSGS))
+    - Fuchs' dystrophy
+    - Functional neurologic disorders/conversion disorder
+    - Galactorrhea
+    - Gallbladder cancer
+    - Gallbladder inflammation (See: Cholecystitis)
+    - Gallstones
+    - Ganglion cyst
+    - Gangrene
+    - Gas and gas pains
+    - Gastritis
+    - Gastrointestinal bleeding
+    - Gastrointestinal stromal tumor (GIST)
+    - Gastroparesis
+    - Gender identity disorder (See: Gender dysphoria)
+    - Generalized anxiety disorder
+    - Geographic tongue
+    - Germ cell tumors
+    - Gestational diabetes
+    - Giant lymph node hyperplasia (See: Castleman disease)
+    - Giardia infection (giardiasis)
+    - Gilbert's syndrome
+    - Glaucoma
+    - Glioblastoma
+    - Glioma
+    - Glomerulonephritis
+    - Glucocerebrosidase deficiency (See: Gaucher disease)
+    - Gonorrhea
+    - Gout
+    - Granuloma annulare
+    - Graves' disease
+    - Group B strep disease
+    - Growing pains
+    - Growth hormone excess (See: Acromegaly)
+    - Growth plate fractures
+    - Guillain-Barré syndrome
+    - Hair loss
+    - Hairy tongue (See: Black hairy tongue)
+    - Halitosis (See: Bad breath)
+    - Hamstring injury
+    - Hand fracture (See: Broken hand)
+    - Hand-foot-and-mouth disease
+    - Hangovers
+    - Hardening of the arteries (See: Arteriosclerosis / atherosclerosis)
+    - Head and neck cancers
+    - Headache, chronic daily (See: Chronic daily headaches)
+    - Headache, cluster (See: Cluster headache)
+    - Headache, exercise (See: Exercise headaches)
+    - Headache, external compression (See: External compression headaches)
+    - Headache, primary cough (See: Cough headaches)
+    - Headaches in children
+    - Heart arrhythmias
+    - Heart defects in adults (See: Congenital heart disease in adults)
+    - Heart disease
+    - Heart failure
+    - Heart murmurs
+    - Heartburn
+    - Heat exhaustion
+    - Heatstroke
+    - Helicobacter pylori (H. pylori) infection
+    - Hemifacial spasm
+    - Hemolytic uremic syndrome (HUS)
+    - Hemophilia
+    - Hepatitis A
+    - Hepatitis B
+    - Hepatitis C
+    - Hepatitis, autoimmune (See: Autoimmune hepatitis)
+    - Hepatocellular carcinoma
+    - Hepatopulmonary syndrome
+    - Hereditary hemorrhagic telangiectasia
+    - Herpes, genital (See: Genital herpes)
+    - Hiatal hernia
+    - Hiccups
+    - Hidradenitis suppurativa
+    - High blood pressure in children
+    - Hip dysplasia
+    - Hip fracture
+    - Hip impingement
+    - Hip labral tear
+    - Hirsutism
+    - Histoplasmosis
+    - Hoarding disorder
+    - Hot flashes
+    - Human immunodeficiency virus (See: HIV/AIDS)
+    - Human papillomavirus infection (See: HPV infection)
+    - Huntington's disease
+    - Hydrocele
+    - Hydrocephalus
+    - Hydronephrosis
+    - Hypercalcemia
+    - Hypercholesterolemia (See: High cholesterol)
+    - Hypercholesterolemia, familial (See: Familial hypercholesterolemia)
+    - Hypercortisolism (See: Cushing syndrome)
+    - Hypereosinophilic syndrome
+    - Hyperglycemia in diabetes
+    - Hyperopia (See: Farsightedness)
+    - Hyperoxaluria and oxalosis
+    - Hyperparathyroidism
+    - Hypertension (See: High blood pressure (hypertension))
+    - Hypertrophic cardiomyopathy
+    - Hypoglycemia, diabetic (See: Diabetic hypoglycemia)
+    - Hypohidrosis (See: Anhidrosis)
+    - Hypohydration (See: Dehydration)
+    - Hyponatremia
+    - Hypoparathyroidism
+    - Hypoplastic left heart syndrome
+    - Hypospadias
+    - Ice cream headaches
+    - Ichthyosis vulgaris
+    - Idiopathic hypersomnia
+    - IgA nephropathy (Berger's disease)
+    - IgA vasculitis (See: Henoch-Schonlein purpura)
+    - Illness anxiety disorder
+    - Impetigo
+    - Impotence (See: Erectile dysfunction)
+    - Incompetent cervix
+    - Incomplete fracture (See: Greenstick fractures)
+    - Incontinence, fecal (See: Fecal incontinence)
+    - Infant jaundice
+    - Infant reflux
+    - Infectious diseases
+    - Infertility, female (See: Female infertility)
+    - Inflammatory bowel disease (IBD)
+    - Inflammatory breast cancer
+    - Influenza (flu)
+    - Influenza, avian (See: Bird flu (avian influenza))
+    - Ingrown hair
+    - Ingrown toenails
+    - Inguinal hernia
+    - Inherited metabolic disorders
+    - Intestinal obstruction
+    - Intracranial venous malformations
+    - Intraductal carcinoma (See: Ductal carcinoma in situ (DCIS))
+    - Intussusception
+    - Invasive lobular carcinoma
+    - Iritis
+    - Iron deficiency anemia
+    - Iron overload (See: Hemochromatosis)
+    - Irritable bowel syndrome
+    - Ischemia, intestinal (See: Intestinal ischemia)
+    - Ischemic colitis
+    - ITP (See: Immune thrombocytopenia (ITP))
+    - Jet lag disorder
+    - Joint dislocation (See: Dislocation)
+    - Juvenile fibromyalgia
+    - Juvenile rheumatoid arthritis (See: Juvenile idiopathic arthritis)
+    - Kaposi's sarcoma
+    - Keratitis
+    - Keratoconus
+    - Ketoacidosis, diabetic (See: Diabetic ketoacidosis)
+    - Kidney cysts
+    - Kidney failure, chronic (See: Chronic kidney disease)
+    - Klatskin tumor (See: Hilar cholangiocarcinoma)
+    - Klinefelter syndrome
+    - Klippel-Trenaunay syndrome
+    - Knee bursitis
+    - Knee pain
+    - KP (See: Keratosis pilaris)
+    - Krabbe disease
+    - Laryngitis
+    - Latex allergy
+    - Lazy eye (amblyopia)
+    - Lead poisoning
+    - Left ventricular hypertrophy
+    - Leg fracture (See: Broken leg)
+    - Legg-Calve-Perthes disease
+    - Legionnaires' disease
+    - Leiomyosarcoma
+    - Leukemia, acute lymphocytic (See: Acute lymphocytic leukemia)
+    - Leukemia, acute myelogenous (See: Acute myelogenous leukemia)
+    - Leukemia, chronic lymphocytic (See: Chronic lymphocytic leukemia)
+    - Leukemia, chronic myelogenous (See: Chronic myelogenous leukemia)
+    - Leukemia, general (See: Leukemia)
+    - Leukemia, hairy cell (See: Hairy cell leukemia)
+    - Leukoplakia
+    - Lewy body dementia
+    - Lice
+    - Lice, body (See: Body lice)
+    - Lichen nitidus
+    - Lichen planus
+    - Lichen sclerosus
+    - Lip cancer
+    - Lipoma
+    - Liposarcoma
+    - Listeriosis (See: Listeria infection)
+    - Liver cancer
+    - Liver disease
+    - Liver failure, acute (See: Acute liver failure)
+    - Liver hemangioma
+    - Liver enlarged (See: Enlarged liver)
+    - Lobular carcinoma in situ (LCIS)
+    - Long QT syndrome
+    - Low blood pressure (hypotension)
+    - Low blood sugar (See: Hypoglycemia)
+    - Low body temperature (See: Hypothermia)
+    - Low sex drive in women
+    - Low sperm count
+    - Lung cancer
+    - Lung collapse (See: Atelectasis)
+    - Lung disease, interstitial (See: Interstitial lung disease)
+    - Lupus nephritis
+    - Lyme disease
+    - Lymphedema
+    - Lymphoma
+    - Lymphoma, Hodgkin's (See: Hodgkin's lymphoma (Hodgkin's disease))
+    - Lynch syndrome
+    - Macular degeneration, dry
+    - Macular degeneration, wet
+    - Major depressive disorder (See: Depression (major depressive disorder))
+    - Malaria
+    - Male breast cancer
+    - Male infertility
+    - Malignant hyperthermia
+    - Malignant peripheral nerve sheath tumors
+    - Mallet toe and hammertoe (See: Hammertoe and mallet toe)
+    - Mammary duct ectasia
+    - Manic-depressive illness (See: Bipolar disorder)
+    - Marburg virus (See: Ebola virus and Marburg virus)
+    - Marfan syndrome
+    - Mastalgia (See: Breast pain)
+    - Mastitis - MCAD deficiency
+    - Medial epicondylitis (See: Golfer's elbow)
+    - Medulloblastoma
+    - Megacolon (See: Hirschsprung's disease)
+    - Membranous nephropathy
+    - Meniere's disease
+    - Meningioma
+    - Meningitis
+    - Menopause
+    - Menstrual bleeding, excessive (See: Menorrhagia)
+    - Mental illness
+    - Meralgia paresthetica
+    - Mesenteric ischemia
+    - Mesenteric lymphadenitis
+    - Mesothelioma
+    - Metachromatic leukodystrophy
+    - Metatarsalgia
+    - Microcephaly
+    - Microscopic colitis
+    - Migraine
+    - Migraine with aura
+    - Mild cognitive impairment (MCI)
+    - Milia - Milk allergy
+    - Milk intolerance (See: Lactose intolerance)
+    - Miscarriage
+    - Mitral valve disease
+    - Mittelschmerz
+    - Mixed connective tissue disease
+    - Molar pregnancy
+    - Mold allergy
+    - Molluscum contagiosum
+    - Monoclonal gammopathy of undetermined significance (MGUS)
+    - Mononucleosis
+    - Mood disorders
+    - Morning sickness
+    - Morphea
+    - Mosquito bites
+    - Movement disorders
+    - Moyamoya disease
+    - MRSA infection
+    - Mucocutaneous lymph node syndrome (See: Kawasaki disease)
+    - Mucopolysaccharidosis type II (See: Hunter syndrome)
+    - Multiple myeloma
+    - Multiple personality disorder (See: Dissociative disorders)
+    - Mumps
+    - Muscle cramp
+    - Muscle strains
+    - Muscular dystrophy
+    - Myasthenia gravis
+    - Myelodysplastic syndromes
+    - Myelofibrosis
+    - Myocardial infarction (See: Heart attack)
+    - Myocardial ischemia
+    - Myocarditis
+    - Myoclonus
+    - Myofascial pain syndrome
+    - Myxofibrosarcoma
+    - Naegleria infection
+    - Nasal and paranasal tumors
+    - Nasopharyngeal carcinoma
+    - Nearsightedness
+    - Neck pain
+    - Nephrogenic systemic fibrosis
+    - Nephrotic syndrome
+    - Neuroblastoma
+    - Neurodermatitis
+    - Neuroendocrine carcinoma of the skin (See: Merkel cell carcinoma)
+    - Neuroendocrine tumors
+    - Neurofibroma
+    - Neurofibromatosis
+    - Neuromyelitis optica
+    - Neuropathy, autonomic (See: Autonomic neuropathy)
+    - Neuropathy, diabetic (See: Diabetic neuropathy)
+    - Nevus (See: Moles)
+    - Nickel allergy
+    - Nicotine dependence
+    - Niemann-Pick
+    - Nightmare disorder
+    - Noctural enuresis (See: Bed-wetting)
+    - Nonalcoholic fatty liver disease
+    - Non-Hodgkin's lymphoma
+    - Nonmelanoma skin cancer
+    - Nontropical sprue (See: Celiac disease)
+    - Noonan syndrome
+    - Norovirus infection
+    - Nose fracture (See: Broken nose)
+    - Obesity, childhood (See: Childhood obesity)
+    - Obstetric cholestasis (See: Cholestasis of pregnancy)
+    - Occupational asthma
+    - OCD (See: Obsessive-compulsive disorder (OCD))
+    - Ocular rosacea
+    - Oculocutaneous albinism (See: Albinism)
+    - Oculosympathetic palsy (See: Horner syndrome)
+    - Odontogenic tumors and cysts (See: Jaw tumors and cysts)
+    - Olfactory neuroblastoma (See: Esthesioneuroblastoma)
+    - Oligodendroglioma
+    - Oppositional defiant disorder (ODD)
+    - Optic neuritis
+    - Oral cancer (See: Mouth cancer)
+    - Oral lichen planus
+    - Orchitis
+    - Osgood-Schlatter disease
+    - Osteoarthritis
+    - Osteochondritis dissecans
+    - Osteomalacia
+    - Osteomyelitis
+    - Osteonecrosis (See: Avascular necrosis)
+    - Osteophytes (See: Bone spurs)
+    - Osteoporosis
+    - Osteosarcoma
+    - Otitis media (See: Ear infection (middle ear))
+    - Ovarian cancer
+    - Ovarian cysts
+    - Ovarian hyperstimulation syndrome
+    - Overactive bladder
+    - Oxyphil cell carcinoma (See: Hurthle cell cancer)
+    - Paget's disease of bone
+    - Paget's disease of the nipple (See: Paget's disease of the breast)
+    - Pain, chest (See: Chest pain)
+    - Painful bladder syndrome (See: Interstitial cystitis)
+    - Painful intercourse (dyspareunia)
+    - Painful periods (See: Menstrual cramps)
+    - Palsy, cerebral (See: Cerebral palsy)
+    - Palsy, facial (See: Bell's palsy)
+    - Pancreatic cancer
+    - Pancreatic cysts
+    - Pancreatic neuroendocrine tumors
+    - Pancreatitis
+    - Panic attacks and panic disorder
+    - Paraganglioma
+    - Paraneoplastic syndromes of the nervous system
+    - Parkinson's disease
+    - Parotid tumors
+    - Partial anomalous pulmonary venous return
+    - Patent foramen ovale
+    - Pathological gambling (See: Compulsive gambling)
+    - Pathological stealing (See: Kleptomania)
+    - PDA (See: Patent ductus arteriosus (PDA))
+    - Peanut allergy - Pectus carinatum
+    - Pediatric brain tumors
+    - Pediculosis capitis (See: Head lice)
+    - Pelvic organ prolapse
+    - Pelvic pain, chronic (See: Chronic pelvic pain in women)
+    - Pemphigus
+    - Penicillin allergy
+    - Pericardial effusion
+    - Pericarditis
+    - Perimenopause
+    - Periodontal disease, gingivitis (See: Gingivitis)
+    - Periodontitis
     - Peripheral nerve injuries
-    - Peripheral nerve tumors 
-    - Peripheral neuropathy 
-    - Peritonitis 
-    - Pernio (See: Chilblains) 
-    - Peroneal muscular atrophy (See: Charcot-Marie-Tooth disease) 
-    - Persistent depressive disorder (dysthymia) 
-    - Personality disorder, antisocial (See: Antisocial personality disorder) 
-    - Personality disorder, borderline (See: Borderline personality disorder) 
-    - Personality disorder, narcissistic (See: Narcissistic personality disorder) 
-    - Personality disorders 
-    - Pes planus (See: Flatfeet) 
-    - Pet allergy - Peyronie's disease 
-    - Pheochromocytoma 
-    - Pick's disease (See: Frontotemporal dementia) 
-    - PID (See: Pelvic inflammatory disease (PID)) 
-    - Piles (See: Hemorrhoids) 
-    - Pilonidal cyst 
-    - Pinched nerve 
-    - Pineoblastoma 
-    - Pink eye (conjunctivitis) 
-    - Pinworm infection 
-    - Pituitary insufficiency (See: Hypopituitarism) 
-    - Pituitary tumors 
-    - Pityriasis rosea 
-    - PKU (See: Phenylketonuria (PKU)) 
-    - Placenta accreta 
-    - Placenta previa 
-    - Placental abruption 
-    - Plantar fasciitis 
-    - Plantar neuroma (See: Morton's neuroma) 
-    - Pleurisy 
-    - Pneumonia 
-    - Pneumonitis 
-    - Pneumothorax 
-    - POEMS syndrome 
-    - Polio 
-    - Polycystic kidney disease 
-    - Polyhydramnios 
-    - Polymyalgia rheumatica 
-    - Polymyositis 
-    - Polyps, colon (See: Colon polyps) 
-    - Polyps, nasal (See: Nasal polyps) 
-    - Pompholyx (See: Dyshidrosis) 
-    - Popliteal artery aneurysm 
-    - Popliteal artery entrapment 
-    - Popliteal cyst (See: Baker's cyst) 
-    - Porphyria 
-    - Post-chemotherapy cognitive impairment (See: Chemo brain) 
-    - Post-concussion syndrome 
-    - Posterior cortical atrophy 
-    - Posterior cruciate ligament injury 
-    - Postherpetic neuralgia 
-    - Postmyocardial infarction syndrome (See: Dressler's syndrome) 
-    - Postpartum depression 
-    - Postpartum preeclampsia 
-    - Postpartum thyroiditis 
-    - Post-polio syndrome 
-    - Postural hypotension (See: Orthostatic hypotension (postural hypotension)) 
-    - Pouchitis 
-    - Prader-Willi syndrome 
-    - Prediabetes 
-    - Premature birth 
-    - Premature ejaculation 
-    - Premature puberty (See: Precocious puberty) 
-    - Premenstrual syndrome (PMS) 
-    - Presbycusis (See: Hearing loss) 
-    - Presbyopia 
-    - Prescription drug abuse 
-    - Pressure ulcer (See: Bedsores (pressure ulcers)) 
-    - Preterm labor 
-    - Priapism 
-    - Prickly heat (See: Heat rash) 
-    - Primary adrenal insufficiency (See: Addison's disease) 
-    - Primary biliary cirrhosis (See: Primary biliary cholangitis) 
-    - Primary hypoaldosteronism (See: Primary aldosteronism) 
-    - Primary immunodeficiency 
-    - Primary lateral sclerosis (PLS) 
-    - Primary ovarian insufficiency 
-    - Primary polycythemia (See: Polycythemia vera) 
-    - Primary progressive aphasia 
-    - Progeria 
-    - Prolactinoma 
-    - Prolapse, mitral valve (See: Mitral valve prolapse) 
-    - Prolapsed bladder (See: Anterior prolapse (cystocele)) 
-    - Prostate cancer 
-    - Prostate gland enlargement (See: Benign prostatic hyperplasia (BPH)) 
-    - Prostatitis 
-    - Pseudocholinesterase deficiency 
-    - Pseudogout 
-    - Pseudomembranous colitis 
-    - Pseudotumor cerebri 
-    - Psoriasis 
-    - Psoriatic arthritis 
-    - PTSD (See: Post-traumatic stress disorder (PTSD)) 
-    - Pubic lice (crabs) 
-    - Pulmonary atresia 
-    - Pulmonary atresia with intact ventricular septum 
-    - Pulmonary atresia with ventricular septum defect 
-    - Pulmonary edema 
-    - Pulmonary fibrosis 
-    - Pulmonary hypertension 
-    - Pulmonary valve disease 
-    - PVD (See: Peripheral artery disease) 
-    - Pyelonephritis (See: Kidney infection) 
-    - Pyoderma gangrenosum - Query fever (See: Q fever) 
-    - Rabies 
-    - Radiation enteritis 
-    - Radiation sickness 
-    - Ramsay Hunt syndrome 
-    - Rapid gastric emptying (See: Dumping syndrome) 
-    - Rash, poison ivy (See: Poison ivy rash) 
-    - Raynaud's disease 
-    - Reactive attachment disorder 
-    - Rebound headache (See: Medication overuse headaches) 
-    - Rectal cancer 
-    - Rectal inflammation (See: Proctitis) 
+    - Peripheral nerve tumors
+    - Peripheral neuropathy
+    - Peritonitis
+    - Pernio (See: Chilblains)
+    - Peroneal muscular atrophy (See: Charcot-Marie-Tooth disease)
+    - Persistent depressive disorder (dysthymia)
+    - Personality disorder, antisocial (See: Antisocial personality disorder)
+    - Personality disorder, borderline (See: Borderline personality disorder)
+    - Personality disorder, narcissistic (See: Narcissistic personality disorder)
+    - Personality disorders
+    - Pes planus (See: Flatfeet)
+    - Pet allergy - Peyronie's disease
+    - Pheochromocytoma
+    - Pick's disease (See: Frontotemporal dementia)
+    - PID (See: Pelvic inflammatory disease (PID))
+    - Piles (See: Hemorrhoids)
+    - Pilonidal cyst
+    - Pinched nerve
+    - Pineoblastoma
+    - Pink eye (conjunctivitis)
+    - Pinworm infection
+    - Pituitary insufficiency (See: Hypopituitarism)
+    - Pituitary tumors
+    - Pityriasis rosea
+    - PKU (See: Phenylketonuria (PKU))
+    - Placenta accreta
+    - Placenta previa
+    - Placental abruption
+    - Plantar fasciitis
+    - Plantar neuroma (See: Morton's neuroma)
+    - Pleurisy
+    - Pneumonia
+    - Pneumonitis
+    - Pneumothorax
+    - POEMS syndrome
+    - Polio
+    - Polycystic kidney disease
+    - Polyhydramnios
+    - Polymyalgia rheumatica
+    - Polymyositis
+    - Polyps, colon (See: Colon polyps)
+    - Polyps, nasal (See: Nasal polyps)
+    - Pompholyx (See: Dyshidrosis)
+    - Popliteal artery aneurysm
+    - Popliteal artery entrapment
+    - Popliteal cyst (See: Baker's cyst)
+    - Porphyria
+    - Post-chemotherapy cognitive impairment (See: Chemo brain)
+    - Post-concussion syndrome
+    - Posterior cortical atrophy
+    - Posterior cruciate ligament injury
+    - Postherpetic neuralgia
+    - Postmyocardial infarction syndrome (See: Dressler's syndrome)
+    - Postpartum depression
+    - Postpartum preeclampsia
+    - Postpartum thyroiditis
+    - Post-polio syndrome
+    - Postural hypotension (See: Orthostatic hypotension (postural hypotension))
+    - Pouchitis
+    - Prader-Willi syndrome
+    - Prediabetes
+    - Premature birth
+    - Premature ejaculation
+    - Premature puberty (See: Precocious puberty)
+    - Premenstrual syndrome (PMS)
+    - Presbycusis (See: Hearing loss)
+    - Presbyopia
+    - Prescription drug abuse
+    - Pressure ulcer (See: Bedsores (pressure ulcers))
+    - Preterm labor
+    - Priapism
+    - Prickly heat (See: Heat rash)
+    - Primary adrenal insufficiency (See: Addison's disease)
+    - Primary biliary cirrhosis (See: Primary biliary cholangitis)
+    - Primary hypoaldosteronism (See: Primary aldosteronism)
+    - Primary immunodeficiency
+    - Primary lateral sclerosis (PLS)
+    - Primary ovarian insufficiency
+    - Primary polycythemia (See: Polycythemia vera)
+    - Primary progressive aphasia
+    - Progeria
+    - Prolactinoma
+    - Prolapse, mitral valve (See: Mitral valve prolapse)
+    - Prolapsed bladder (See: Anterior prolapse (cystocele))
+    - Prostate cancer
+    - Prostate gland enlargement (See: Benign prostatic hyperplasia (BPH))
+    - Prostatitis
+    - Pseudocholinesterase deficiency
+    - Pseudogout
+    - Pseudomembranous colitis
+    - Pseudotumor cerebri
+    - Psoriasis
+    - Psoriatic arthritis
+    - PTSD (See: Post-traumatic stress disorder (PTSD))
+    - Pubic lice (crabs)
+    - Pulmonary atresia
+    - Pulmonary atresia with intact ventricular septum
+    - Pulmonary atresia with ventricular septum defect
+    - Pulmonary edema
+    - Pulmonary fibrosis
+    - Pulmonary hypertension
+    - Pulmonary valve disease
+    - PVD (See: Peripheral artery disease)
+    - Pyelonephritis (See: Kidney infection)
+    - Pyoderma gangrenosum - Query fever (See: Q fever)
+    - Rabies
+    - Radiation enteritis
+    - Radiation sickness
+    - Ramsay Hunt syndrome
+    - Rapid gastric emptying (See: Dumping syndrome)
+    - Rash, poison ivy (See: Poison ivy rash)
+    - Raynaud's disease
+    - Reactive attachment disorder
+    - Rebound headache (See: Medication overuse headaches)
+    - Rectal cancer
+    - Rectal inflammation (See: Proctitis)
     - Rectal itching (See: Anal itching)
-    - Rectal prolapse 
-    - Rectovaginal fistula 
-    - Recurrent breast cancer 
-    - Reflux, bile (See: Bile reflux) 
-    - Reflux, gastroesophageal (See: Gastroesophageal reflux disease (GERD)) 
-    - Regurgitation, aortic valve (See: Aortic valve regurgitation) 
-    - Regurgitation, mitral valve (See: Mitral valve regurgitation) 
-    - Reiter's syndrome (See: Reactive arthritis) 
-    - REM sleep behavior disorder 
-    - Renal artery stenosis 
-    - Renal cancer (See: Kidney cancer) 
-    - Renal failure, acute (See: Acute kidney failure) 
-    - Residual limb pain 
-    - Retinal detachment 
-    - Retinal diseases 
-    - Retinoblastoma 
-    - Retinopathy, diabetic (See: Diabetic retinopathy) 
-    - Retrograde ejaculation 
-    - Rett syndrome 
-    - Reye's syndrome 
-    - Rhabdomyosarcoma 
-    - Rheumatic fever 
-    - Rheumatoid arthritis 
-    - Rib fracture (See: Broken ribs) 
-    - Rickets 
-    - RLS (See: Restless legs syndrome) 
-    - Road rage (See: Intermittent explosive disorder) 
-    - Rocky Mountain spotted fever 
-    - Rosacea 
-    - Roseola 
-    - Rotator cuff injury 
-    - Rotavirus 
-    - Round back (See: Kyphosis) 
-    - RSV (See: Respiratory syncytial virus (RSV)) 
-    - Rubeola (See: Measles) 
-    - Rumination syndrome 
-    - Runner's knee (See: Patellofemoral pain syndrome) 
-    - Ruptured eardrum (perforated eardrum) 
-    - Ruptured spleen 
-    - Sacral dimple 
-    - Sacroiliitis 
-    - Salmonellosis (See: Salmonella infection) 
-    - Sarcoidosis 
-    - Sarcoma 
-    - Sarcoma, bone cancer (See: Bone cancer) 
-    - Scabies 
-    - Scarlet fever 
-    - Schizoaffective disorder 
-    - Schizoid personality disorder 
-    - Schizophrenia 
-    - Schizophrenia, juvenile (See: Childhood schizophrenia) 
-    - Schizotypal personality disorder 
-    - Schwannoma 
-    - Sciatica 
-    - Scleroderma, limited (See: Limited scleroderma) 
-    - Sclerosing cholangitis (See: Primary sclerosing cholangitis) 
-    - Sclerosing mesenteritis 
-    - Sclerosis, amyotrophic lateral (See: Amyotrophic lateral sclerosis (ALS)) 
-    - Sclerosis, multiple (See: Multiple sclerosis) 
-    - Scrotal masses 
-    - Seasonal affective disorder (SAD) 
-    - Seasonal allergy (See: Hay fever) 
-    - Sebaceous carcinoma 
-    - Sebaceous cysts (See: Epidermoid cysts) 
-    - Seborrheic dermatitis 
-    - Seborrheic keratosis 
-    - Secondary brain cancer (See: Brain metastases) 
-    - Secondary hypertension 
-    - Seizure disorder (See: Epilepsy) 
-    - Seizure, febrile (See: Febrile seizure) 
-    - Seizure, petit mal (See: Absence seizure) 
-    - Seizures 
-    - Selective IgA deficiency 
-    - Self-injury/cutting 
-    - Separation anxiety disorder 
-    - Sepsis 
-    - Septal defect, atrial (See: Atrial septal defect (ASD)) 
-    - Septal defect, atrioventricular (See: Atrioventricular canal defect) 
-    - Septic arthritis 
-    - Serotonin syndrome 
-    - Severe acute respiratory syndrome (SARS) 
-    - Severe brain injury, coma (See: Coma) 
-    - Sex headaches 
-    - Sexual dysfunction, female (See: Female sexual dysfunction) 
-    - Sexual obsession (See: Compulsive sexual behavior) 
-    - Shaken baby syndrome 
-    - Sheehan's syndrome 
-    - Shellfish allergy 
-    - Shigella infection 
-    - Shin splints 
-    - Short bowel syndrome 
-    - Shoulder dislocation (See: Dislocated shoulder) 
-    - Shoulder separation (See: Separated shoulder) 
-    - Shy-Drager syndrome (See: Multiple system atrophy (MSA)) 
-    - Sick sinus syndrome 
-    - Sickle cell anemia 
-    - Sin Nombre virus infection (See: Hantavirus pulmonary syndrome) 
-    - Sinus headaches 
-    - Sinusitis, acute (See: Acute sinusitis) 
-    - Sinusitis, chronic (See: Chronic sinusitis) 
-    - Sjogren's syndrome 
-    - Skin cancer 
-    - Skin cancer, melanoma (See: Melanoma) 
-    - Skin, itchy (See: Itchy skin (pruritus)) 
-    - Skipped heartbeats (See: Heart palpitations) 
-    - Slapped cheek disease (See: Parvovirus infection) 
-    - Sleep apnea 
-    - Sleep apnea in children, obstructive (See: Pediatric obstructive sleep apnea) 
-    - Sleep apnea, central 
-    - Sleep apnea, obstructive 
-    - Sleep disorders 
-    - Sleep terrors (night terrors) 
-    - Sleepiness, daytime (See: Narcolepsy) 
-    - Sleeplessness (See: Insomnia) 
-    - Sleep-related eating disorder 
-    - Slipped disk (See: Herniated disk) 
-    - Slow heartbeat (See: Bradycardia) 
-    - Small bowel cancer 
-    - Small intestine prolapse (See: Small bowel prolapse (enterocele)) 
-    - Small vessel disease 
-    - Snoring - Social anxiety disorder (social phobia) (See: Social anxiety disorder) 
-    - Soft palate cancer 
-    - Soft tissue sarcoma 
-    - Solar keratosis (See: Actinic keratosis) 
-    - Solar lentigines (See: Age spots (liver spots)) 
-    - Solitary fibrous tumor - Somatic symptom disorder 
-    - Somnambulism (See: Sleepwalking) 
-    - Sore throat 
-    - Soy allergy 
-    - Specific phobias 
-    - Specific reading disability (See: Dyslexia) 
-    - Spermatocele 
-    - Spider bites 
-    - Spina bifida 
-    - Spinal arteriovenous malformation (AVM) 
-    - Spinal cord tumor 
-    - Spinal curvature (See: Scoliosis) 
-    - Spinal headaches 
-    - Splenomegaly (See: Enlarged spleen (splenomegaly)) 
-    - Spondylosis, cervical (See: Cervical spondylosis) 
-    - Spontaneous coronary artery dissection (SCAD) 
-    - Sprained ankle 
-    - Sprains 
-    - Squamous cell carcinoma of the skin 
-    - Stage 4 prostate cancer 
-    - Staph infections 
-    - Statis syndrome (See: Blind loop syndrome) 
-    - STDs (See: Sexually transmitted diseases (STDs)) 
-    - Steele-Richardson-Olszewski syndrome (See: Progressive supranuclear palsy) 
-    - Stein-Leventhal syndrome (See: Polycystic ovary syndrome (PCOS)) 
-    - Stenosis, aortic valve (See: Aortic valve stenosis) 
-    - Stenosis, mitral valve (See: Mitral valve stenosis) 
-    - Stenosis, pulmonary valve (See: Pulmonary valve stenosis) 
-    - Stenosis, pyloric (See: Pyloric stenosis) 
+    - Rectal prolapse
+    - Rectovaginal fistula
+    - Recurrent breast cancer
+    - Reflux, bile (See: Bile reflux)
+    - Reflux, gastroesophageal (See: Gastroesophageal reflux disease (GERD))
+    - Regurgitation, aortic valve (See: Aortic valve regurgitation)
+    - Regurgitation, mitral valve (See: Mitral valve regurgitation)
+    - Reiter's syndrome (See: Reactive arthritis)
+    - REM sleep behavior disorder
+    - Renal artery stenosis
+    - Renal cancer (See: Kidney cancer)
+    - Renal failure, acute (See: Acute kidney failure)
+    - Residual limb pain
+    - Retinal detachment
+    - Retinal diseases
+    - Retinoblastoma
+    - Retinopathy, diabetic (See: Diabetic retinopathy)
+    - Retrograde ejaculation
+    - Rett syndrome
+    - Reye's syndrome
+    - Rhabdomyosarcoma
+    - Rheumatic fever
+    - Rheumatoid arthritis
+    - Rib fracture (See: Broken ribs)
+    - Rickets
+    - RLS (See: Restless legs syndrome)
+    - Road rage (See: Intermittent explosive disorder)
+    - Rocky Mountain spotted fever
+    - Rosacea
+    - Roseola
+    - Rotator cuff injury
+    - Rotavirus
+    - Round back (See: Kyphosis)
+    - RSV (See: Respiratory syncytial virus (RSV))
+    - Rubeola (See: Measles)
+    - Rumination syndrome
+    - Runner's knee (See: Patellofemoral pain syndrome)
+    - Ruptured eardrum (perforated eardrum)
+    - Ruptured spleen
+    - Sacral dimple
+    - Sacroiliitis
+    - Salmonellosis (See: Salmonella infection)
+    - Sarcoidosis
+    - Sarcoma
+    - Sarcoma, bone cancer (See: Bone cancer)
+    - Scabies
+    - Scarlet fever
+    - Schizoaffective disorder
+    - Schizoid personality disorder
+    - Schizophrenia
+    - Schizophrenia, juvenile (See: Childhood schizophrenia)
+    - Schizotypal personality disorder
+    - Schwannoma
+    - Sciatica
+    - Scleroderma, limited (See: Limited scleroderma)
+    - Sclerosing cholangitis (See: Primary sclerosing cholangitis)
+    - Sclerosing mesenteritis
+    - Sclerosis, amyotrophic lateral (See: Amyotrophic lateral sclerosis (ALS))
+    - Sclerosis, multiple (See: Multiple sclerosis)
+    - Scrotal masses
+    - Seasonal affective disorder (SAD)
+    - Seasonal allergy (See: Hay fever)
+    - Sebaceous carcinoma
+    - Sebaceous cysts (See: Epidermoid cysts)
+    - Seborrheic dermatitis
+    - Seborrheic keratosis
+    - Secondary brain cancer (See: Brain metastases)
+    - Secondary hypertension
+    - Seizure disorder (See: Epilepsy)
+    - Seizure, febrile (See: Febrile seizure)
+    - Seizure, petit mal (See: Absence seizure)
+    - Seizures
+    - Selective IgA deficiency
+    - Self-injury/cutting
+    - Separation anxiety disorder
+    - Sepsis
+    - Septal defect, atrial (See: Atrial septal defect (ASD))
+    - Septal defect, atrioventricular (See: Atrioventricular canal defect)
+    - Septic arthritis
+    - Serotonin syndrome
+    - Severe acute respiratory syndrome (SARS)
+    - Severe brain injury, coma (See: Coma)
+    - Sex headaches
+    - Sexual dysfunction, female (See: Female sexual dysfunction)
+    - Sexual obsession (See: Compulsive sexual behavior)
+    - Shaken baby syndrome
+    - Sheehan's syndrome
+    - Shellfish allergy
+    - Shigella infection
+    - Shin splints
+    - Short bowel syndrome
+    - Shoulder dislocation (See: Dislocated shoulder)
+    - Shoulder separation (See: Separated shoulder)
+    - Shy-Drager syndrome (See: Multiple system atrophy (MSA))
+    - Sick sinus syndrome
+    - Sickle cell anemia
+    - Sin Nombre virus infection (See: Hantavirus pulmonary syndrome)
+    - Sinus headaches
+    - Sinusitis, acute (See: Acute sinusitis)
+    - Sinusitis, chronic (See: Chronic sinusitis)
+    - Sjogren's syndrome
+    - Skin cancer
+    - Skin cancer, melanoma (See: Melanoma)
+    - Skin, itchy (See: Itchy skin (pruritus))
+    - Skipped heartbeats (See: Heart palpitations)
+    - Slapped cheek disease (See: Parvovirus infection)
+    - Sleep apnea
+    - Sleep apnea in children, obstructive (See: Pediatric obstructive sleep apnea)
+    - Sleep apnea, central
+    - Sleep apnea, obstructive
+    - Sleep disorders
+    - Sleep terrors (night terrors)
+    - Sleepiness, daytime (See: Narcolepsy)
+    - Sleeplessness (See: Insomnia)
+    - Sleep-related eating disorder
+    - Slipped disk (See: Herniated disk)
+    - Slow heartbeat (See: Bradycardia)
+    - Small bowel cancer
+    - Small intestine prolapse (See: Small bowel prolapse (enterocele))
+    - Small vessel disease
+    - Snoring - Social anxiety disorder (social phobia) (See: Social anxiety disorder)
+    - Soft palate cancer
+    - Soft tissue sarcoma
+    - Solar keratosis (See: Actinic keratosis)
+    - Solar lentigines (See: Age spots (liver spots))
+    - Solitary fibrous tumor - Somatic symptom disorder
+    - Somnambulism (See: Sleepwalking)
+    - Sore throat
+    - Soy allergy
+    - Specific phobias
+    - Specific reading disability (See: Dyslexia)
+    - Spermatocele
+    - Spider bites
+    - Spina bifida
+    - Spinal arteriovenous malformation (AVM)
+    - Spinal cord tumor
+    - Spinal curvature (See: Scoliosis)
+    - Spinal headaches
+    - Splenomegaly (See: Enlarged spleen (splenomegaly))
+    - Spondylosis, cervical (See: Cervical spondylosis)
+    - Spontaneous coronary artery dissection (SCAD)
+    - Sprained ankle
+    - Sprains
+    - Squamous cell carcinoma of the skin
+    - Stage 4 prostate cancer
+    - Staph infections
+    - Statis syndrome (See: Blind loop syndrome)
+    - STDs (See: Sexually transmitted diseases (STDs))
+    - Steele-Richardson-Olszewski syndrome (See: Progressive supranuclear palsy)
+    - Stein-Leventhal syndrome (See: Polycystic ovary syndrome (PCOS))
+    - Stenosis, aortic valve (See: Aortic valve stenosis)
+    - Stenosis, mitral valve (See: Mitral valve stenosis)
+    - Stenosis, pulmonary valve (See: Pulmonary valve stenosis)
+    - Stenosis, pyloric (See: Pyloric stenosis)
     - Stenosis, spinal (See: Spinal stenosis)
-    - Stevens-Johnson syndrome 
-    - Stickler syndrome 
-    - Stings, bee (See: Bee sting) 
-    - Stings, jellyfish (See: Jellyfish stings) 
-    - Stings, scorpion (See: Scorpion sting) 
-    - Stomach cancer 
-    - Stomach pain, nonulcer (See: Functional dyspepsia) 
-    - Stomach polyps 
-    - Stomatodynia (See: Burning mouth syndrome) 
-    - Stones, kidney (See: Kidney stones) 
-    - Stool holding (See: Encopresis) 
-    - Strawberry hemangioma (See: Hemangioma) 
-    - Strep throat 
-    - Stress fractures 
-    - Stress incontinence 
-    - Stretch marks 
-    - Stroke 
-    - Stump pain (See: Phantom pain) 
-    - Stuttering 
-    - Sty 
-    - Subarachnoid hemorrhage 
-    - Subconjunctival hemorrhage (broken blood vessel in eye) 
-    - Subdural hematoma (See: Intracranial hematoma) 
-    - Subfertility (See: Infertility) 
-    - Sudden cardiac arrest 
-    - Sudden infant death syndrome (SIDS) 
-    - Suicide and suicidal thoughts 
-    - Sun allergy 
-    - Sun poisoning (See: Polymorphous light eruption) 
-    - Sunburn 
-    - Sunken chest (See: Pectus excavatum) 
-    - Suspicious breast lumps 
-    - SVT (See: Supraventricular tachycardia) 
-    - Sweating and body odor 
-    - Sweating, abnormally excessive (See: Hyperhidrosis) 
-    - Sweet's syndrome 
-    - Swimmer's ear 
-    - Swimmer's itch 
-    - Swine flu (H1N1 flu) 
-    - Swollen lymph nodes 
-    - Synostosis (See: Craniosynostosis) 
-    - Synovial sarcoma 
-    - Syphilis 
-    - Syringomyelia 
-    - Systemic capillary leak syndrome 
-    - Systemic lupus erythematosus (See: Lupus) 
-    - Systemic mastocytosis 
-    - Systemic sclerosis (See: Scleroderma) 
-    - Tachycardia 
-    - Takayasu's arteritis 
-    - Takotsubo cardiomyopathy (See: Broken heart syndrome) 
-    - Tapeworm infection 
-    - Tay-Sachs disease 
-    - Tears, decreased production (See: Dry eyes) 
-    - Teen depression 
-    - Teeth grinding (See: Bruxism (teeth grinding)) 
-    - Temporal arteritis (See: Giant cell arteritis) 
-    - Temporal lobe seizure 
-    - Tendinitis 
-    - Tendinitis, Achilles (See: Achilles tendinitis) 
-    - Tendinitis, patellar (See: Patellar tendinitis) 
-    - Tennis elbow 
-    - Tenosynovitis, de Quervain's (See: De Quervain's tenosynovitis) 
-    - Tension headache 
-    - Testicle, retractile (See: Retractile testicle) 
-    - Testicular cancer 
-    - Testosterone deficiency (See: Male hypogonadism) 
-    - Tetanus 
-    - Tetralogy of Fallot 
-    - Tetraplegia (See: Spinal cord injury) 
-    - Thalassemia 
-    - Thoracic aortic aneurysm 
-    - Thoracic outlet syndrome 
-    - Three-day measles (See: Rubella) 
-    - Throat cancer 
-    - Thromboangiitis obliterans (See: Buerger's disease) 
-    - Thrombocythemia, essential (See: Essential thrombocythemia) 
-    - Thrombocytopenia 
-    - Thrombocytopenia, childhood (See: Pediatric thrombocytopenia) 
-    - Thrombocytosis 
-    - Thrombophlebitis 
-    - Thrush, oral (See: Oral thrush) 
-    - Thumb arthritis 
-    - Thunderclap headaches 
-    - Thyroid cancer 
-    - Thyroid gland enlargement (See: Goiter) 
-    - Thyroid nodules 
-    - Thyroid, overactive (See: Hyperthyroidism) 
-    - Thyroiditis, chronic lymphocytic (See: Hashimoto's disease) 
-    - Tinea barbae (See: Folliculitis) 
-    - Tinea capitis (See: Ringworm (scalp)) 
-    - Tinea corporis (See: Ringworm (body)) 
-    - Tinea cruris (See: Jock itch) 
-    - Tinea pedis (See: Athlete's foot) 
-    - Tinea versicolor 
-    - Tinnitus 
-    - TMJ disorders 
-    - Toe walking in children 
-    - Toenail fungus (See: Nail fungus) 
-    - Tongue cancer 
-    - Tongue-tie (ankyloglossia) 
-    - Tonic-clonic seizure (See: Grand mal seizure) 
-    - Tonsil cancer 
-    - Tonsillitis 
-    - Tooth abscess 
-    - Tooth decay (See: Cavities/tooth decay) 
-    - Torn meniscus 
-    - Torsion, testicular (See: Testicular torsion) 
-    - Torticollis, spasmodic (See: Cervical dystonia) 
-    - Total anomalous pulmonary venous return 
-    - Tourette syndrome 
-    - Toxemia (See: Preeclampsia) 
-    - Toxic hepatitis 
-    - Toxic shock syndrome 
-    - Toxoplasmosis 
-    - Trachoma 
-    - Transient global amnesia 
-    - Transient ischemic attack (TIA) 
-    - Transposition of the great arteries 
-    - Transverse myelitis 
-    - Traumatic brain injury 
-    - Traumatic grief (See: Complicated grief) 
-    - Traveler's diarrhea 
-    - Trichinosis 
-    - Trichomoniasis 
-    - Trichotillomania (hair-pulling disorder) 
-    - Tricuspid atresia 
-    - Tricuspid valve disease 
-    - Tricuspid valve regurgitation 
-    - Trigeminal neuralgia 
-    - Trigger finger 
-    - Trisomy 21 syndrome (See: Down syndrome) 
-    - Trouble swallowing (See: Dysphagia) 
-    - Truncus arteriosus 
-    - Trypanosomiasis, American (See: Chagas disease) 
-    - Tuberculosis 
-    - Tuberous sclerosis 
-    - Tularemia 
-    - Tumor, salivary gland (See: Salivary gland tumors) 
-    - Turner syndrome 
-    - Type 1 diabetes 
-    - Type 1 diabetes in children 
-    - Type 2 diabetes 
-    - Type 2 diabetes in children 
-    - Typhoid fever 
-    - Ulcer, aphthous (See: Canker sore) 
-    - Ulcer, peptic (See: Peptic ulcer) 
-    - Ulcer, rectal (See: Solitary rectal ulcer syndrome) 
-    - Ulcerative colitis 
-    - Ulnar wrist pain 
-    - Umbilical hernia 
-    - Uncontrollable laughter and crying (See: Pseudobulbar affect) 
-    - Underactive thyroid (See: Hypothyroidism) 
-    - Under-eye puffiness (See: Bags under eyes) 
-    - Undescended testicle 
-    - Undifferentiated pleomorphic sarcoma 
-    - Unstable angina (See: Angina) 
-    - Upset stomach (See: Indigestion) 
-    - Ureteral cancer - Ureteral obstruction 
-    - Urethral stricture - Urinary incontinence 
-    - Urinary tract infection (UTI) 
-    - Urine color 
-    - Urine, blood in (See: Blood in urine (hematuria)) 
-    - Urticaria (See: Hives and angioedema) 
-    - Urticaria (See: Chronic hives) 
-    - Uterine cancer (See: Endometrial cancer) 
-    - Uterine myoma (See: Uterine fibroids) 
-    - Uterine polyps 
-    - Uterine prolapse 
-    - Uterus didelphys (See: Double uterus) 
-    - Uveal melanoma (See: Eye melanoma) 
-    - Uveitis 
-    - Vaginal agenesis 
-    - Vaginal atrophy 
-    - Vaginal cancer 
-    - Vaginal fistula 
-    - Vaginal prolapse, posterior (See: Posterior vaginal prolapse (rectocele)) 
-    - Vaginitis 
-    - Valley fever 
-    - Valvular heart disease (See: Heart valve disease) 
-    - Varicella (See: Chickenpox) 
-    - Varices, esophageal (See: Esophageal varices) 
-    - Varicocele 
-    - Varicose veins 
-    - Variola (See: Smallpox) 
-    - Vascular dementia 
-    - Vascular rings 
-    - Vasculitis 
-    - Vasomotor rhinitis (See: Nonallergic rhinitis) 
-    - Vasovagal syncope 
-    - vCJD (See: Creutzfeldt-Jakob disease) 
-    - Venous thromboembolism (VTE) (See: Pulmonary embolism) 
-    - Ventricular septal defect 
-    - Ventricular tachycardia 
-    - Vertebral tumor 
-    - Vertigo (See: Benign paroxysmal positional vertigo (BPPV)) 
-    - Vesicoureteral reflux 
-    - Vestibular schwannoma (See: Acoustic neuroma) 
-    - V-fib (See: Ventricular fibrillation) 
-    - Viral gastroenteritis 
-    - Viral hemorrhagic fevers 
-    - Vitamin deficiency anemia 
-    - Vitiligo - Vocal fold paralysis (See: Vocal cord paralysis) 
-    - Voice disorders 
-    - Von Willebrand disease 
-    - VPCs (See: Premature ventricular contractions (PVCs)) 
-    - Vulvar cancer 
-    - Vulvodynia 
-    - Waldenstrom macroglobulinemia 
-    - Warts, common (See: Common warts) 
-    - Warts, plantar (See: Plantar warts) 
-    - Warts, venereal (See: Genital warts) 
-    - Water on the knee (See: Swollen knee) 
-    - Wegener's granulomatosis (See: Granulomatosis with polyangiitis) 
-    - Weight loss (See: Obesity) 
-    - Wermer's syndrome (See: Multiple endocrine neoplasia, type 1 (MEN 1)) 
-    - West Nile virus 
-    - Wheat allergy 
-    - Whiplash 
-    - Whipple's disease 
-    - White blood cell disorders in children (See: Pediatric white blood cell disorders) 
-    - Whiteheads (See: Acne) 
-    - Whooping cough 
-    - Wilms' tumor 
-    - Wilson's disease 
-    - Wisdom teeth, impacted (See: Impacted wisdom teeth) 
-    - Wolff-Parkinson-White (WPW) syndrome 
-    - Wrinkles 
-    - Wrist fracture (See: Broken wrist) 
-    - Wrist pain 
-    - X, Syndrome (See: Metabolic syndrome) 
-    - Xerosis (See: Dry skin) 
-    - Xerostomia (See: Dry mouth) 
-    - X-linked agammaglobulinemia 
-    - XXX syndrome (See: Triple X syndrome) 
-    - Yeast infection (vaginal) 
-    - Yellow fever 
-    - Yersinia pestis (See: Plague) 
-    - Yips 
-    - Zika virus 
-    - Zollinger-Ellison syndrome 
-    - Zoster (See: Shingles) - 22q11.2 deletion syndrome 
+    - Stevens-Johnson syndrome
+    - Stickler syndrome
+    - Stings, bee (See: Bee sting)
+    - Stings, jellyfish (See: Jellyfish stings)
+    - Stings, scorpion (See: Scorpion sting)
+    - Stomach cancer
+    - Stomach pain, nonulcer (See: Functional dyspepsia)
+    - Stomach polyps
+    - Stomatodynia (See: Burning mouth syndrome)
+    - Stones, kidney (See: Kidney stones)
+    - Stool holding (See: Encopresis)
+    - Strawberry hemangioma (See: Hemangioma)
+    - Strep throat
+    - Stress fractures
+    - Stress incontinence
+    - Stretch marks
+    - Stroke
+    - Stump pain (See: Phantom pain)
+    - Stuttering
+    - Sty
+    - Subarachnoid hemorrhage
+    - Subconjunctival hemorrhage (broken blood vessel in eye)
+    - Subdural hematoma (See: Intracranial hematoma)
+    - Subfertility (See: Infertility)
+    - Sudden cardiac arrest
+    - Sudden infant death syndrome (SIDS)
+    - Suicide and suicidal thoughts
+    - Sun allergy
+    - Sun poisoning (See: Polymorphous light eruption)
+    - Sunburn
+    - Sunken chest (See: Pectus excavatum)
+    - Suspicious breast lumps
+    - SVT (See: Supraventricular tachycardia)
+    - Sweating and body odor
+    - Sweating, abnormally excessive (See: Hyperhidrosis)
+    - Sweet's syndrome
+    - Swimmer's ear
+    - Swimmer's itch
+    - Swine flu (H1N1 flu)
+    - Swollen lymph nodes
+    - Synostosis (See: Craniosynostosis)
+    - Synovial sarcoma
+    - Syphilis
+    - Syringomyelia
+    - Systemic capillary leak syndrome
+    - Systemic lupus erythematosus (See: Lupus)
+    - Systemic mastocytosis
+    - Systemic sclerosis (See: Scleroderma)
+    - Tachycardia
+    - Takayasu's arteritis
+    - Takotsubo cardiomyopathy (See: Broken heart syndrome)
+    - Tapeworm infection
+    - Tay-Sachs disease
+    - Tears, decreased production (See: Dry eyes)
+    - Teen depression
+    - Teeth grinding (See: Bruxism (teeth grinding))
+    - Temporal arteritis (See: Giant cell arteritis)
+    - Temporal lobe seizure
+    - Tendinitis
+    - Tendinitis, Achilles (See: Achilles tendinitis)
+    - Tendinitis, patellar (See: Patellar tendinitis)
+    - Tennis elbow
+    - Tenosynovitis, de Quervain's (See: De Quervain's tenosynovitis)
+    - Tension headache
+    - Testicle, retractile (See: Retractile testicle)
+    - Testicular cancer
+    - Testosterone deficiency (See: Male hypogonadism)
+    - Tetanus
+    - Tetralogy of Fallot
+    - Tetraplegia (See: Spinal cord injury)
+    - Thalassemia
+    - Thoracic aortic aneurysm
+    - Thoracic outlet syndrome
+    - Three-day measles (See: Rubella)
+    - Throat cancer
+    - Thromboangiitis obliterans (See: Buerger's disease)
+    - Thrombocythemia, essential (See: Essential thrombocythemia)
+    - Thrombocytopenia
+    - Thrombocytopenia, childhood (See: Pediatric thrombocytopenia)
+    - Thrombocytosis
+    - Thrombophlebitis
+    - Thrush, oral (See: Oral thrush)
+    - Thumb arthritis
+    - Thunderclap headaches
+    - Thyroid cancer
+    - Thyroid gland enlargement (See: Goiter)
+    - Thyroid nodules
+    - Thyroid, overactive (See: Hyperthyroidism)
+    - Thyroiditis, chronic lymphocytic (See: Hashimoto's disease)
+    - Tinea barbae (See: Folliculitis)
+    - Tinea capitis (See: Ringworm (scalp))
+    - Tinea corporis (See: Ringworm (body))
+    - Tinea cruris (See: Jock itch)
+    - Tinea pedis (See: Athlete's foot)
+    - Tinea versicolor
+    - Tinnitus
+    - TMJ disorders
+    - Toe walking in children
+    - Toenail fungus (See: Nail fungus)
+    - Tongue cancer
+    - Tongue-tie (ankyloglossia)
+    - Tonic-clonic seizure (See: Grand mal seizure)
+    - Tonsil cancer
+    - Tonsillitis
+    - Tooth abscess
+    - Tooth decay (See: Cavities/tooth decay)
+    - Torn meniscus
+    - Torsion, testicular (See: Testicular torsion)
+    - Torticollis, spasmodic (See: Cervical dystonia)
+    - Total anomalous pulmonary venous return
+    - Tourette syndrome
+    - Toxemia (See: Preeclampsia)
+    - Toxic hepatitis
+    - Toxic shock syndrome
+    - Toxoplasmosis
+    - Trachoma
+    - Transient global amnesia
+    - Transient ischemic attack (TIA)
+    - Transposition of the great arteries
+    - Transverse myelitis
+    - Traumatic brain injury
+    - Traumatic grief (See: Complicated grief)
+    - Traveler's diarrhea
+    - Trichinosis
+    - Trichomoniasis
+    - Trichotillomania (hair-pulling disorder)
+    - Tricuspid atresia
+    - Tricuspid valve disease
+    - Tricuspid valve regurgitation
+    - Trigeminal neuralgia
+    - Trigger finger
+    - Trisomy 21 syndrome (See: Down syndrome)
+    - Trouble swallowing (See: Dysphagia)
+    - Truncus arteriosus
+    - Trypanosomiasis, American (See: Chagas disease)
+    - Tuberculosis
+    - Tuberous sclerosis
+    - Tularemia
+    - Tumor, salivary gland (See: Salivary gland tumors)
+    - Turner syndrome
+    - Type 1 diabetes
+    - Type 1 diabetes in children
+    - Type 2 diabetes
+    - Type 2 diabetes in children
+    - Typhoid fever
+    - Ulcer, aphthous (See: Canker sore)
+    - Ulcer, peptic (See: Peptic ulcer)
+    - Ulcer, rectal (See: Solitary rectal ulcer syndrome)
+    - Ulcerative colitis
+    - Ulnar wrist pain
+    - Umbilical hernia
+    - Uncontrollable laughter and crying (See: Pseudobulbar affect)
+    - Underactive thyroid (See: Hypothyroidism)
+    - Under-eye puffiness (See: Bags under eyes)
+    - Undescended testicle
+    - Undifferentiated pleomorphic sarcoma
+    - Unstable angina (See: Angina)
+    - Upset stomach (See: Indigestion)
+    - Ureteral cancer - Ureteral obstruction
+    - Urethral stricture - Urinary incontinence
+    - Urinary tract infection (UTI)
+    - Urine color
+    - Urine, blood in (See: Blood in urine (hematuria))
+    - Urticaria (See: Hives and angioedema)
+    - Urticaria (See: Chronic hives)
+    - Uterine cancer (See: Endometrial cancer)
+    - Uterine myoma (See: Uterine fibroids)
+    - Uterine polyps
+    - Uterine prolapse
+    - Uterus didelphys (See: Double uterus)
+    - Uveal melanoma (See: Eye melanoma)
+    - Uveitis
+    - Vaginal agenesis
+    - Vaginal atrophy
+    - Vaginal cancer
+    - Vaginal fistula
+    - Vaginal prolapse, posterior (See: Posterior vaginal prolapse (rectocele))
+    - Vaginitis
+    - Valley fever
+    - Valvular heart disease (See: Heart valve disease)
+    - Varicella (See: Chickenpox)
+    - Varices, esophageal (See: Esophageal varices)
+    - Varicocele
+    - Varicose veins
+    - Variola (See: Smallpox)
+    - Vascular dementia
+    - Vascular rings
+    - Vasculitis
+    - Vasomotor rhinitis (See: Nonallergic rhinitis)
+    - Vasovagal syncope
+    - vCJD (See: Creutzfeldt-Jakob disease)
+    - Venous thromboembolism (VTE) (See: Pulmonary embolism)
+    - Ventricular septal defect
+    - Ventricular tachycardia
+    - Vertebral tumor
+    - Vertigo (See: Benign paroxysmal positional vertigo (BPPV))
+    - Vesicoureteral reflux
+    - Vestibular schwannoma (See: Acoustic neuroma)
+    - V-fib (See: Ventricular fibrillation)
+    - Viral gastroenteritis
+    - Viral hemorrhagic fevers
+    - Vitamin deficiency anemia
+    - Vitiligo - Vocal fold paralysis (See: Vocal cord paralysis)
+    - Voice disorders
+    - Von Willebrand disease
+    - VPCs (See: Premature ventricular contractions (PVCs))
+    - Vulvar cancer
+    - Vulvodynia
+    - Waldenstrom macroglobulinemia
+    - Warts, common (See: Common warts)
+    - Warts, plantar (See: Plantar warts)
+    - Warts, venereal (See: Genital warts)
+    - Water on the knee (See: Swollen knee)
+    - Wegener's granulomatosis (See: Granulomatosis with polyangiitis)
+    - Weight loss (See: Obesity)
+    - Wermer's syndrome (See: Multiple endocrine neoplasia, type 1 (MEN 1))
+    - West Nile virus
+    - Wheat allergy
+    - Whiplash
+    - Whipple's disease
+    - White blood cell disorders in children (See: Pediatric white blood cell disorders)
+    - Whiteheads (See: Acne)
+    - Whooping cough
+    - Wilms' tumor
+    - Wilson's disease
+    - Wisdom teeth, impacted (See: Impacted wisdom teeth)
+    - Wolff-Parkinson-White (WPW) syndrome
+    - Wrinkles
+    - Wrist fracture (See: Broken wrist)
+    - Wrist pain
+    - X, Syndrome (See: Metabolic syndrome)
+    - Xerosis (See: Dry skin)
+    - Xerostomia (See: Dry mouth)
+    - X-linked agammaglobulinemia
+    - XXX syndrome (See: Triple X syndrome)
+    - Yeast infection (vaginal)
+    - Yellow fever
+    - Yersinia pestis (See: Plague)
+    - Yips
+    - Zika virus
+    - Zollinger-Ellison syndrome
+    - Zoster (See: Shingles) - 22q11.2 deletion syndrome
