@@ -162,3 +162,8 @@ stories:
   - action: utter_anything_next
   - intent: quit_bot
   - action: utter_alright
+
+- story: out_of_scope_intent
+  steps:
+  - intent: out_of_scope
+  - action: action_my_fallback
