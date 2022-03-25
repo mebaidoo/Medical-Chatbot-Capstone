@@ -134,3 +134,8 @@ stories:
     - disease: Baby acne
   - action: action_disease_checker
   - intent: affirm
+
+- story: out_of_scope_intent
+  steps:
+  - intent: out_of_scope
+  - action: action_my_fallback
