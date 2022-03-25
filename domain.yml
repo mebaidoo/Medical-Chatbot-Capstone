@@ -108,6 +108,7 @@ responses:
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
   utter_fallback:
+  - text: Sorry! I did not get that! Please select one of the following options. 
     buttons:
     - title: Locate a pharmacy/hospital/lab
       payload: /locate
@@ -115,7 +116,6 @@ responses:
       payload: /gen_terms
     - title: Get information on diseases
       payload: /diseases_info
-  - text: Sorry! I did not get that! Please select one of the following options.  
 actions:
 - action_disease_checker
 - action_map_location

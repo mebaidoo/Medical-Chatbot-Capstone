@@ -142,23 +142,18 @@ nlu:
 - intent: hospital_name
   examples: |
     - [takoradi hospital](hosp_name)
-    - I want [takoradi hospital](hosp_name)
     - [g.p.h.a clinic](hosp_name)
-    - I want [g.p.h.a clinic](hosp_name)
     - [end point homeopathic clinic](hosp_name)
     - [end point homeopathic clinic][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
     - [takoradi hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
 - intent: pharmacy_name
   examples: |
     - [kendicks pharmacy](pharm_name)
-    - I want [kendicks pharmacy](pharm_name)
     - [akan chemist](pharm_name)
-    - I want [akan chemist](pharm_name)
     - [kendicks pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
 - intent: laboratory_name
   examples: |
     - [mediwest laboratory](lab_name)
-    - I want [mediwest laboratory](lab_name)
     - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
     - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}][laboratory](lab_name)
 - intent: out_of_scope
@@ -170,20 +165,22 @@ nlu:
     - what else can you do
     - whats the weather like
     - im sleeping
-    
-- regex: place_name
+- regex: hosp_name
   examples: |
     - .+hospital
     - .+Hospital
     - .+clinic
     - .+Clinic
+- regex: pharm_name
+  examples: |
     - .+pharmacy
     - .+Pharmacy
     - .+chemist
     - .+Chemist
+- regex: lab_name
+  examples: |
     - .+laboratory
     - .+Laboratory
-    - I want [mediwest laboratory](place_name)
 - intent: gen_terms
   examples: |
     - Get definitions to medical terms
