@@ -135,6 +135,34 @@ stories:
   - action: action_disease_checker
   - intent: affirm
 
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: locate_hosp
+  - action: action_places_list
+  - intent: hospital_name
+    entities:
+    - place_name: Takoradi Hospital
+  - action: action_map_location
+
+- story: anything next 1
+  steps:
+  - action: utter_anything_next
+  - intent: return_main_menu
+  - action: utter_ask_quest
+
+- story: anything next 2
+  steps:
+  - action: utter_anything_next
+  - intent: quit_bot
+  - action: utter_alright
+
 - story: out_of_scope_intent
   steps:
   - intent: out_of_scope

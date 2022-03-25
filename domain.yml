@@ -1,138 +1,140 @@
 version: '3.0'
-
-intents:
-  - greet
-  - diseases
-  - diseases_info
-  - affirm
-  - mood_great
-  - thanks
-  - goodbye
-  - deny
-  - mood_bad
-  - locate
-  - med_history
-  - locate_pharm
-  - locate_hosp
-  - hospital_name
-  - pharmacy_name
-  - laboratory_name
-  - locate_lab
-  - gen_terms
-  - terms
-  - medical_terms
-  - bot_challenge
-  - out_of_scope
-entities:
-  - bad
-  - good
-  - help
-  - term_name
-  - disease
-  - place_name
-responses:
-  utter_greet:
-    - text: Hey! how are you today?
-  utter_mood_great:
-    - text: That's good to hear!
-  utter_mood_bad:
-    - text: Sorry, I am here to help.
-  utter_thanks:
-    - text: My pleasure
-  utter_ask_quest:
-    - text: What can I do for you today? Would you like to locate a pharmacy/hospital/lab (1), get medical information (2), or get your medical history (3). Enter 1, 2, or 3.
-      channel: whatsapp
-    - text: What can I do for you today?
-      buttons:
-      - title: Locate a pharmacy/hospital/lab
-        payload: /locate
-      - title: Get definitions to medical terms
-        payload: /gen_terms
-      - title: Get information on diseases
-        payload: /diseases_info
-  utter_locate:
-    - text: Which of these places would you like to locate? Pharmacy (p), Hospital (h) or Lab (l). Enter p, h, or l.
-      channel: whatsapp
-    - text: Which of these places would you like to locate?
-      buttons:
-      - title: Pharmacy
-        payload: /locate_pharm
-      - title: Health Centre
-        payload: /locate_hosp
-      - title: Lab
-        payload: /locate_lab
-  utter_goodbye:
-    - text: Bye, have a nice day.
-  utter_iamabot:
-    - text: I am a bot, powered by Rasa.
-  utter_term:
-    - text: What medical term would you like to learn more about? Please add @ before the term. e.g. @systolic
-  utter_definition:
-    - text: '{term} is {definition}'
-  utter_correct_term:
-    - text: Sorry, no such medical term. Kindly check your spelling. Would you like to try again?
-  utter_anything_next:
-    - text: Would you like to return to the menu options or quit :(?
-  utter_hospitals:
-    - text: |
-        Find below a list of hospitals and enter the name of the one you'd like to locate based on the attached areas and your location.
-        {hospitals}
-  utter_pharmacies:
-    - text: |
-        Find below a list of pharmacies and enter the name of the one you'd like to locate based on the attached areas and your location.
-        {pharmacies}
-  utter_labs:
-    - text: |
-        Find below a list of labs and enter the name of the one you'd like to locate based on the attached areas and your location.
-        {labs}
-  utter_map_location:
-    - text: |
-        This is a link to the google map location of {place_name}. Hope you get what you're looking for.
-        {map_link}
-  utter_correct_name:
-    - text: Please enter the correct name.
-  utter_what_disease:
-    - text: What disease would you like to learn more about?
-  utter_disease:
-    - text: '{disease_name} is {data}'
-  utter_no_disease:
-    - text: '{disease_name} was not found in my database, please check your spelling!'
-  utter_fallback:
-    buttons:
-      - title: Locate a pharmacy/hospital/lab
-        payload: /locate
-      - title: Get definitions to medical terms
-        payload: /gen_terms
-      - title: Get information on diseases
-        payload: /diseases_info
-    - text: Sorry! I did not get that, please select any of the options.
-actions:
-  - action_disease_checker
-  - action_map_location
-  - action_places_list
-  - action_term_api
-  - utter_anything_next
-  - utter_ask_quest
-  - utter_correct_name
-  - utter_correct_term
-  - utter_definition
-  - utter_disease
-  - utter_goodbye
-  - utter_greet
-  - utter_hospitals
-  - utter_iamabot
-  - utter_labs
-  - utter_locate
-  - utter_mood_bad
-  - utter_mood_great
-  - utter_no_disease
-  - utter_pharmacies
-  - utter_term
-  - utter_thanks
-  - utter_what_disease
-  - utter_fallback
-  - action_my_fallback
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet
+- hospital_name
+- locate_hosp
+- mood_great
+- locate
+- diseases
+- diseases_info
+- affirm
+- thanks
+- goodbye
+- deny
+- mood_bad
+- med_history
+- locate_pharm
+- pharmacy_name
+- laboratory_name
+- locate_lab
+- gen_terms
+- terms
+- medical_terms
+- bot_challenge
+- return_main_menu
+- quit_bot
+entities:
+- bad
+- disease
+- good
+- help
+- place_name
+- term_name
+responses:
+  utter_greet:
+  - text: Hey! how are you today?
+  utter_mood_great:
+  - text: That's good to hear!
+  utter_mood_bad:
+  - text: Sorry, I am here to help.
+  utter_thanks:
+  - text: My pleasure
+  utter_ask_quest:
+  - text: What can I do for you today? Would you like to locate a pharmacy/hospital/lab (1), get medical information (2), or get your medical history (3). Enter 1, 2, or 3.
+    channel: whatsapp
+  - text: What can I do for you today?
+    buttons:
+    - title: Locate a pharmacy/hospital/lab
+      payload: /locate
+    - title: Get definitions to medical terms
+      payload: /gen_terms
+    - title: Get information on diseases
+      payload: /diseases_info
+  utter_locate:
+  - text: Which of these places would you like to locate? Pharmacy (p), Hospital (h) or Lab (l). Enter p, h, or l.
+    channel: whatsapp
+  - text: Which of these places would you like to locate?
+    buttons:
+    - title: Pharmacy
+      payload: /locate_pharm
+    - title: Health Centre
+      payload: /locate_hosp
+    - title: Lab
+      payload: /locate_lab
+  utter_goodbye:
+  - text: Bye, have a nice day.
+  utter_alright:
+  - text: Alright.
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_term:
+  - text: What medical term would you like to learn more about? Please add @ before the term. e.g. @systolic
+  utter_definition:
+  - text: '{term} is {definition}'
+  utter_correct_term:
+  - text: Sorry, no such medical term. Kindly check your spelling. Would you like to try again?
+  utter_anything_next:
+  - text: Would you like to return to the menu options or quit :(?
+  utter_hospitals:
+  - text: |
+      Find below a list of hospitals and enter the name of the one you'd like to locate based on the attached areas and your location.
+      {hospitals}
+  utter_pharmacies:
+  - text: |
+      Find below a list of pharmacies and enter the name of the one you'd like to locate based on the attached areas and your location.
+      {pharmacies}
+  utter_labs:
+  - text: |
+      Find below a list of labs and enter the name of the one you'd like to locate based on the attached areas and your location.
+      {labs}
+  utter_map_location:
+  - text: |
+      This is a link to the google map location of {place_name}. Hope you get what you're looking for.
+      {map_link}
+  utter_correct_name:
+  - text: The name you entered is incorrect. Would you like to try again?
+  utter_what_disease:
+  - text: What disease would you like to learn more about?
+  utter_disease:
+  - text: '{disease_name} is {data}'
+  utter_no_disease:
+  - text: '{disease_name} was not found in my database, please check your spelling!'
+  utter_fallback:
+  buttons:
+    - title: Locate a pharmacy/hospital/lab
+      payload: /locate
+    - title: Get definitions to medical terms
+      payload: /gen_terms
+    - title: Get information on diseases
+      payload: /diseases_info
+  - text: Sorry! I did not get that! Please select one of the following options.
+actions:
+- action_disease_checker
+- action_map_location
+- action_places_list
+- action_term_api
+- utter_anything_next
+- utter_ask_quest
+- utter_correct_name
+- utter_correct_term
+- utter_definition
+- utter_disease
+- utter_goodbye
+- utter_greet
+- utter_hospitals
+- utter_iamabot
+- utter_labs
+- utter_locate
+- utter_mood_bad
+- utter_mood_great
+- utter_no_disease
+- utter_pharmacies
+- utter_term
+- utter_thanks
+- utter_what_disease
+- utter_alright
+- utter_fallback
+- action_my_fallback
