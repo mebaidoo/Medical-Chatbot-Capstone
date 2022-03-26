@@ -102,7 +102,11 @@ responses:
   - text: |
       '{disease_name}.
       Symptoms.
-      {data}'
+      {data}
+
+      Treatment
+      {data2}'
+
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
   utter_default:
