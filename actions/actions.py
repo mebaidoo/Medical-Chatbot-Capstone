@@ -32,8 +32,9 @@ class TermsAndDefinitions(Action):
         try:
             definition = str(Terms(term))
             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
+            dispatcher.utter_message(response="utter_anything_next")
         except:
-            dispatcher.utter_message(response="utter_correct_term")
+            dispatcher.utter_message(response="utter_default")
 
         return []
 ########################################################################################
@@ -47,7 +48,7 @@ class DiseasesAndSymptoms(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        bad_chars = ["[","'"]
+        bad_chars = ["[","'","]","'"]
         disease_name = next(tracker.get_latest_entity_values("disease"), None)
         data = disease_repo()
         if data['name'].str.contains(disease_name).any():
@@ -58,6 +59,25 @@ class DiseasesAndSymptoms(Action):
             for i in bad_chars:
                 data = data.replace(i,"")
             dispatcher.utter_message(response="utter_disease", data=data, disease_name=disease_name)
+        else:
+            dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
+        return []
+
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        bad_chars = ["[","'","]","'"]
+        disease_name = next(tracker.get_latest_entity_values("disease"), None)
+        data = disease_repo()
+        if data['name'].str.contains(disease_name).any():
+            data= data[data.name == disease_name]
+            data = data.to_dict()
+            data = list(data.values())[2]
+            data = list(data.values())[0]
+            for i in bad_chars:
+                data = data.replace(i,"")
+            dispatcher.utter_message(response="utter_disease", data2=data, disease_name=disease_name)
         else:
             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
         return []
@@ -134,9 +154,6 @@ class MapLocations(Action):
             map = labs.map_location[labs['name'] == place].to_list()
             dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
             dispatcher.utter_message(response="utter_anything_next")
-
-        else:
-            dispatcher.utter_message(response="utter_correct_name")
 
         return []
 

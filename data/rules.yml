@@ -5,9 +5,23 @@ rules:
 - rule: rule goodbye
   steps:
   - intent: goodbye
+    entities:
+    - bye: bye
   - action: utter_goodbye
 
 - rule: rule thanks
   steps:
   - intent: thanks
   - action: utter_thanks
+
+- rule: anything next 1
+  steps:
+  - action: utter_anything_next
+  - intent: return_main_menu
+  - action: utter_ask_quest
+
+- rule: anything next 2
+  steps:
+  - action: utter_anything_next
+  - intent: quit_bot
+  - action: utter_alright
