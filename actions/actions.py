@@ -57,7 +57,7 @@ class DiseasesAndSymptoms(Action):
             data = list(data.values())[0]
             for i in bad_chars:
                 data = data.replace(i,"")
-            dispatcher.utter_message(response="utter_disease", data=data.to_json(), disease_name=disease_name)
+            dispatcher.utter_message(response="utter_disease", data=data, disease_name=disease_name)
         else:
             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
         return []
