@@ -102,7 +102,9 @@ responses:
   utter_what_disease:
   - text: What disease would you like to learn more about?
   utter_disease:
-  - text: '{disease_name} is {data}'
+  - text: |
+      '{disease_name}.
+       Symptoms is {data}'
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
   utter_default:

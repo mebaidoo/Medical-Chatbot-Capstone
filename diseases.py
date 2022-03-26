@@ -7,5 +7,3 @@ def disease_repo():
     #print(df)
     return df
 
-gh = disease_repo()
-print()
