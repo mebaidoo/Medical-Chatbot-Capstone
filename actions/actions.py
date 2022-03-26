@@ -32,8 +32,9 @@ class TermsAndDefinitions(Action):
         try:
             definition = str(Terms(term))
             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
+            dispatcher.utter_message(response="utter_anything_next")
         except:
-            dispatcher.utter_message(response="utter_correct_term")
+            dispatcher.utter_message(response="utter_default")
 
         return []
 ########################################################################################
@@ -129,9 +130,6 @@ class MapLocations(Action):
             map = labs.map_location[labs['name'] == place].to_list()
             dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
             dispatcher.utter_message(response="utter_anything_next")
-
-        else:
-            dispatcher.utter_message(response="utter_correct_name")
 
         return []
 
