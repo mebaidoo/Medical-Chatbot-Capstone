@@ -107,6 +107,7 @@ nlu:
     - I want to return to main menu
     - I will like to return to main menu
     - continue
+    - main menu
 - intent: quit_bot
   examples: |
     - quit
@@ -140,44 +141,37 @@ nlu:
     - lab
 - intent: hospital_name
   examples: |
-    - [takoradi hospital](place_name)
-    - I want [takoradi hospital](place_name)
-    - [g.p.h.a clinic](place_name)
-    - I want [g.p.h.a clinic](place_name)
+    - [takoradi hospital](hosp_name)
+    - [g.p.h.a clinic](hosp_name)
+    - [end point homeopathic clinic](hosp_name)
+    - [end point homeopathic clinic][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
+    - [takoradi hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
 - intent: pharmacy_name
   examples: |
-    - [kendicks pharmacy](place_name)
-    - I want [kendicks pharmacy](place_name)
-    - [akan chemist](place_name)
-    - I want [akan chemist](place_name)
+    - [kendicks pharmacy](pharm_name)
+    - [akan chemist](pharm_name)
+    - [kendicks pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
 - intent: laboratory_name
   examples: |
-    - [mediwest laboratory](place_name)
-    - [oasis medical centre](place_name)
-    - [oasis medical center](place_name)
-- intent: out_of_scope
-  examples: |
-    - asdf 
-    - blablabla
-    - alsdfkja
-    - where are you
-    - what else can you do
-    - whats the weather like
-    - im sleeping
-    
-- regex: place_name
+    - [mediwest laboratory](lab_name)
+    - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
+    - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}]
+- regex: hosp_name
   examples: |
     - .+hospital
     - .+Hospital
     - .+clinic
     - .+Clinic
+- regex: pharm_name
+  examples: |
     - .+pharmacy
     - .+Pharmacy
     - .+chemist
     - .+Chemist
+- regex: lab_name
+  examples: |
     - .+laboratory
     - .+Laboratory
-    - I want [mediwest laboratory](place_name)
 - intent: gen_terms
   examples: |
     - Get definitions to medical terms
@@ -206,27 +200,21 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-- intent: out_of_scope
+- regex: hosp_name
   examples: |
-    - blablabla
-    - asdf
-    - jkl
-    - asldfk 
-    - where are you
-    - weather update
-    - i'm sleeping
-    - im sleeping
-- regex: place_name
-  examples: |
-    - .+Chemist
     - .+Clinic
     - .+Hospital
-    - .+Laboratory
-    - .+Pharmacy
-    - .+chemist
     - .+clinic
     - .+hospital
+- regex: lab_name
+  examples: |
+    - .+Laboratory
     - .+laboratory
+- regex: pharm_name
+  examples: |
+    - .+Chemist
+    - .+Pharmacy
+    - .+chemist
     - .+pharmacy
 - regex: term_name
   examples: |
@@ -696,7 +684,7 @@ nlu:
     - Liver disease
     - Liver failure, acute (See: Acute liver failure)
     - Liver hemangioma
-    - Liver, enlarged (See: Enlarged liver)
+    - Liver enlarged (See: Enlarged liver)
     - Lobular carcinoma in situ (LCIS)
     - Long QT syndrome
     - Low blood pressure (hypotension)

@@ -3,36 +3,38 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- mood_great
+- locate_lab
+- laboratory_name
 - greet
+- locate
 - hospital_name
 - locate_hosp
-- mood_great
-- locate
+- pharmacy_name
+- thanks
+- locate_pharm
 - diseases
 - diseases_info
 - affirm
-- thanks
 - goodbye
 - deny
 - mood_bad
 - med_history
-- locate_pharm
-- pharmacy_name
-- laboratory_name
-- locate_lab
 - gen_terms
 - terms
 - medical_terms
 - bot_challenge
 - return_main_menu
 - quit_bot
-- out_of_scope
+- nlu_fallback
 entities:
 - bad
 - disease
 - good
 - help
-- place_name
+- hosp_name
+- lab_name
+- pharm_name
 - term_name
 responses:
   utter_greet:
@@ -103,15 +105,8 @@ responses:
   - text: '{disease_name} is {data}'
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
-  utter_fallback:
-    buttons:
-    - title: Locate a pharmacy/hospital/lab
-      payload: /locate
-    - title: Get definitions to medical terms
-      payload: /gen_terms
-    - title: Get information on diseases
-      payload: /diseases_info
-  - text: Sorry! I did not get that! Please select one of the following options.  
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
 actions:
 - action_disease_checker
 - action_map_location
@@ -137,5 +132,4 @@ actions:
 - utter_thanks
 - utter_what_disease
 - utter_alright
-- utter_fallback
-- action_my_fallback
+- utter_default
