@@ -3,13 +3,13 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- terms
-- goodbye
-- quit_bot
-- mood_great
 - gen_terms
+- quit_bot
 - greet
 - return_main_menu
+- terms
+- mood_great
+- goodbye
 - locate_lab
 - laboratory_name
 - locate
@@ -76,6 +76,8 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_term:
   - text: What medical term would you like to learn more about? Please add @ before the term. e.g. @systolic
+  utter_no_term:
+  - text: No such medical term. Sorry.
   utter_definition:
   - text: '{term} is {definition}'
   utter_anything_next:
@@ -127,6 +129,7 @@ actions:
 - utter_mood_bad
 - utter_mood_great
 - utter_no_disease
+- utter_no_term
 - utter_pharmacies
 - utter_term
 - utter_thanks

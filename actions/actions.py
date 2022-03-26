@@ -34,9 +34,11 @@ class TermsAndDefinitions(Action):
             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
             dispatcher.utter_message(response="utter_anything_next")
         except:
-            dispatcher.utter_message(response="utter_default")
+            dispatcher.utter_message(response="utter_no_term")
+            dispatcher.utter_message(response="utter_anything_next")
 
         return []
+        
 ########################################################################################
 #  DISEASES CLASS                                                                      #
 ########################################################################################
