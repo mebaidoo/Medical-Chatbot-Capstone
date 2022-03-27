@@ -17,7 +17,7 @@ from locations import hospitals, pharmacies, labs
 
 #Action for returning the medical terms definitions
 from diseases import disease_repo
-from diseases import treatment
+
 
 class TermsAndDefinitions(Action):
 
@@ -57,7 +57,6 @@ class DiseasesAndSymptoms(Action):
         data_two= disease_repo()
         
         if data['name'].str.contains(disease_name).any():
-            # data_two = treatment(disease_name)
             data= data[data.name == disease_name]
             data = data.to_dict()
             data = list(data.values())[1]
