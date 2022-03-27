@@ -3,15 +3,10 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- gen_terms
-- quit_bot
-- greet
-- return_main_menu
-- terms
 - mood_great
-- goodbye
 - locate_lab
 - laboratory_name
+- greet
 - locate
 - hospital_name
 - locate_hosp
@@ -21,15 +16,19 @@ intents:
 - diseases
 - diseases_info
 - affirm
+- goodbye
 - deny
 - mood_bad
 - med_history
+- gen_terms
+- terms
 - medical_terms
 - bot_challenge
+- return_main_menu
+- quit_bot
 - nlu_fallback
 entities:
 - bad
-- bye
 - disease
 - good
 - help
@@ -71,7 +70,7 @@ responses:
   utter_goodbye:
   - text: Bye, have a nice day.
   utter_alright:
-  - text: Alright :(
+  - text: Alright.
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
   utter_term:
@@ -80,6 +79,8 @@ responses:
   - text: No such medical term. Sorry.
   utter_definition:
   - text: '{term} is {definition}'
+  utter_correct_term:
+  - text: Sorry, no such medical term. Kindly check your spelling. Would you like to try again?
   utter_anything_next:
   - text: Would you like to return to the menu options or quit :(?
   utter_hospitals:
@@ -98,17 +99,23 @@ responses:
   - text: |
       This is a link to the google map location of {place_name}. Hope you get what you're looking for.
       {map_link}
+  utter_correct_name:
+  - text: The name you entered is incorrect. Would you like to try again?
   utter_what_disease:
   - text: What disease would you like to learn more about?
   utter_disease:
   - text: |
-      '{disease_name}.
-      Symptoms.
+      -----------------------------------------------
+      {disease_name}
+      -----------------------------------------------
+      Symptoms:
       {data}
-
-      Treatment
-      {data2}'
-
+      -----------------------------------------------
+      Treatment:
+      {data_two}
+      -----------------------------------------------
+  
+       
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
   utter_default:
@@ -118,10 +125,10 @@ actions:
 - action_map_location
 - action_places_list
 - action_term_api
-- utter_alright
 - utter_anything_next
 - utter_ask_quest
-- utter_default
+- utter_correct_name
+- utter_correct_term
 - utter_definition
 - utter_disease
 - utter_goodbye
@@ -138,3 +145,5 @@ actions:
 - utter_term
 - utter_thanks
 - utter_what_disease
+- utter_alright
+- utter_default
