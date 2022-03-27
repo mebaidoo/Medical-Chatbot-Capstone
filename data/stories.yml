@@ -11,16 +11,6 @@ stories:
   - action: utter_ask_quest
   - checkpoint: quest_asked
 
-- story: good mood 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: goodbye
-  - action: utter_goodbye
-
 - story: bad mood 1
   steps:
   - intent: greet
@@ -29,16 +19,6 @@ stories:
   - action: utter_mood_bad
   - action: utter_ask_quest
   - checkpoint: quest_asked
-
-- story: bad mood 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_bad
-  - action: utter_mood_bad
-  - action: utter_ask_quest
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: locate hospital
   steps:
@@ -49,10 +29,6 @@ stories:
   - action: action_places_list
   - intent: hospital_name
   - action: action_map_location
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: locate pharmacy
   steps:
@@ -63,10 +39,6 @@ stories:
   - action: action_places_list
   - intent: pharmacy_name
   - action: action_map_location
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: locate lab
   steps:
@@ -77,10 +49,6 @@ stories:
   - action: action_places_list
   - intent: laboratory_name
   - action: action_map_location
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: get term definition 1
   steps:
@@ -89,10 +57,6 @@ stories:
   - action: utter_term
   - intent: terms
   - action: action_term_api
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
 
 - story: get_diseases
   steps:
@@ -101,10 +65,7 @@ stories:
   - action: utter_what_disease
   - intent: diseases
   - action: action_disease_checker
-  - intent: thanks
-  - action: utter_thanks
-  - intent: goodbye
-  - action: utter_goodbye
+
 - story: interactive_story_1
   steps:
   - intent: greet
@@ -134,18 +95,6 @@ stories:
     - disease: Baby acne
   - action: action_disease_checker
   - intent: affirm
-
-- story: anything next 1
-  steps:
-  - action: utter_anything_next
-  - intent: return_main_menu
-  - action: utter_ask_quest
-
-- story: anything next 2
-  steps:
-  - action: utter_anything_next
-  - intent: quit_bot
-  - action: utter_alright
 
 - story: interactive_story_pharmacy
   steps:
@@ -231,8 +180,6 @@ stories:
   - action: action_map_location
   - intent: quit_bot
   - action: utter_alright
-  - intent: thanks
-  - action: utter_thanks
 
 - story: interactive_story_hospital_quit
   steps:
@@ -271,5 +218,117 @@ stories:
     - lab_name: solar medical laboratory
     - lab_name: laboratory
   - action: action_map_location
+  - intent: quit_bot
+  - action: utter_alright
+
+- story: interactive_story_term_return 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@benign'
+  - action: action_term_api
+  - intent: return_main_menu
+  - action: utter_ask_quest
+
+- story: interactive_story_term_quit
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@edema'
+  - action: action_term_api
+  - intent: quit_bot
+  - action: utter_alright
+
+- story: interactive_story_term_return 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@chronic'
+  - action: action_term_api
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@aneurysm'
+  - action: action_term_api
+  - intent: quit_bot
+  - action: utter_alright
+
+- story: interactive_story_wrong_term
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@djhby'
+  - action: action_term_api
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@tumor'
+  - action: action_term_api
+
+- story: interactive_story_term_keep_returning
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@abrasion'
+  - action: action_term_api
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@bcuhjd'
+    - term_name: '@bcuhjd'
+  - action: action_term_api
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@thrombosis'
+    - term_name: '@thrombosis'
+  - action: action_term_api
   - intent: quit_bot
   - action: utter_alright

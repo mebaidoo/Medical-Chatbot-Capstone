@@ -20,13 +20,13 @@ nlu:
   examples: |
     - cu
     - good by
-    - cee you later
+    - cee you [later](bye)
     - good night
-    - bye
+    - [bye](bye)
     - goodbye
     - have a nice day
     - see you around
-    - bye bye
+    - bye [bye](bye)
     - see you later
 - intent: affirm
   examples: |
@@ -156,22 +156,6 @@ nlu:
     - [mediwest laboratory](lab_name)
     - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
     - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}]
-- regex: hosp_name
-  examples: |
-    - .+hospital
-    - .+Hospital
-    - .+clinic
-    - .+Clinic
-- regex: pharm_name
-  examples: |
-    - .+pharmacy
-    - .+Pharmacy
-    - .+chemist
-    - .+Chemist
-- regex: lab_name
-  examples: |
-    - .+laboratory
-    - .+Laboratory
 - intent: gen_terms
   examples: |
     - Get definitions to medical terms
@@ -194,6 +178,17 @@ nlu:
     - I would like to learn more about [@systolic](term_name)
     - about [@systolic](term_name)
     - [@systolic](term_name)
+    - [@benign](term_name)
+    - [@edema](term_name)
+    - [@chronic](term_name)
+    - [@aneurysm](term_name)
+    - [@grhtbfg](term_name)
+    - [@chronic][{"entity": "term_name"}, {"entity": "term_name"}]
+    - [@djhby](term_name)
+    - [@tumor](term_name)
+    - [@abrasion](term_name)
+    - [@bcuhjd][{"entity": "term_name"}, {"entity": "term_name"}]
+    - [@thrombosis][{"entity": "term_name"}, {"entity": "term_name"}]
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -203,18 +198,28 @@ nlu:
 - regex: hosp_name
   examples: |
     - .+Clinic
+    - .+Clinic
+    - .+Hospital
     - .+Hospital
     - .+clinic
+    - .+clinic
+    - .+hospital
     - .+hospital
 - regex: lab_name
   examples: |
     - .+Laboratory
+    - .+Laboratory
+    - .+laboratory
     - .+laboratory
 - regex: pharm_name
   examples: |
     - .+Chemist
+    - .+Chemist
+    - .+Pharmacy
     - .+Pharmacy
     - .+chemist
+    - .+chemist
+    - .+pharmacy
     - .+pharmacy
 - regex: term_name
   examples: |
