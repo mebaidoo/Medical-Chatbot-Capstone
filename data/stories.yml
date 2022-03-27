@@ -276,3 +276,59 @@ stories:
   - action: action_term_api
   - intent: quit_bot
   - action: utter_alright
+
+- story: interactive_story_wrong_term
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@djhby'
+  - action: action_term_api
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@tumor'
+  - action: action_term_api
+
+- story: interactive_story_term_keep_returning
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@abrasion'
+  - action: action_term_api
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@bcuhjd'
+    - term_name: '@bcuhjd'
+  - action: action_term_api
+  - intent: return_main_menu
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term
+  - intent: terms
+    entities:
+    - term_name: '@thrombosis'
+    - term_name: '@thrombosis'
+  - action: action_term_api
+  - intent: quit_bot
+  - action: utter_alright

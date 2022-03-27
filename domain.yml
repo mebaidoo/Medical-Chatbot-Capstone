@@ -75,6 +75,8 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_term:
   - text: What medical term would you like to learn more about? Please add @ before the term. e.g. @systolic
+  utter_no_term:
+  - text: No such medical term. Sorry.
   utter_definition:
   - text: '{term} is {definition}'
   utter_correct_term:
@@ -138,6 +140,7 @@ actions:
 - utter_mood_bad
 - utter_mood_great
 - utter_no_disease
+- utter_no_term
 - utter_pharmacies
 - utter_term
 - utter_thanks

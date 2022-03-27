@@ -28,7 +28,6 @@ nlu:
     - see you around
     - bye [bye](bye)
     - see you later
-    - [bye](bye)
 - intent: affirm
   examples: |
     - yes
@@ -183,6 +182,13 @@ nlu:
     - [@edema](term_name)
     - [@chronic](term_name)
     - [@aneurysm](term_name)
+    - [@grhtbfg](term_name)
+    - [@chronic][{"entity": "term_name"}, {"entity": "term_name"}]
+    - [@djhby](term_name)
+    - [@tumor](term_name)
+    - [@abrasion](term_name)
+    - [@bcuhjd][{"entity": "term_name"}, {"entity": "term_name"}]
+    - [@thrombosis][{"entity": "term_name"}, {"entity": "term_name"}]
 - intent: bot_challenge
   examples: |
     - are you a bot?
