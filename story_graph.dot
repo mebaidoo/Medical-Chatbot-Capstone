@@ -5,15 +5,14 @@ digraph  {
 2 [class=active, fontsize=12, label=utter_greet];
 3 [class=active, fontsize=12, label=utter_mood_great];
 4 [class=active, fontsize=12, label=utter_ask_quest];
-5 [class=active, fontsize=12, label=utter_locate];
-6 [class=active, fontsize=12, label=action_places_list];
-7 [class=active, fontsize=12, label=utter_map_location];
+5 [class=active, fontsize=12, label=utter_what_disease];
+6 [class=active, fontsize=12, label=action_disease_checker];
+7 [class=active, fontsize=12, label=utter_anything_next];
 8 [class="intent dashed active", label="  ?  ", shape=rect];
 9 [class="intent active", fillcolor=lightblue, label="/greet", shape=rect, style=filled];
 10 [class="intent active", fillcolor=lightblue, label="/mood_great", shape=rect, style=filled];
-11 [class="intent active", fillcolor=lightblue, label="/locate", shape=rect, style=filled];
-12 [class="intent active", fillcolor=lightblue, label="/locate_pharm", shape=rect, style=filled];
-13 [class="intent active", fillcolor=lightblue, label="/locate_pharm", shape=rect, style=filled];
+11 [class="intent active", fillcolor=lightblue, label="/diseases_info", shape=rect, style=filled];
+12 [class="intent active", fillcolor=lightblue, label="/diseases", shape=rect, style=filled];
 0 -> "-1"  [class="", key=NONE, label=""];
 0 -> 1  [class=active, key=NONE, label=""];
 1 -> 9  [class=active, key=0];
@@ -21,11 +20,10 @@ digraph  {
 3 -> 4  [class=active, key=NONE, label=""];
 4 -> 11  [class=active, key=0];
 5 -> 12  [class=active, key=0];
-6 -> 13  [class=active, key=0];
+6 -> 7  [class=active, key=NONE, label=""];
 7 -> 8  [class=active, key=NONE, label=""];
 9 -> 2  [class=active, key=0];
 10 -> 3  [class=active, key=0];
 11 -> 5  [class=active, key=0];
 12 -> 6  [class=active, key=0];
-13 -> 7  [class=active, key=0];
 }

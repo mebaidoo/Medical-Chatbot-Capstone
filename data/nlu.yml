@@ -169,10 +169,10 @@ nlu:
 - intent: diseases
   examples: |
     - i want to know about [Baby acne](disease)
-    - [malaria](disease)
+    - [Malaria](disease)
     - i am suffering from [malaria](disease)
-    - symptom of [malaria](disease)
-    - i want to know about [Baby acne][{"entity": "disease"}, {"entity": "disease"}]
+    - symptom of [Malaria](disease)
+    - [Baby acne][{"entity": "disease"}, {"entity": "disease"}]
 - intent: terms
   examples: |
     - I would like to learn more about [@systolic](term_name)

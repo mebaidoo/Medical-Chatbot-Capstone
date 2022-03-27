@@ -332,3 +332,67 @@ stories:
   - action: action_term_api
   - intent: quit_bot
   - action: utter_alright
+
+- story: disease_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: diseases_info
+  - action: utter_what_disease
+  - intent: diseases
+    entities:
+    - disease: Malaria
+    - disease: Malaria
+  - action: action_disease_checker
+  - intent: diseases
+    entities:
+    - disease: malaria
+    - disease: malaria
+  - action: action_disease_checker
+  - intent: diseases
+    entities:
+    - disease: Baby acne
+    - disease: Baby acne
+  - action: action_disease_checker
+  - intent: thanks
+  - action: utter_thanks
+
+
+- story: disease_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: diseases_info
+  - action: utter_what_disease
+  - intent: diseases
+    entities:
+    - disease
+  - action: action_disease_checker
+  - action: utter_anything_next
+  - intent: affirm
+  - action: utter_ask_quest
+  - intent: diseases_info
+  - action: utter_what_disease
+  - intent: diseases
+    entities:
+    - disease
+  - action: action_disease_checker
+
+- story: happy mood
+  steps:
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: disease_info
+  - action: utter_what_disease
+  - intent: diseases
+    entities:
+    - disease
+  - action: action_disease_checker
+

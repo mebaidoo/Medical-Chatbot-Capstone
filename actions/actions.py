@@ -70,7 +70,6 @@ class DiseasesAndSymptoms(Action):
                 data = data.replace(i,"")
                 data_two = data_two.replace(i,"")
             dispatcher.utter_message(response="utter_disease", data=data, data_two=data_two, disease_name=disease_name)
-            dispatcher.utter_message(response="utter_anything_next")
         else:
             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
         return []
@@ -141,6 +140,8 @@ class MapLocations(Action):
             map = pharmacies.map_location[pharmacies['name'] == place].to_list()
             dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
             dispatcher.utter_message(response="utter_anything_next")
+
+    
 
         elif place_type == "laboratory_name":
             place = next(tracker.get_latest_entity_values("lab_name"), None)
