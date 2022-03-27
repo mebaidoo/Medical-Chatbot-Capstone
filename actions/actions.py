@@ -70,6 +70,7 @@ class DiseasesAndSymptoms(Action):
                 data = data.replace(i,"")
                 data_two = data_two.replace(i,"")
             dispatcher.utter_message(response="utter_disease", data=data, data_two=data_two, disease_name=disease_name)
+            dispatcher.utter_message(response="utter_anything_next")
         else:
             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
         return []
