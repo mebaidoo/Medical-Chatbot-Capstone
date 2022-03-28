@@ -14,11 +14,13 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from terms import Terms
 from locations import hospitals, pharmacies, labs
+import string
+from bs4 import BeautifulSoup
+import re
+from diseases import disease_repo
+import requests
 
 #Action for returning the medical terms definitions
-from diseases import disease_repo
-
-
 class TermsAndDefinitions(Action):
 
     def name(self) -> Text:
@@ -41,9 +43,7 @@ class TermsAndDefinitions(Action):
 
         return []
         
-########################################################################################
-#  DISEASES CLASS                                                                      #
-########################################################################################
+
 # class DiseasesAndSymptoms(Action):
 
 #     def name(self) -> Text:
@@ -85,17 +85,26 @@ class DiseasesAndSymptoms(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         disease_name = next(tracker.get_latest_entity_values("disease"), None)
-        disease_name = disease_name.capitalize()
-        data = disease_repo()
+        disease_name = disease_name.lower()
+        u_i = string.capwords(disease_name)
+        lists = u_i.split()
+        word = "_".join(lists)
+        url = "https://en.wikipedia.org/wiki/" + word
 
-        if disease_name != None:
-            disease_data = data[data['name'] == disease_name]
-            symptoms = disease_data['symptoms'].to_list()
-            treatment =disease_data['treatment'].to_list()
-            dispatcher.utter_message(response="utter_disease", symptoms=symptoms[0].strip('['']'), treatment=treatment[0].strip('['']'), disease_name=disease_name)
-
-        else:
-            dispatcher.utter_message(response="utter_no_disease", disease_name="Your disease")
+        url_open = requests.get(url)
+        soup = BeautifulSoup(url_open.content, 'html.parser')
+        details = soup('table', {'class':'infobox'})
+        for i in details:
+            h = i.find_all('tr')
+            for j in h:
+                heading = j.find_all('th')
+                detail = j.find_all('td')
+                if heading is not None and detail is not None:
+                    for x, y in zip(heading, detail):
+                        title = re.sub("\[[0-9]\]", "", x.text)
+                        sub = re.sub("\[[0-9]\]", "", y.text)
+                        if title not in ["Pronunciation", "Specialty", "Frequency", "Deaths", "Other names"]:
+                            dispatcher.utter_message(response="utter_disease", title=title, data=sub)
 
         return []
 
