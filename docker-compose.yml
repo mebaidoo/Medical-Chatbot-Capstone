@@ -20,7 +20,8 @@ services:
     build: "./"
     volumes:
     - ./actions: /app/actions
-    command: bash -c "rasa run actions"
+    # command: bash -c "rasa run actions"
+    command: ["rasa","run","actions"]
     working_dir: /app
     restart: always
     ports:
