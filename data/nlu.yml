@@ -146,16 +146,31 @@ nlu:
     - [end point homeopathic clinic](hosp_name)
     - [end point homeopathic clinic][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
     - [takoradi hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
+    - [s.d.a hospital](hosp_name)
+    - [effia nkwanta hospital](hosp_name)
+    - [kwesimintsim hospital](hosp_name)
+    - [grace spring mission hospital](hosp_name)
+    - [family health specialist hospital](hosp_name)
+    - [jemima crentsil hospital](hosp_name)
+    - [bethel methodist medical hospital](hosp_name)
 - intent: pharmacy_name
   examples: |
     - [kendicks pharmacy](pharm_name)
     - [akan chemist](pharm_name)
     - [kendicks pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
+    - [day by day pharmacy](pharm_name)
+    - [medrugs pharmacy](pharm_name)
+    - [abuakwa pharmacy](pharm_name)
+    - [a.a.a. mens pharmacy](pharm_name)
+    - [eff-ess pharmacy](pharm_name)
 - intent: laboratory_name
   examples: |
     - [mediwest laboratory](lab_name)
     - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
     - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}]
+    - [oasis medical laboratory](lab_name)
+    - [blue waves diagnostic laboratory](lab_name)
+    - [diascan laboratory](lab_name)
 - intent: gen_terms
   examples: |
     - Get definitions to medical terms
