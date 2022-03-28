@@ -115,7 +115,6 @@ stories:
   - action: action_map_location
   - intent: return_main_menu
   - action: utter_ask_quest
-  - intent: locate
 
 - story: interactive_story_hospital
   steps:
@@ -136,8 +135,6 @@ stories:
   - action: action_map_location
   - intent: return_main_menu
   - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
 
 - story: interactive_story_lab
   steps:
@@ -158,8 +155,6 @@ stories:
   - action: action_map_location
   - intent: return_main_menu
   - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
 
 - story: interactive_story_pharmacy_quit
   steps:

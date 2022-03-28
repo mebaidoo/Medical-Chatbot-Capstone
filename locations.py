@@ -5,7 +5,7 @@ hosp = [{'name': 'S.D.A Hospital', 'area': 'Takoradi-Liberation Road', 'map_loca
           {'name': 'Effia Nkwanta Hospital', 'area': 'Sekondi-Takoradi Road', 'map_location': 'https://goo.gl/maps/ybD16FZmVjUuicY59'},
           {'name': 'Kwesimintsim Hospital', 'area': 'Kwesimintsim', 'map_location': 'https://goo.gl/maps/fLrQujJPdvAs3gC37'},
           {'name': 'Grace Spring Mission Hospital', 'area': 'Effia', 'map_location': 'https://goo.gl/maps/EFCWUF8QEh25em1b8'},
-          {'name': 'Takoradi Family Health Specialist Hospital', 'area': 'Anaji Hills', 'map_location': 'https://goo.gl/maps/iJMwim4Hjjrg9yXZ8'},
+          {'name': 'Family Health Specialist Hospital', 'area': 'Anaji Hills', 'map_location': 'https://goo.gl/maps/iJMwim4Hjjrg9yXZ8'},
           {'name': 'Jemima Crentsil Hospital', 'area': 'Takoradi-Akufo-Addo Road', 'map_location': 'https://goo.gl/maps/wZ4psDry7s2LyJrbA'},
           {'name': 'G.P.H.A Clinic', 'area': 'Takoradi-J. De Graft-Johnson Ave', 'map_location': 'https://goo.gl/maps/yhVQpEDs1TJ67V5F9'},
           {'name': 'End Point Homeopathic Clinic', 'area': 'Anaji-Queen of Peace inside', 'map_location': 'https://goo.gl/maps/azBX9RwSCPtnLwY87'},
