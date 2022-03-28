@@ -29,3 +29,48 @@ rules:
   steps:
   - intent: greet
   - action: utter_greet
+
+- rule: places_list pharm
+  steps:
+  - intent: locate_pharm
+  - action: action_places_list
+
+- rule: places_list hosp
+  steps:
+  - intent: locate_hosp
+  - action: action_places_list
+
+- rule: places_list lab
+  steps:
+  - intent: locate_lab
+  - action: action_places_list
+
+- rule: map location pharm
+  steps:
+  - intent: pharmacy_name
+  - action: action_map_location
+
+- rule: map location hosp
+  steps:
+  - intent: hospital_name
+  - action: action_map_location
+
+- rule: map location lab
+  steps:
+  - intent: laboratory_name
+  - action: action_map_location
+
+- rule: terms
+  steps:
+  - intent: terms
+  - action: action_term_api
+
+- rule: locate
+  steps:
+  - intent: locate
+  - action: utter_locate
+
+- rule: general terms
+  steps:
+  - intent: gen_terms
+  - action: utter_term

@@ -16,7 +16,6 @@ pharm = [{'name': 'Kendicks Pharmacy', 'area': 'Takoradi-Market Circle', 'map_lo
         {'name': 'Day By Day Pharmacy', 'area': 'Takoradi-Kitson Ave', 'map_location': 'https://goo.gl/maps/efJATHoFERBJhLot6'},
         {'name': 'Medrugs Pharmacy', 'area': 'Takoradi-Liberation Road', 'map_location': 'https://goo.gl/maps/dZGunVo2RJLxmZcr7'},
         {'name': 'Abuakwa Pharmacy', 'area': 'Takoradi-Market Circle', 'map_location': 'https://goo.gl/maps/95HHL7abYtTmzB7r7'},
-        {'name': 'A.A.A. Mens Pharmacy', 'area': 'Takoradi-Market Circle', 'map_location': 'https://goo.gl/maps/whwKAMus8gMrWYgR7'},
         {'name': 'Akan Chemist', 'area': 'Takoradi-Pakos Ave', 'map_location': 'https://goo.gl/maps/fmGrLxZBaBA3wja2A'},
         {'name': 'Eff-Ess Pharmacy', 'area': 'Takoradi-Liberation Rd', 'map_location': 'https://goo.gl/maps/c7hfVnAbMsSHXiWv8'}]
 

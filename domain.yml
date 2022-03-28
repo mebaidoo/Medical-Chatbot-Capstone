@@ -3,28 +3,28 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
-- diseases
-- diseases_info
-- mood_great
-- locate_pharm
-- thanks
-- locate_lab
-- laboratory_name
 - locate
+- return_main_menu
+- pharmacy_name
+- gen_terms
+- locate_pharm
+- greet
+- mood_great
+- terms
+- laboratory_name
+- locate_lab
 - hospital_name
 - locate_hosp
-- pharmacy_name
+- diseases
+- diseases_info
+- thanks
 - affirm
 - goodbye
 - deny
 - mood_bad
 - med_history
-- gen_terms
-- terms
 - medical_terms
 - bot_challenge
-- return_main_menu
 - quit_bot
 - nlu_fallback
 entities:
@@ -102,23 +102,22 @@ responses:
   utter_correct_name:
   - text: The name you entered is incorrect. Would you like to try again?
   utter_what_disease:
-  - text: What disease would you like to learn more about?
+  - text: What disease would you like to learn more about? Please enter the name of the disease.
   utter_disease:
   - text: |
       -----------------------------------------------
       {disease_name}
       -----------------------------------------------
       Symptoms:
-      {data}
+      {symptoms}
       -----------------------------------------------
       Treatment:
-      {data_two}
+      {treatment}
       -----------------------------------------------
 
        
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
-
 actions:
 - action_disease_checker
 - action_map_location

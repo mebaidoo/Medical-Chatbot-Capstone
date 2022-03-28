@@ -153,6 +153,12 @@ nlu:
     - [family health specialist hospital](hosp_name)
     - [jemima crentsil hospital](hosp_name)
     - [bethel methodist medical hospital](hosp_name)
+    - [s.d.a hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
+    - [grace spring mission hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
+    - [end point homeopathic clinic][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
+    - [kwesimintsim hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
+    - [jemima crentsil hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
+    - [g.p.h.a clinic][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
 - intent: pharmacy_name
   examples: |
     - [kendicks pharmacy](pharm_name)
@@ -161,8 +167,14 @@ nlu:
     - [day by day pharmacy](pharm_name)
     - [medrugs pharmacy](pharm_name)
     - [abuakwa pharmacy](pharm_name)
-    - [a.a.a. mens pharmacy](pharm_name)
     - [eff-ess pharmacy](pharm_name)
+    - [day by day pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
+    - [eff-ess pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
+    - [akan chemist][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
+    - [medrugs pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
+    - [abuakwa pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
+    - [kendicks pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
+    - [abuakwa pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
 - intent: laboratory_name
   examples: |
     - [mediwest laboratory](lab_name)
@@ -171,6 +183,11 @@ nlu:
     - [oasis medical laboratory](lab_name)
     - [blue waves diagnostic laboratory](lab_name)
     - [diascan laboratory](lab_name)
+    - [diascan laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
+    - [oasis medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
+    - [blue waves diagnostic laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
+    - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
+    - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
 - intent: gen_terms
   examples: |
     - Get definitions to medical terms
@@ -183,11 +200,11 @@ nlu:
     - info on diseases
 - intent: diseases
   examples: |
-    - i want to know about [Baby acne](disease)
-    - [Malaria](disease)
+    - i want to know about [baby acne](disease)
+    - [malaria](disease)
     - i am suffering from [malaria](disease)
-    - symptom of [Malaria](disease)
-    - [Baby acne][{"entity": "disease"}, {"entity": "disease"}]
+    - symptom of [malaria](disease)
+    - [baby acne][{"entity": "disease"}, {"entity": "disease"}]
 - intent: terms
   examples: |
     - I would like to learn more about [@systolic](term_name)
@@ -204,6 +221,8 @@ nlu:
     - [@abrasion](term_name)
     - [@bcuhjd][{"entity": "term_name"}, {"entity": "term_name"}]
     - [@thrombosis][{"entity": "term_name"}, {"entity": "term_name"}]
+    - [@aneurysm][{"entity": "term_name"}, {"entity": "term_name"}]
+    - [@lesion][{"entity": "term_name"}, {"entity": "term_name"}]
 - intent: bot_challenge
   examples: |
     - are you a bot?

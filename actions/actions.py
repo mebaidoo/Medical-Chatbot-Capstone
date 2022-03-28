@@ -8,9 +8,8 @@
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
-from aiormq import DuplicateConsumerTag
 
-from rasa_sdk import Action, Tracker, ValidationAction, FormValidationAction
+from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from terms import Terms
 from locations import hospitals, pharmacies, labs
@@ -43,37 +42,60 @@ class TermsAndDefinitions(Action):
 ########################################################################################
 #  DISEASES CLASS                                                                      #
 ########################################################################################
-class DiseasesAndSymptoms(Action):
+# class DiseasesAndSymptoms(Action):
 
+#     def name(self) -> Text:
+#         return "action_disease_checker"
+
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#         bad_chars = ["[","'","]","'"]
+#         disease_name = next(tracker.get_latest_entity_values("disease"), None)
+#         disease_name = disease_name.capitalize()
+#         data = disease_repo()
+#         data_two= disease_repo()
+        
+#         if data['name'].str.contains(disease_name).any():
+#             data= data[data.name == disease_name]
+#             data = data.to_dict()
+#             data = list(data.values())[1]
+#             data = list(data.values())[0]
+
+#             data_two = data_two.loc[data_two["name"]==disease_name]
+#             data_two= data_two.to_dict()
+#             data_two = list(data_two.values())[2]
+#             data_two = list(data_two.values())[0]
+#             for i in bad_chars:
+#                 data = data.replace(i,"")
+#                 data_two = data_two.replace(i,"")
+#             dispatcher.utter_message(response="utter_disease", data=data, data_two=data_two, disease_name=disease_name)
+#         else:
+#             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
+#         return []
+
+class DiseasesAndSymptoms(Action):
+    
     def name(self) -> Text:
         return "action_disease_checker"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        bad_chars = ["[","'","]","'"]
         disease_name = next(tracker.get_latest_entity_values("disease"), None)
+        disease_name = disease_name.capitalize()
         data = disease_repo()
-        data_two= disease_repo()
-        
-        if data['name'].str.contains(disease_name).any():
-            data= data[data.name == disease_name]
-            data = data.to_dict()
-            data = list(data.values())[1]
-            data = list(data.values())[0]
 
-            data_two = data_two.loc[data_two["name"]==disease_name]
-            data_two= data_two.to_dict()
-            data_two = list(data_two.values())[2]
-            data_two = list(data_two.values())[0]
-            for i in bad_chars:
-                data = data.replace(i,"")
-                data_two = data_two.replace(i,"")
-            dispatcher.utter_message(response="utter_disease", data=data, data_two=data_two, disease_name=disease_name)
+        if disease_name != None:
+            disease_data = data[data['name'] == disease_name]
+            symptoms = disease_data['symptoms'].to_list()
+            treatment =disease_data['treatment'].to_list()
+            dispatcher.utter_message(response="utter_disease", symptoms=symptoms[0].strip('['']'), treatment=treatment[0].strip('['']'), disease_name=disease_name)
+
         else:
-            dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
-        return []
+            dispatcher.utter_message(response="utter_no_disease", disease_name="Your disease")
 
+        return []
 
 #Action for returning a list of hospitals/pharmacies/labs
 class ListOfPlaces(Action):
