@@ -27,6 +27,7 @@ intents:
 - bot_challenge
 - quit_bot
 - nlu_fallback
+- query_knowledge_base
 entities:
 - bad
 - disease
@@ -36,6 +37,12 @@ entities:
 - lab_name
 - pharm_name
 - term_name
+- pharm 
+- mention 
+- hosp
+- lab
+
+
 responses:
   utter_greet:
   - text: Hey! how are you today?

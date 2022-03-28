@@ -18,7 +18,7 @@ services:
     image: rasa-server-okteto:latest
     build: './'
     volumes:
-    - ./actions: /app/actions
+    - ./actions: ./app/actions
     command: bash -c "rasa run actions"
     working_dir: /app
     ports:
@@ -30,4 +30,4 @@ networks:
   all:
     driver: bridge
     driver_opts:
-      com.docker.network.enable.ipv6: "true"
+      com.docker.network.enable_ipv6: "true"
