@@ -112,17 +112,7 @@ responses:
   - text: What disease would you like to learn more about? Please enter the name of the disease.
   utter_disease:
   - text: |
-      -----------------------------------------------
-      {disease_name}
-      -----------------------------------------------
-      Symptoms:
-      {symptoms}
-      -----------------------------------------------
-      Treatment:
-      {treatment}
-      -----------------------------------------------
-
-       
+      {title}: {data}
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
 actions:
