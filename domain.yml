@@ -3,18 +3,18 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- greet
+- diseases
+- diseases_info
 - mood_great
+- locate_pharm
+- thanks
 - locate_lab
 - laboratory_name
-- greet
 - locate
 - hospital_name
 - locate_hosp
 - pharmacy_name
-- thanks
-- locate_pharm
-- diseases
-- diseases_info
 - affirm
 - goodbye
 - deny
@@ -114,17 +114,17 @@ responses:
       Treatment:
       {data_two}
       -----------------------------------------------
-  
+
        
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
-  utter_default:
-  - text: Sorry I didn't get that. Can you rephrase?
+
 actions:
 - action_disease_checker
 - action_map_location
 - action_places_list
 - action_term_api
+- utter_alright
 - utter_anything_next
 - utter_ask_quest
 - utter_correct_name
@@ -145,5 +145,3 @@ actions:
 - utter_term
 - utter_thanks
 - utter_what_disease
-- utter_alright
-- utter_default

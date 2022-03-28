@@ -23,3 +23,9 @@ rules:
   steps:
   - intent: quit_bot
   - action: utter_alright
+
+
+- rule: hello / hi rule
+  steps:
+  - intent: greet
+  - action: utter_greet
