@@ -153,6 +153,7 @@ nlu:
     - [family health specialist hospital](hosp_name)
     - [jemima crentsil hospital](hosp_name)
     - [bethel methodist medical hospital](hosp_name)
+
 - intent: pharmacy_name
   examples: |
     - [kendicks pharmacy](pharm_name)
@@ -210,6 +211,13 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+- intent: query_knowlegde_base
+  examples: |
+    - list [pharmacies]{"entity":"pharm","value":"pharmacies"}
+    - [first]{"entity":"mention","value":"1"}
+    - list [hospitals]{"entity":"hosp","value":"hospitals"}
+    - list [labs]{"entity":"lab","value":"labs"}
+
 - regex: hosp_name
   examples: |
     - .+Clinic

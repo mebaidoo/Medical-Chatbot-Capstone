@@ -3,7 +3,8 @@
 #
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
-
+from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
+from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 
 # This is a simple example for a custom action which utters "Hello World!"
 
@@ -53,6 +54,7 @@ class DiseasesAndSymptoms(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         bad_chars = ["[","'","]","'"]
         disease_name = next(tracker.get_latest_entity_values("disease"), None)
+        disease_name = disease_name.capitalize()
         data = disease_repo()
         data_two= disease_repo()
         
@@ -151,6 +153,14 @@ class MapLocations(Action):
             dispatcher.utter_message(response="utter_anything_next")
 
         return []
+
+
+class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
+    def __init__(self):
+        knowledge_base = InMemoryKnowledgeBase("knowledge-base-data.json")
+        super().__init__(knowledge_base)
+
+
 
 # Fallback action
 # class MyFallback(Action):
