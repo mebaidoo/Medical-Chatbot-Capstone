@@ -1,0 +1,132 @@
+{
+	"hospitals": [{
+			"id": 0,
+			"name": "S.D.A Hospital",
+			"area": "Takoradi-Liberation Road",
+			"map_location": "https://goo.gl/maps/GdjRdK9NZAMnFKsu9"
+		},
+		{
+			"id": 1,
+			"name": "Takoradi Hospital",
+			"area": "Takoradi-Beach Road",
+			"map_location": "https://goo.gl/maps/61nyzdziyopQ3pUHA"
+
+		},
+		{
+			"id": 2,
+			"name": "Effia Nkwanta Hospital",
+			"area": "Sekondi-Takoradi Road",
+			"map_location": "https://goo.gl/maps/ybD16FZmVjUuicY59"
+
+		},
+		{
+			"id": 3,
+			"name": "Kwesimintsim Hospital",
+			"area": "Kwesimintsim",
+			"map_location": "https://goo.gl/maps/fLrQujJPdvAs3gC37"
+		},
+		{
+			"id": 4,
+			"name": "Grace Spring Mission Hospital",
+			"area": "Effia",
+			"map_location": "https://goo.gl/maps/EFCWUF8QEh25em1b8"
+
+		},
+		{
+			"id": 5,
+			"name": "Family Health Specialist Hospital",
+			"area": "Anaji Hills",
+			"map_location": "https://goo.gl/maps/iJMwim4Hjjrg9yXZ8"
+
+		},
+		{
+			"id": 6,
+			"name": "Jemima Crentsil Hospital",
+			"area": "Takoradi-Akufo-Addo Road",
+			"map_location": "https://goo.gl/maps/wZ4psDry7s2LyJrbA"
+
+		},
+		{
+			"id": 7,
+			"name": "G.P.H.A Clinic",
+			"area": "Takoradi-J. De Graft-Johnson Ave",
+			"map_location": "https://goo.gl/maps/yhVQpEDs1TJ67V5F9"
+
+		},
+		{
+			"id": 8,
+			"name": "End Point Homeopathic Clinic",
+			"area": "Anaji-Queen of Peace inside",
+			"map_location": "https://goo.gl/maps/azBX9RwSCPtnLwY87"
+		},
+		{
+			"id": 9,
+			"name": "Bethel Methodist Medical Hospital",
+			"area": "Takoradi-Pakos Ave",
+			"map_location": "https://goo.gl/maps/uchfKzf8tpE7NmreA"
+
+		}
+	],
+
+	"pharmacies": [{
+			"id": 0,
+			"name": "Kendicks Pharmacy",
+			"area": "Takoradi-Market Circle",
+			"map_location": "https://goo.gl/maps/QnYTcyA5DDhwsfFB7"
+		},
+		{
+			"id": 1,
+			"name": "Day By Day Pharmacy",
+			"area": "Takoradi-Kitson Ave",
+			"map_location": "https://goo.gl/maps/efJATHoFERBJhLot6"
+
+		},
+		{
+			"id": 2,
+			"name": "Medrugs Pharmacy",
+			"area": "Takoradi-Liberation Road",
+			"map_location": "https://goo.gl/maps/dZGunVo2RJLxmZcr7"
+
+		},
+		{
+			"id": 3,
+			"name": "Abuakwa Pharmacy",
+			"area": "Takoradi-Market Circle",
+			"map_location": "https://goo.gl/maps/95HHL7abYtTmzB7r7"
+
+		},
+		{
+			"id": 4,
+			"name": "Akan Chemist",
+			"area": "Takoradi-Pakos Ave",
+			"map_location": "https://goo.gl/maps/fmGrLxZBaBA3wja2A"
+		},
+		{
+			"id": 5,
+			"name": "Eff-Ess Pharmacy",
+			"area": "Takoradi-Liberation Rd",
+			"map_location": "https://goo.gl/maps/c7hfVnAbMsSHXiWv8"
+
+		}
+	],
+    "labs":[{
+            "id": 0,
+            "name": "Mediwest Laboratory", 
+            "area": "Sawmill", 
+            "map_location": "https://goo.gl/maps/gWUDJYf3EH3TeiZn7"                 
+        },
+        {
+            "id": 1,
+            "name": "Solar Medical Laboratory", 
+            "area": "New Takoradi", 
+            "map_location": "https://goo.gl/maps/WRppCWCoaj6uX4ra9"
+        },
+        {
+            "id": 2,
+            "name": "Oasis Medical Laboratory", 
+            "area": "Fijai", 
+            "map_location": "https://goo.gl/maps/ouqNthQFFTM42nZF8"
+
+        }
+    ]
+}

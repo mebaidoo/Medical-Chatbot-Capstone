@@ -3,7 +3,8 @@
 #
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
-
+from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
+from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 
 # This is a simple example for a custom action which utters "Hello World!"
 
@@ -174,6 +175,14 @@ class MapLocations(Action):
             dispatcher.utter_message(response="utter_anything_next")
 
         return []
+
+
+class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
+    def __init__(self):
+        knowledge_base = InMemoryKnowledgeBase("knowledge-base-data.json")
+        super().__init__(knowledge_base)
+
+
 
 # Fallback action
 # class MyFallback(Action):
