@@ -29,6 +29,7 @@ class TermsAndDefinitions(Action):
         
         term = next(tracker.get_latest_entity_values("term_name"), None)
         term = term[1:] #Taking out the @ character
+        term = term.lower()
         try:
             definition = str(Terms(term))
             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)

@@ -37,3 +37,16 @@
 #   ?item wdt:P2176 ?drug .
 #   SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 # }
+
+
+import wikipedia
+
+disease = input("Enter disease: ")
+
+#print(wikipedia.search(disease))
+
+#print(wikipedia.summary(disease))
+
+results = wikipedia.page(disease).content
+results_list = results.split("==")
+print(results_list)
