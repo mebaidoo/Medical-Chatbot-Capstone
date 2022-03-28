@@ -19,7 +19,7 @@ services:
     image: rasa-bot:latest
     build: "./"
     volumes:
-    - ./actions: /app/actions
+    - ./actions:/app/actions
     # command: bash -c "rasa run actions"
     command: ["rasa","run","actions"]
     working_dir: /app
