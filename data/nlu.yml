@@ -91,6 +91,7 @@ nlu:
     - I'm [unwell](bad)
     - [bad](bad)
     - very bad
+    - help me
 - intent: thanks
   examples: |
     - thanks
@@ -99,6 +100,8 @@ nlu:
     - awesome, thanks
     - thanks for helping me
     - Thanks
+    - grateful
+    - appreciate your help
 - intent: return_main_menu
   examples: |
     - return
@@ -108,6 +111,8 @@ nlu:
     - I will like to return to main menu
     - continue
     - main menu
+    - back
+    - go back
 - intent: quit_bot
   examples: |
     - quit
@@ -116,6 +121,9 @@ nlu:
     - I want to quit
     - finish
     - end
+    - close
+    - i am done
+    - that will be all
 - intent: locate
   examples: |
     - Locate a pharmacy/hospital/lab
