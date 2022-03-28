@@ -48,5 +48,8 @@ disease = input("Enter disease: ")
 #print(wikipedia.summary(disease))
 
 results = wikipedia.page(disease).content
-results_list = results.split("==")
-print(results_list)
+#results_list = results.split("==")
+#print(results_list)
+#print(len(results))
+
+print(results)
