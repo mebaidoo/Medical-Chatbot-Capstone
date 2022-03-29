@@ -37,11 +37,50 @@ entities:
 - lab_name
 - pharm_name
 - term_name
-- pharm 
+- object_type
 - mention 
-- hosp
-- lab
+- attribute
 
+
+slots:
+  object_type:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: object_type
+  mention:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: mention
+  attribute:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: attribute
+  # knowledge_base_last_object:
+  #   type: any
+  #   mappings:
+  #   - type: from_entity
+  #     entity: knowledge_base_last_object
+  # knowledge_base_last_object_type:
+  #   type: any
+  #   mappings:
+  #   - type: from_entity
+  #     entity: knowledge_base_last_object_type
+  # knowledge_base_listed_objects:
+  #   type: any
+  #   mappings:
+  #   - type: from_entity
+  #     entity: mention
+  # knowledge_base_objects:
+  #   type: any
+  #   mappings:
+  #   - type: from_entity
+  #     entity: knowledge_base_objects
 
 responses:
   utter_greet:
@@ -115,6 +154,7 @@ responses:
       {title}: {data}
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
+
 actions:
 - action_disease_checker
 - action_map_location
@@ -141,3 +181,4 @@ actions:
 - utter_term
 - utter_thanks
 - utter_what_disease
+- action_response_query

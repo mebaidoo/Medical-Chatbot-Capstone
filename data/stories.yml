@@ -376,6 +376,7 @@ stories:
   - action: action_disease_checker
 
 
+
 - story: interactive_story_pharmacy_return
   steps:
   - intent: greet
@@ -823,3 +824,9 @@ stories:
     - term_name: '@lesion'
     - term_name: '@lesion'
   - action: action_term_api
+
+- story: knowledge query
+  steps:
+  - intent: query_knowledge_base
+  - action: action_response_query
+ 

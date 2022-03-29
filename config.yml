@@ -23,7 +23,7 @@ pipeline:
     epochs: 100
     constrain_similarities: true
     model_confidence: softmax
-#   - name: EntitySynonymMapper
+  - name: EntitySynonymMapper
 #   - name: ResponseSelector
 #     epochs: 100
 #     constrain_similarities: true
@@ -45,4 +45,3 @@ policies:
     core_fallback_threshold: 0.4
     core_fallback_action_name: "action_default_fallback"
     enable_fallback_prediction: True
-

@@ -56,6 +56,7 @@ class TermsAndDefinitions(Action):
 #         disease_name = next(tracker.get_latest_entity_values("disease"), None)
 #         disease_name = disease_name.capitalize()
 #         data = disease_repo()
+
 #         data_two= disease_repo()
         
 #         if data['name'].str.contains(disease_name).any():
@@ -185,25 +186,43 @@ class MapLocations(Action):
 
         return []
 
+#  knowledge based actions 
+class InMemoryKnowledgeBaseAction(ActionQueryKnowledgeBase):
+    def name(self) -> Text:
+        return "action_response_query"
 
-class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
     def __init__(self):
-        knowledge_base = InMemoryKnowledgeBase("knowledge-base-data.json")
+        knowledge_base = InMemoryKnowledgeBase("data.json")
         super().__init__(knowledge_base)
 
-
-
-# Fallback action
-# class MyFallback(Action):
+    async def utter_objects(
+        self,
+        dispatcher,
+        object_type,
+        objects,
+    ) -> None:
+        if objects:
+            dispatcher.utter_message(text=f"Found the following {object_type}s:")
+            repr_function = await utils.call_potential_coroutine(
+                self.knowledge_base.get_representation_function_of_object(object_type)
+            )
+            for i, obj in enumerate(objects,1):
+                dispatcher.utter_message(text="{i}: {repr_function(obj)}")
+        else:
+            dispatcher.utter_message(text="I didn''t find any {object_type}s")
     
-#     def name(self) -> Text:
-#         return "action_my_fallback"
-
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        
-#         dispatcher.utter_message(template="utter_fallback")
-
-#         return []
-
+    def utter_attribute_value(
+        self,
+        dispatcher,
+        object_name,
+        attribute_name,
+        attribute_value,
+    ) -> None:
+        if attribute_value:
+            dispatcher.utter_message(
+                text=f"{object_name}'s {attribute_name} is {attribute_value}."
+            )
+        else:
+            dispatcher.utter_message(
+                text=f"I didn't find {object_name}'s {attribute_name}."
+            )
