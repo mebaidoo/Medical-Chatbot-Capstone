@@ -14,8 +14,9 @@ For the directions to medical facilities, the bot focused on medical facilities 
 All other map APIs did not have enough coverage of medical facilities in Sekondi-Takoradi except Google map, whose APIs were priced. Because the chatbot was not meant to be used for production/commercial purposes, the directions were not sourced directly from the API. Instead, Google map links to locations of these medical facilities was used, which will further provide the user with the directions to the medical facility they chose.
 
 Information about diseases:
-When a user selects this option, they are asked to enter the name of the disease they would like to learn more about, then the bot provides them with the signs/symptoms associated with that disease, as well as the treatment options.
-All other medical APIs were also priced and because the chatbot was not meant to be used for production/commercial purposes, a diseases dataset from kaggle was downloaded and used instead.
+When a user selects this option, they are asked to enter the name of the disease they would like to learn more about, then the bot provides them with some information associated with that disease, including symptoms, diagnostics, treatment and medication.
+The python module bs4 which contains BeautifulSoup was used to scrape information about diseases from Wikipedia.
+After the disease information is dispatched to the user, they are again given the option to ask for the adverse reaction of any drug probably mentioned in the medication data that came along with the disease information. BeautifulSoup is again used to scrape the adverse reaction/side effects of drugs from Wikipedia.
 
 Extras:
 After the chatbot provides the user with the information they required, it gives them the option to either return to the main menu where they can go on to ask for other information, or quit.
