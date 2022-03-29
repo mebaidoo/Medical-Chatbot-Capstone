@@ -1,4 +1,4 @@
-FROM python:3.7.7-stretch AS BASE
+FROM python:3.7.6-stretch AS BASE
 
 RUN apt-get update \
     && apt-get --assume-yes --no-install-recommends install \
@@ -6,7 +6,7 @@ RUN apt-get update \
         curl \
         git \
         jq \
-        libgompl \
+        # libgompl \
         vim
 
 WORKDIR /app
