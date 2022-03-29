@@ -1,7 +1,7 @@
 version: '3.4'
 services:
   rasa:
-    image: rasa-server-bot:latest
+    image: rasa-bot:latest
     build: "./"
     restart: always
     volumes:
