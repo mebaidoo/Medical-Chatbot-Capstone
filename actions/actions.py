@@ -36,12 +36,15 @@ class TermsAndDefinitions(Action):
         try:
             definition = str(Terms(term))
             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
+            dispatcher.utter_message(text = "\n")
             dispatcher.utter_message(response="utter_anything_next")
         except:
             dispatcher.utter_message(response="utter_no_term")
+            dispatcher.utter_message(text = "\n")
             dispatcher.utter_message(response="utter_anything_next")
 
         return []
+<<<<<<< HEAD
         
 
 # class DiseasesAndSymptoms(Action):
@@ -76,6 +79,8 @@ class TermsAndDefinitions(Action):
 #         else:
 #             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
 #         return []
+=======
+>>>>>>> 4795b8532b74657d5529f3b9154cdee351f96cb2
 
 class DiseasesAndSymptoms(Action):
     
@@ -86,26 +91,107 @@ class DiseasesAndSymptoms(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         disease_name = next(tracker.get_latest_entity_values("disease"), None)
-        disease_name = disease_name.lower()
-        u_i = string.capwords(disease_name)
-        lists = u_i.split()
-        word = "_".join(lists)
-        url = "https://en.wikipedia.org/wiki/" + word
 
-        url_open = requests.get(url)
-        soup = BeautifulSoup(url_open.content, 'html.parser')
-        details = soup('table', {'class':'infobox'})
-        for i in details:
-            h = i.find_all('tr')
-            for j in h:
-                heading = j.find_all('th')
-                detail = j.find_all('td')
-                if heading is not None and detail is not None:
-                    for x, y in zip(heading, detail):
-                        title = re.sub("\[[0-9]\]", "", x.text)
-                        sub = re.sub("\[[0-9]\]", "", y.text)
-                        if title not in ["Pronunciation", "Specialty", "Frequency", "Deaths", "Other names"]:
-                            dispatcher.utter_message(response="utter_disease", title=title, data=sub)
+        try:
+            disease_name = disease_name[1:] #Taking off the underscore
+            disease_name = disease_name.lower()
+            u_i = string.capwords(disease_name)
+            lists = u_i.split()
+            word = "_".join(lists)
+            url = "https://en.wikipedia.org/wiki/" + word
+
+            url_open = requests.get(url)
+            soup = BeautifulSoup(url_open.content, 'html.parser')
+            details = soup('table', {'class':'infobox'})
+            if details:
+                dispatcher.utter_message(response="utter_pre_disease", disease=disease_name)
+                dispatcher.utter_message(text = "\n")
+                for i in details:
+                    h = i.find_all('tr')
+                    for j in h:
+                        heading = j.find_all('th')
+                        detail = j.find_all('td')
+                        if heading is not None and detail is not None:
+                            for x, y in zip(heading, detail):
+                                title = re.sub(r"\[[0-9]\]", "", x.text)
+                                title = re.sub(r"\[[0-5][0-9]\]","", title)
+                                sub = re.sub(r"\[[0-9]\]", "", y.text)
+                                sub = re.sub(r"\[[0-5][0-9]\]","", sub)
+                                if title not in ["Pronunciation", "Frequency", "Deaths", "Other names"]:
+                                    dispatcher.utter_message(response="utter_disease", title=title, data=sub)
+                dispatcher.utter_message(text = "\n")
+                dispatcher.utter_message(response="utter_adverse")
+            
+        except:
+            dispatcher.utter_message(response="utter_no_disease")
+            dispatcher.utter_message(text = "\n")
+            dispatcher.utter_message(response="utter_adverse")
+
+        return []
+
+#Action for adverse drug reaction
+class AdverseDrugReactions(Action):
+    
+    def name(self) -> Text:
+        return "action_adverse_drug"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        drug_name = next(tracker.get_latest_entity_values("name_of_drug"), None)
+
+        try:
+            drug_name = drug_name[1:] #Taking off &
+            drug_name = drug_name.lower()
+            u_i_drug = string.capwords(drug_name)
+            lists_drug = u_i_drug.split()
+            word_drug = "_".join(lists_drug)
+            drug_url = "https://en.wikipedia.org/wiki/" + word_drug
+            drug_url_open = requests.get(drug_url)
+            drug_soup = BeautifulSoup(drug_url_open.content, 'html.parser')
+            span = drug_soup.select("span#Adverse_effects.mw-headline")[0]
+            all_p_after = span.find_all_next("p")
+            info = all_p_after[0].text
+            info = re.sub(r"\[[0-9]\]", "", info)
+            info = re.sub(r"\[[0-5][0-9]\]","", info)
+            dispatcher.utter_message(response="utter_adverse_info", drug=drug_name, data=info)
+            if len(info.split()) < 50:
+                if all_p_after[1]:
+                    info_2 = all_p_after[1].text
+                    info_2 = re.sub(r"\[[0-9]\]", "", info_2)
+                    info_2 = re.sub(r"\[[0-5][0-9]\]","", info_2)
+                    dispatcher.utter_message(text = "\n")
+                    dispatcher.utter_message(response="utter_adverse_info", drug=drug_name, data=info_2)
+            dispatcher.utter_message(text = "\n")
+            dispatcher.utter_message(response="utter_anything_next")
+        except:
+            try:
+                drug_name = drug_name.lower()
+                u_i_drug = string.capwords(drug_name)
+                lists_drug = u_i_drug.split()
+                word_drug = "_".join(lists_drug)
+                drug_url = "https://en.wikipedia.org/wiki/" + word_drug
+                drug_url_open = requests.get(drug_url)
+                drug_soup = BeautifulSoup(drug_url_open.content, 'html.parser')
+                span = drug_soup.select("span#Side_effects.mw-headline")[0]
+                all_p_after = span.find_all_next("p")
+                info = all_p_after[0].text
+                info = re.sub(r"\[[0-9]\]", "", info)
+                info = re.sub(r"\[[0-5][0-9]\]","", info)
+                dispatcher.utter_message(response="utter_adverse_info", drug=drug_name, data=info)
+                if len(info.split()) < 50:
+                    if all_p_after[1]:
+                        info_2 = all_p_after[1].text
+                        info_2 = re.sub(r"\[[0-9]\]", "", info_2)
+                        info_2 = re.sub(r"\[[0-5][0-9]\]","", info_2)
+                        dispatcher.utter_message(text = "\n")
+                        dispatcher.utter_message(response="utter_adverse_info", drug=drug_name, data=info_2)
+                dispatcher.utter_message(text = "\n")
+                dispatcher.utter_message(response="utter_anything_next")
+            except:
+                dispatcher.utter_message(response="utter_no_drug")
+                dispatcher.utter_message(text = "\n")
+                dispatcher.utter_message(response="utter_anything_next")
 
         return []
 
@@ -166,6 +252,7 @@ class MapLocations(Action):
             place = place.title() #ensuring name matches format in dataframe
             map = hospitals.map_location[hospitals['name'] == place].to_list()
             dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
+            dispatcher.utter_message(text = "\n")
             dispatcher.utter_message(response="utter_anything_next")
 
         elif place_type == "pharmacy_name":
@@ -173,6 +260,7 @@ class MapLocations(Action):
             place = place.title()
             map = pharmacies.map_location[pharmacies['name'] == place].to_list()
             dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
+            dispatcher.utter_message(text = "\n")
             dispatcher.utter_message(response="utter_anything_next")
 
     
@@ -182,6 +270,7 @@ class MapLocations(Action):
             place = place.title()
             map = labs.map_location[labs['name'] == place].to_list()
             dispatcher.utter_message(response="utter_map_location", place_name = place, map_link = map[0])
+            dispatcher.utter_message(text = "\n")
             dispatcher.utter_message(response="utter_anything_next")
 
         return []

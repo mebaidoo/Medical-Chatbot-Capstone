@@ -1,0 +1,94 @@
+[
+  {
+    "name": "hosp_name",
+    "pattern": ".+Clinic"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+Clinic"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+Hospital"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+Hospital"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+clinic"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+clinic"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+hospital"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+hospital"
+  },
+  {
+    "name": "lab_name",
+    "pattern": ".+Laboratory"
+  },
+  {
+    "name": "lab_name",
+    "pattern": ".+Laboratory"
+  },
+  {
+    "name": "lab_name",
+    "pattern": ".+laboratory"
+  },
+  {
+    "name": "lab_name",
+    "pattern": ".+laboratory"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+Chemist"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+Chemist"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+Pharmacy"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+Pharmacy"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+chemist"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+chemist"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+pharmacy"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+pharmacy"
+  },
+  {
+    "name": "term_name",
+    "pattern": "@.+"
+  },
+  {
+    "name": "disease",
+    "pattern": "(\\bacne\\b|\\baddison's\\ disease\\b|\\ballergies\\b|\\balzheimer's\\ disease\\b|\\banal\\ cancer\\b|\\banaphylaxis\\b|\\bangioedema\\b|\\banorexia\\ nervosa\\b|\\banxiety\\b|\\bappendicitis\\b|\\barthritis\\b|\\basbestosis\\b|\\basthma\\b|\\beczema\\b|\\battention\\ deficit\\ hyperactivity\\ disorder\\b|\\bautistic\\ spectrum\\ disorder\\b|\\bbacterial\\ vaginosis\\b|\\bbile\\ duct\\ cancer\\b|\\bbinge\\ eating\\b|\\bbipolar\\ disorder\\b|\\bbladder\\ cancer\\b|\\bblood\\ poisoning\\b|\\bbone\\ cancer\\b|\\bbowel\\ cancer\\b|\\bbowel\\ incontinence\\b|\\bbowel\\ polyps\\b|\\bbrain\\ stem\\ death\\b|\\bbrain\\ tumour\\b|\\bbreast\\ cancer\\b|\\bbronchiectasis\\b|\\bbronchitis\\b|\\bbulimia\\b|\\bbunion\\b|\\bcatarrh\\b|\\bcellulitis\\b|\\bcervical\\ cancer\\b|\\bchest\\ infection\\b|\\bchest\\ pain\\b|\\bchickenpox\\b|\\bchlamydia\\b|\\bcataract\\b|\\bcancer\\b|\\bcholera\\b|\\bpancreatitis\\b|\\bcirrhosis\\b|\\bcold\\ sore\\b|\\bcoma\\b|\\bcommon\\ cold\\b|\\bcongenital\\ heart\\ disease\\b|\\bconjunctivitis\\b|\\bconstipation\\b|\\bcovid\\ 19\\b|\\bcovid\\-19\\b|\\bcough\\b|\\bcrohn's\\ disease\\b|\\bcystic\\ fibrosis\\b|\\bcystitis\\b|\\bthrombosis\\b|\\bdehydration\\b|\\bdementia\\b|\\bdental\\ abscess\\b|\\bdepression\\b|\\bdermatitis\\b|\\bdiabetes\\b|\\bdiarrhoea\\b|\\bdiverticulitis\\b|\\bdizziness\\b|\\bdown's\\ syndrome\\b|\\bdysphagia\\b|\\bdystonia\\b|\\bebola\\b|\\bectopic\\ pregnancy\\b|\\bendometriosis\\b|\\bepilepsy\\b|\\belephantiasis\\b|\\berectile\\ dysfunction\\b|\\bfebrile\\ seizures\\b|\\bfever\\b|\\bfibroid\\b|\\bfibromyalgia\\b|\\bflu\\b|\\bgallbladder\\ cancer\\b|\\bgallstones\\b|\\bgastroenteritis\\b|\\bgastrooesophageal\\ reflux\\ disease\\b|\\bgenital\\ herpes\\b|\\bgenital\\ warts\\b|\\bgonorrhoea\\b|\\bhaemorrhoids\\b|\\bleukaemia\\b|\\bhand,\\ foot\\ and\\ mouth\\ disease\\b|\\bhay\\ fever\\b|\\bheadache\\b|\\bhearing\\ loss\\b|\\bheart\\ failure\\b|\\bhepatitis\\ a\\b|\\bhepatitis\\ b\\b|\\bhepatitis\\ c\\b|\\bhiv/aids\\b|\\bhiv\\b|\\blymphoma\\b|\\bhuntington's\\ disease\\b|\\bhyperglycaemia\\b|\\bhyperhidrosis\\b|\\bhypoglycaemia\\b|\\bfibrosis\\b|\\bimpetigo\\b|\\bindigestion\\b|\\binsomnia\\b|\\banaemia\\b|\\birritable\\ bowel\\ syndrome\\b|\\bitching\\b|\\bsarcoma\\b|\\bkidney\\ cancer\\b|\\bkidney\\ infection\\b|\\bkidney\\ stones\\b|\\blabyrinthitis\\b|\\blactose\\ intolerance\\b|\\blaryngitis\\b|\\bcramp\\b|\\bliver\\ cancer\\b|\\bliver\\ disease\\b|\\bliver\\ tumour\\b|\\blung\\ cancer\\b|\\blupus\\b|\\blyme\\ disease\\b|\\blymphoedema\\b|\\bmalaria\\b|\\bmalnutrition\\b|\\bmeasles\\b|\\bmeningitis\\b|\\bmenopause\\b|\\bmigraine\\b|\\bmiscarriage\\b|\\bmotor\\ neurone\\ disease\\b|\\bmouth\\ cancer\\b|\\bmouth\\ ulcer\\b|\\bmultiple\\ sclerosis\\b|\\bmumps\\b|\\bnosebleed\\b|\\bobesity\\b|\\bobsessive\\ compulsive\\ disorder\\b|\\bosteoarthritis\\b|\\bosteoporosis\\b|\\bosteosarcoma\\b|\\bosteomyelitis\\b|\\bovarian\\ cancer\\b|\\bovarian\\ cyst\\b|\\bpancreatic\\ cancer\\b|\\bpanic\\ disorder\\b|\\bpiles\\b|\\bparkinson's\\ disease\\b|\\bpelvic\\ inflammatory\\ disease\\b|\\bpenile\\ cancer\\b|\\bpersonality\\ disorder\\b|\\bpleurisy\\b|\\bpneumonia\\b|\\bpost\\-traumatic\\ stress\\ disorder\\b|\\bpostnatal\\ depression\\b|\\bpregnancy\\b|\\bulcer\\b|\\bprostate\\ cancer\\b|\\bpolio\\b|\\bpsoriasis\\b|\\bpsychosis\\b|\\bretinoblastoma\\b|\\bringworm\\b|\\brosacea\\b|\\bscabies\\b|\\bschizophrenia\\b|\\bscoliosis\\b|\\bshingles\\b|\\bsickle\\ cell\\ disease\\b|\\bsinusitis\\b|\\bskin\\ cancer\\b|\\bmelanoma\\b|\\bsore\\ throat\\b|\\bstillbirth\\b|\\babdominal\\ pain\\b|\\bricket\\b|\\brabies\\b|\\bstomach\\ cancer\\b|\\bstomach\\ ulcer\\b|\\bstroke\\b|\\bsuicide\\b|\\bsunburn\\b|\\bsyphilis\\b|\\bseizure\\b|\\btesticular\\ cancer\\b|\\bthrush\\b|\\bthyroid\\ cancer\\b|\\btinnitus\\b|\\btonsillitis\\b|\\btooth\\ decay\\b|\\btuberculosis\\b|\\btype\\ 1\\ diabetes\\b|\\btype\\ 2\\ diabetes\\b|\\burinary\\ tract\\ infection\\b|\\bvaginal\\ cancer\\b|\\bvaginal\\ thrush\\b|\\bvertigo\\b|\\bvomiting\\b|\\bvulval\\ cancer\\b|\\bwart\\b|\\buterine\\ cancer\\b|\\byellow\\ fever\\b|\\bglaucoma\\b|\\bfisula\\b|\\bprediabetes\\b|\\bpremature\\ ejaculation\\b|\\bpremenstrual\\ syndrome\\b|\\bcolon\\ cancer\\b|\\bhypothermia\\b|\\bhyperthermia\\b|\\binfluenza\\b|\\binfertility\\b|\\bhepatitis\\b|\\bcervical\\ cancer\\b|\\banthrax\\b)"
+  },
+  {
+    "name": "name_of_drug",
+    "pattern": "(\\baciclovir\\b|\\bacrivastine\\b|\\badalimumab\\b|\\balendronic\\ acid\\b|\\ballopurinol\\b|\\balogliptin\\b|\\bamitriptyline\\b|\\bamlodipine\\b|\\bamoxicillin\\b|\\banastrozole\\b|\\bapixaban\\b|\\baspirin\\b|\\batenolol\\b|\\batorvastatin\\b|\\bazathioprine\\b|\\bazithromycin\\b|\\bbaclofen\\b|\\bbeclometasone\\b|\\bbendroflumethiazide\\b|\\bbenzoyl\\ peroxide\\b|\\bbenzydamine\\b|\\bbetahistine\\b|\\bbetamethasone\\b|\\bbimatoprost\\b|\\bbisacodyl\\b|\\bbisoprolol\\b|\\bbrinzolamide\\b|\\bbudesonide\\b|\\bbumetanide\\b|\\bbuprenorphine\\b|\\bbuscopan\\b|\\bcandesartan\\b|\\bcarbamazepine\\b|\\bcarbimazole\\b|\\bcarbocisteine\\b|\\bcarmellose\\ sodium\\b|\\bcarvedilol\\b|\\bcefalexin\\b|\\bcetirizine\\b|\\bchampix\\b|\\bcocaine\\b|\\bvarenicline\\b|\\bchloramphenicol\\b|\\bchlorhexidine\\b|\\bchlorphenamine\\b|\\bpiriton\\b|\\bcinnarizine\\b|\\bciprofloxacin\\b|\\bcitalopram\\b|\\bclarithromycin\\b|\\bclobetasol\\b|\\bclobetasone\\b|\\bclonazepam\\b|\\bclopidogrel\\b|\\bclotrimazole\\b|\\bcanesten\\b|\\bcodeine\\b|\\bcolchicine\\b|\\bcyanocobalamin\\b|\\bcyclizine\\b|\\bchloroquine\\b|\\bdabigatran\\b|\\bdapagliflozin\\b|\\bdexamethasone\\b|\\bdiazepam\\b|\\bdiclofenac\\b|\\bdigoxin\\b|\\bdihydrocodeine\\b|\\bdiltiazem\\b|\\bdiphenhydramine\\b|\\bdipyridamole\\b|\\bdocusate\\b|\\bdomperidone\\b|\\bdonepezil\\b|\\bdosulepin\\b|\\bdoxazosin\\b|\\bdoxycycline\\b|\\bduloxetine\\b|\\bedoxaban\\b|\\bempagliflozin\\b|\\benalapril\\b|\\beplerenone\\b|\\berythromycin\\b|\\bescitalopram\\b|\\besomeprazole\\b|\\bezetimibe\\b|\\bfelodipine\\b|\\bfentanyl\\b|\\bferrous\\ fumarate\\b|\\bferrous\\ sulfate\\b|\\bfexofenadine\\b|\\bfinasteride\\b|\\bflucloxacillin\\b|\\bfluconazole\\b|\\bfluoxetine\\b|\\bprozac\\b|\\bfluticasone\\b|\\bfolic\\ acid\\b|\\bfurosemide\\b|\\bfusidic\\ acid\\b|\\bfybogel\\b|\\bgabapentin\\b|\\bgaviscon\\b|\\balginic\\ acid\\b|\\bgliclazide\\b|\\bglimepiride\\b|\\bglyceryl\\ trinitrate\\b|\\bheparinoid\\b|\\bhydrocortisone\\b|\\bhydrocortisone\\b|\\bhydroxocobalamin\\b|\\bhyoscine\\ hydrobromide\\b|\\bibuprofen\\b|\\bcodeine\\b|\\bindapamide\\b|\\birbesartan\\b|\\bisosorbide\\ mononitrate\\b|\\bisosorbide\\ dinitrate\\b|\\bisotretinoin\\b|\\broaccutane\\b|\\bisotrex\\b|\\bketoconazole\\b|\\blabetalol\\b|\\blactulose\\b|\\blamotrigine\\b|\\blansoprazole\\b|\\blatanoprost\\b|\\blercanidipine\\b|\\bletrozole\\b|\\blevetiracetam\\b|\\blevothyroxine\\b|\\blidocaine\\b|\\blinagliptin\\b|\\blisinopril\\b|\\blithium\\b|\\bloperamide\\b|\\bloratadine\\b|\\bclarityn\\b|\\blorazepam\\b|\\blosartan\\b|\\blymecycline\\b|\\bmacrogol\\b|\\bmebendazole\\b|\\bmebeverine\\b|\\bmelatonin\\b|\\bmesalazine\\b|\\bmetformin\\b|\\bmethadone\\b|\\bmethotrexate\\b|\\bmethylphenidate\\b|\\bmetoclopramide\\b|\\bmetoprolol\\b|\\bmetronidazole\\b|\\bmirabegron\\b|\\bmirtazapine\\b|\\bmolnupiravir\\b|\\blagevrio\\b|\\bmometasone\\b|\\bmontelukast\\b|\\bmorphine\\b|\\bnaproxen\\b|\\bnefopam\\b|\\bnicorandil\\b|\\bnifedipine\\b|\\bnitrofurantoin\\b|\\bnortriptyline\\b|\\bnystatin\\b|\\bolanzapine\\b|\\bolmesartan\\b|\\bomeprazole\\b|\\boxybutynin\\b|\\boxycodone\\b|\\bpantoprazole\\b|\\bparacetamol\\b|\\bparoxetine\\b|\\bpeppermint\\ oil\\b|\\bpepto\\-bismol\\b|\\bperindopril\\b|\\bphenoxymethylpenicillin\\b|\\bphenytoin\\b|\\bpioglitazone\\b|\\bpravastatin\\b|\\bprednisolone\\b|\\bpregabalin\\b|\\bprochlorperazine\\b|\\bpromethazine\\b|\\bphenergan\\b|\\bpropranolol\\b|\\bpseudoephedrine\\b|\\bsudafed\\b|\\brabeprazole\\b|\\bramipril\\b|\\branitidine\\b|\\brisedronate\\b|\\brisperidone\\b|\\brivaroxaban\\b|\\bropinirole\\b|\\brosuvastatin\\b|\\bsalbutamol\\b|\\bsaxagliptin\\b|\\bsenna\\b|\\bsertraline\\b|\\bsildenafil\\b|\\bviagra\\b|\\bsimeticone\\b|\\bsimvastatin\\b|\\bsitagliptin\\b|\\bsodium\\ valproate\\b|\\bsolifenacin\\b|\\bsotalol\\b|\\bsotrovimab\\ \\(Xevudy\\)\\b|\\bsulfasalazine\\b|\\bsumatriptan\\b|\\btadalafil\\b|\\btamsulosin\\b|\\btemazepam\\b|\\bterbinafine\\b|\\bthiamine\\b|\\bvitamin\\ b1\\b|\\bvitamin\\b|\\bticagrelor\\b|\\btolterodine\\b|\\btopiramate\\b|\\btramadol\\b|\\btranexamic\\ acid\\b|\\btrazodone\\b|\\btrimethoprim\\b|\\bvalproic\\ acid\\b|\\bvalsartan\\b|\\bvarenicline\\b|\\bchampix\\b|\\bvarenicline\\b|\\bvenlafaxine\\b|\\bverapamil\\b|\\bwarfarin\\b|\\bzolpidem\\b|\\bzopiclone\\b)"
+  }
+]

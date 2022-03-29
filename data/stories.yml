@@ -7,6 +7,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
+    entities:
+    - good: good
   - action: utter_mood_great
   - action: utter_ask_quest
   - checkpoint: quest_asked
@@ -16,6 +18,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_bad
+    entities:
+    - bad: bad
   - action: utter_mood_bad
   - action: utter_ask_quest
   - checkpoint: quest_asked
@@ -290,6 +294,7 @@ stories:
   - intent: quit_bot
   - action: utter_alright
 
+<<<<<<< HEAD
 - story: get_diseases 1
   steps:
   - checkpoint: quest_asked
@@ -377,6 +382,8 @@ stories:
 
 
 
+=======
+>>>>>>> 4795b8532b74657d5529f3b9154cdee351f96cb2
 - story: interactive_story_pharmacy_return
   steps:
   - intent: greet
@@ -830,3 +837,90 @@ stories:
   - intent: query_knowledge_base
   - action: action_response_query
  
+
+- story: interactive_story_disease_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: diseases_info
+  - action: utter_what_disease
+  - intent: diseases
+    entities:
+    - disease: _polio
+  - action: action_disease_checker
+  - intent: affirm
+  - action: utter_what_drug
+  - intent: drug_name
+    entities:
+    - name_of_drug: '&clonazepam'
+  - action: action_adverse_drug
+  - intent: return_main_menu
+  - action: utter_ask_quest
+
+- story: interactive_story_disease_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: diseases_info
+  - action: utter_what_disease
+  - intent: diseases
+    entities:
+    - disease: _meningitis
+  - action: action_disease_checker
+  - intent: affirm
+  - action: utter_what_drug
+  - intent: drug_name
+    entities:
+    - name_of_drug: '&tadalafil'
+    - name_of_drug: '&tadalafil'
+  - action: action_adverse_drug
+  - intent: return_main_menu
+  - action: utter_ask_quest
+
+- story: interactive_story_disease_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: diseases_info
+  - action: utter_what_disease
+  - intent: diseases
+    entities:
+    - disease: _diabetes
+    - disease: _diabetes
+  - action: action_disease_checker
+  - intent: deny
+  - action: utter_alright
+
+- story: interactive_story_bad_mood 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
+    entities:
+    - bad: not good
+  - action: utter_mood_bad
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+
+- story: interactive_story_bad_mood 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
+    entities:
+    - bad: I'm sick
+    - bad: sick
+  - action: utter_mood_bad
+  - action: utter_ask_quest
+  - intent: gen_terms
+  - action: utter_term

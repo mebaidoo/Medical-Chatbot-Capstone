@@ -3,29 +3,30 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- locate
-- return_main_menu
-- pharmacy_name
 - gen_terms
-- locate_pharm
+- mood_bad
 - greet
+- locate
 - mood_great
+- diseases
+- diseases_info
+- deny
+- return_main_menu
+- drug_name
+- affirm
+- quit_bot
+- pharmacy_name
+- locate_pharm
 - terms
 - laboratory_name
 - locate_lab
 - hospital_name
 - locate_hosp
-- diseases
-- diseases_info
 - thanks
-- affirm
 - goodbye
-- deny
-- mood_bad
 - med_history
 - medical_terms
 - bot_challenge
-- quit_bot
 - nlu_fallback
 - query_knowledge_base
 entities:
@@ -33,8 +34,13 @@ entities:
 - disease
 - good
 - help
+- hosp
 - hosp_name
+- lab
 - lab_name
+- mention
+- name_of_drug
+- pharm
 - pharm_name
 - term_name
 - object_type
@@ -82,6 +88,7 @@ slots:
   #   - type: from_entity
   #     entity: knowledge_base_objects
 
+- get_definition
 responses:
   utter_greet:
   - text: Hey! how are you today?
@@ -92,7 +99,12 @@ responses:
   utter_thanks:
   - text: My pleasure
   utter_ask_quest:
-  - text: What can I do for you today? Would you like to locate a pharmacy/hospital/lab (1), get medical information (2), or get your medical history (3). Enter 1, 2, or 3.
+  - text: |
+      What can I do for you today? Would you like to:
+
+      Locate a pharmacy/hospital/lab
+      Get definitions to medical terms or
+      Get information on diseases
     channel: whatsapp
   - text: What can I do for you today?
     buttons:
@@ -103,7 +115,12 @@ responses:
     - title: Get information on diseases
       payload: /diseases_info
   utter_locate:
-  - text: Which of these places would you like to locate? Pharmacy (p), Hospital (h) or Lab (l). Enter p, h, or l.
+  - text: |
+      Which of these places would you like to locate?
+
+      Pharmacy
+      Health Centre or
+      Lab
     channel: whatsapp
   - text: Which of these places would you like to locate?
     buttons:
@@ -125,8 +142,6 @@ responses:
   - text: No such medical term. Sorry.
   utter_definition:
   - text: '{term} is {definition}'
-  utter_correct_term:
-  - text: Sorry, no such medical term. Kindly check your spelling. Would you like to try again?
   utter_anything_next:
   - text: Would you like to return to the menu options or quit :(?
   utter_hospitals:
@@ -145,10 +160,10 @@ responses:
   - text: |
       This is a link to the google map location of {place_name}. Hope you get what you're looking for.
       {map_link}
-  utter_correct_name:
-  - text: The name you entered is incorrect. Would you like to try again?
   utter_what_disease:
-  - text: What disease would you like to learn more about? Please enter the name of the disease.
+  - text: What disease would you like to learn more about? Please add _(underscore) before the name of the disease. e.g. _malaria
+  utter_pre_disease:
+  - text: This is some information on {disease}.
   utter_disease:
   - text: |
       {title}: {data}
@@ -156,15 +171,16 @@ responses:
   - text: '{disease_name} was not found in my database, please check your spelling!'
 
 actions:
+- action_adverse_drug
 - action_disease_checker
 - action_map_location
 - action_places_list
 - action_term_api
+- utter_adverse
+- utter_adverse_info
 - utter_alright
 - utter_anything_next
 - utter_ask_quest
-- utter_correct_name
-- utter_correct_term
 - utter_definition
 - utter_disease
 - utter_goodbye
@@ -176,8 +192,10 @@ actions:
 - utter_mood_bad
 - utter_mood_great
 - utter_no_disease
+- utter_no_drug
 - utter_no_term
 - utter_pharmacies
+- utter_pre_disease
 - utter_term
 - utter_thanks
 - utter_what_disease
