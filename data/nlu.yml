@@ -120,6 +120,7 @@ nlu:
     - very bad
     - [not good](bad)
     - I'm sick
+    - help me
 - intent: thanks
   examples: |
     - thanks
@@ -129,6 +130,8 @@ nlu:
     - thanks for helping me
     - thanks for your help
     - thanks for the help
+    - grateful
+    - appreciate your help
 - intent: return_main_menu
   examples: |
     - return
@@ -145,6 +148,8 @@ nlu:
     - continue
     - main menu
     - menu
+    - back
+    - go back
 - intent: quit_bot
   examples: |
     - quit
@@ -155,6 +160,9 @@ nlu:
     - I want to quit
     - finish
     - end
+    - close
+    - i am done
+    - that will be all
 - intent: locate
   examples: |
     - Locate a pharmacy/hospital/lab
