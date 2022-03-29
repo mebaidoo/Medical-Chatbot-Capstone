@@ -1,0 +1,94 @@
+[
+  {
+    "name": "disease",
+    "pattern": "_.+"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+Clinic"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+Clinic"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+Hospital"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+Hospital"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+clinic"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+clinic"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+hospital"
+  },
+  {
+    "name": "hosp_name",
+    "pattern": ".+hospital"
+  },
+  {
+    "name": "lab_name",
+    "pattern": ".+Laboratory"
+  },
+  {
+    "name": "lab_name",
+    "pattern": ".+Laboratory"
+  },
+  {
+    "name": "lab_name",
+    "pattern": ".+laboratory"
+  },
+  {
+    "name": "lab_name",
+    "pattern": ".+laboratory"
+  },
+  {
+    "name": "name_of_drug",
+    "pattern": "&.+"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+Chemist"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+Chemist"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+Pharmacy"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+Pharmacy"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+chemist"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+chemist"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+pharmacy"
+  },
+  {
+    "name": "pharm_name",
+    "pattern": ".+pharmacy"
+  },
+  {
+    "name": "term_name",
+    "pattern": "@.+"
+  }
+]

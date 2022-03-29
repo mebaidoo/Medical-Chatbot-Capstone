@@ -14,6 +14,17 @@ rules:
   - intent: thanks
   - action: utter_thanks
 
+- rule: affirm drug
+  steps:
+  - intent: affirm
+  - action: utter_what_drug
+
+- rule: deny drug
+  steps:
+  - intent: deny
+  - action: utter_alright
+
+
 - rule: anything next 1
   steps:
   - intent: return_main_menu
@@ -74,3 +85,21 @@ rules:
   steps:
   - intent: gen_terms
   - action: utter_term
+
+- rule: what disease
+  steps:
+  - intent: diseases_info
+  - action: utter_what_disease
+
+- rule: disease
+  steps:
+  - intent: diseases
+  - action: action_disease_checker
+
+- rule: drug
+  steps:
+  - intent: drug_name
+  - action: action_adverse_drug
+
+
+
