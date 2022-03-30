@@ -34,18 +34,15 @@ entities:
 - disease
 - good
 - help
-- hosp
 - hosp_name
-- lab
 - lab_name
 - mention
 - name_of_drug
-- pharm
 - pharm_name
 - term_name
-- object_type
-- mention 
+- object_type 
 - attribute
+- get_definition
 
 
 slots:
@@ -65,30 +62,34 @@ slots:
     type: any
     influence_conversation: false
     mappings:
-    - type: from_entity
+    - type: custom
       entity: attribute
-  # knowledge_base_last_object:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: knowledge_base_last_object
-  # knowledge_base_last_object_type:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: knowledge_base_last_object_type
-  # knowledge_base_listed_objects:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: mention
-  # knowledge_base_objects:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: knowledge_base_objects
+  knowledge_base_last_object:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: custom
+      entity: knowledge_base_last_object
+  knowledge_base_last_object_type:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: custom
+      entity: knowledge_base_last_object_type
+  knowledge_base_listed_objects:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: custom
+      entity: mention
+  knowledge_base_objects:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: custom
+      entity: knowledge_base_objects
 
-- get_definition
+
 responses:
   utter_greet:
   - text: Hey! how are you today?
@@ -101,7 +102,6 @@ responses:
   utter_ask_quest:
   - text: |
       What can I do for you today? Would you like to:
-
       Locate a pharmacy/hospital/lab
       Get definitions to medical terms or
       Get information on diseases
@@ -117,7 +117,6 @@ responses:
   utter_locate:
   - text: |
       Which of these places would you like to locate?
-
       Pharmacy
       Health Centre or
       Lab
@@ -170,6 +169,19 @@ responses:
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
 
+  - text: Sorry, no such disease.
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
+  utter_adverse:
+  - text: Would you like to know about the adverse reaction of any drug?
+  utter_what_drug:
+  - text: What drug would you like to know about? Please add & before the name of the disease. e.g. &paracetamol
+  utter_no_drug:
+  - text: Sorry, no such drug.
+  utter_adverse_info:
+  - text: |
+      Adverse reaction of {drug}:
+      {data}
 actions:
 - action_adverse_drug
 - action_disease_checker
@@ -200,3 +212,4 @@ actions:
 - utter_thanks
 - utter_what_disease
 - action_response_query
+- utter_what_drug

@@ -274,7 +274,7 @@ nlu:
     - [medical terms](get_definitions)
     - get definitions
     - [definitions](get_definitions)
-    - [definition](get_definition)
+    - [definition](get_definitions)
     - I need definitions
     - I want definitions
 - intent: diseases_info
@@ -327,13 +327,13 @@ nlu:
     - am I talking to a human?
 - intent: query_knowledge_base
   examples: |
-    - List [hospitals](object_type)
-    - List [pharmacies](object_type)
-    - List [labs](object_type)
-    - [First](mention)
-    - [last](mention) 
-    - map [location](attribute)
-    - [area](attribute)
+    - list [hospitals]{"entity":"object_type","value":"hospitals"}
+    - list [pharmacies]{"entity":"object_type","value":"pharmacies"}
+    - list [labs]{"entity":"object_type","value":"labs"}
+    - [First]{"entity":"mention","value":"1"}
+    - [last]{"entity":"mention","value":"LAST"} 
+    - map [location]{"entity":"attribute","value":"map_location"}
+    - [area]{"entity":"attribute","value":"area"}
 
 - synonym: "1"
   examples: |
@@ -354,15 +354,7 @@ nlu:
     - [&aspirin](name_of_drug)
     - [&sodium valproate](name_of_drug)
     - [&tadalafil][{"entity": "name_of_drug"}, {"entity": "name_of_drug"}]
-- intent: query_knowlegde_base
-  examples: |
-    - list [pharmacies](pharm)
-    - [first]{"entity": "mention", "value": "1"}
-    - list [hospitals](hosp)
-    - list [labs](lab)
-- synonym: '1'
-  examples: |
-    - first
+
 - regex: bad
   examples: |
     - .*don't.*

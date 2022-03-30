@@ -5,12 +5,11 @@
 # https://rasa.com/docs/rasa/custom-actions
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
-
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker,utils
 from rasa_sdk.executor import CollectingDispatcher
 from terms import Terms
 from locations import hospitals, pharmacies, labs
@@ -44,43 +43,6 @@ class TermsAndDefinitions(Action):
             dispatcher.utter_message(response="utter_anything_next")
 
         return []
-<<<<<<< HEAD
-        
-
-# class DiseasesAndSymptoms(Action):
-
-#     def name(self) -> Text:
-#         return "action_disease_checker"
-
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         bad_chars = ["[","'","]","'"]
-#         disease_name = next(tracker.get_latest_entity_values("disease"), None)
-#         disease_name = disease_name.capitalize()
-#         data = disease_repo()
-
-#         data_two= disease_repo()
-        
-#         if data['name'].str.contains(disease_name).any():
-#             data= data[data.name == disease_name]
-#             data = data.to_dict()
-#             data = list(data.values())[1]
-#             data = list(data.values())[0]
-
-#             data_two = data_two.loc[data_two["name"]==disease_name]
-#             data_two= data_two.to_dict()
-#             data_two = list(data_two.values())[2]
-#             data_two = list(data_two.values())[0]
-#             for i in bad_chars:
-#                 data = data.replace(i,"")
-#                 data_two = data_two.replace(i,"")
-#             dispatcher.utter_message(response="utter_disease", data=data, data_two=data_two, disease_name=disease_name)
-#         else:
-#             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
-#         return []
-=======
->>>>>>> 4795b8532b74657d5529f3b9154cdee351f96cb2
 
 class DiseasesAndSymptoms(Action):
     
@@ -291,14 +253,14 @@ class InMemoryKnowledgeBaseAction(ActionQueryKnowledgeBase):
         objects,
     ) -> None:
         if objects:
-            dispatcher.utter_message(text=f"Found the following {object_type}s:")
+            dispatcher.utter_message(text=f"Found the following {object_type}:")
             repr_function = await utils.call_potential_coroutine(
                 self.knowledge_base.get_representation_function_of_object(object_type)
             )
             for i, obj in enumerate(objects,1):
-                dispatcher.utter_message(text="{i}: {repr_function(obj)}")
+                dispatcher.utter_message(text=f"{i}: {repr_function(obj)}")
         else:
-            dispatcher.utter_message(text="I didn''t find any {object_type}s")
+            dispatcher.utter_message(text=f"I didn''t find any {object_type}s")
     
     def utter_attribute_value(
         self,
