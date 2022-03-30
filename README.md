@@ -1,3 +1,4 @@
+
 # Medical-Chatbot-Capstone
 This goal of this project is to design a conversational chatbot (using rasa) for a local community which will provide healthcare assistance to users. The bot is able to provide medical information including disease symptoms, diagnostics, available treatments, and adverse drug reaction. Also, directions to medical facilities such as hospitals, pharmacies and labs and simple interpretation to medical terminologies such as bmi, hypertension, benign, malignant, etc.
 
@@ -26,3 +27,8 @@ The rasa default fallback intent and action was used, so in cases where a user e
 
 Deployment on social media apps:
 The bot was finally deployed on Facebook and Whatsapp to make it accessible to users. Facebook supports the use of buttons and therefore the user only needs to select an option where there are buttons unlike Whatsapp where the user needs to manually enter their inputs.
+
+## Chatbot deployed on Facebook Messenger
+![1](https://github.com/SeyramDiaba/Medical-Chatbot-Capstone/blob/main/pics/Screenshot_20220330_073929_com.facebook.orca.jpg?raw=true)
+![1](https://github.com/SeyramDiaba/Medical-Chatbot-Capstone/blob/main/pics/Screenshot_20220330_073936_com.facebook.orca.jpg?raw=true)
+![1](https://github.com/SeyramDiaba/Medical-Chatbot-Capstone/blob/main/pics/Screenshot_20220330_073945_com.facebook.orca.jpg?raw=true)
