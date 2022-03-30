@@ -61,7 +61,7 @@ rules:
   - intent: diseases_info
   - action: utter_what_disease
 
-- rule: disease
+- rule: disease 
   steps:
   - intent: diseases
   - action: action_disease_checker

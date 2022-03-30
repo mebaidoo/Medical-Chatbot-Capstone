@@ -36,17 +36,16 @@ entities:
 - get_definition
 - good
 - help
-- hosp
 - hosp_name
-- lab
 - lab_name
 - mention
 - name_of_drug
-- object_type
-- pharm
 - pharm_name
 - pharmacies
 - term_name
+- object_type 
+
+
 slots:
   object_type:
     type: any
@@ -64,7 +63,7 @@ slots:
     type: any
     influence_conversation: false
     mappings:
-    - type: from_entity
+    - type: custom
       entity: attribute
 responses:
   utter_greet:
@@ -78,7 +77,6 @@ responses:
   utter_ask_quest:
   - text: |
       What can I do for you today? Would you like to:
-
       Locate a pharmacy/hospital/lab
       Get definitions to medical terms or
       Get information on diseases
@@ -143,28 +141,28 @@ responses:
   - text: |
       {title}: {data}
   utter_no_disease:
-  - text: '{disease_name} was not found in my database, please check your spelling!'
-  utter_adverse:
-  - text: Would you like to know about the adverse reaction of any drug?
-  utter_what_drug:
-  - text: What drug would you like to know about?
-  utter_adverse_info:
-  - text: |
-      This is some information on the adverse reaction of {drug}:
-
-      {data}
-  utter_no_drug:
-  - text: Sorry, no such drug.
+  - text: Sorry, no such disease.
   utter_ask_rephrase:
   - text: Sorry, I'm not sure I understand. Could you rephrase it?
   - text: Could you please rephrase your message? I didn't quite get that.
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
+  utter_adverse:
+  - text: Would you like to know about the adverse reaction of any drug?
+  utter_what_drug:
+  - text: What drug would you like to know about? Please add & before the name of the disease. e.g. &paracetamol
+  utter_no_drug:
+  - text: Sorry, no such drug.
+  utter_adverse_info:
+  - text: |
+      Adverse reaction of {drug}:
+      {data}
 actions:
 - action_adverse_drug
 - action_disease_checker
 - action_map_location
 - action_places_list
 - action_query_knowledge_base
-- action_response_query
 - action_term_api
 - utter_adverse
 - utter_adverse_info

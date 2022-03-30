@@ -5,7 +5,6 @@
 # https://rasa.com/docs/rasa/custom-actions
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
-
 # This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
@@ -45,39 +44,6 @@ class TermsAndDefinitions(Action):
 
         return []
         
-
-# class DiseasesAndSymptoms(Action):
-
-#     def name(self) -> Text:
-#         return "action_disease_checker"
-
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         bad_chars = ["[","'","]","'"]
-#         disease_name = next(tracker.get_latest_entity_values("disease"), None)
-#         disease_name = disease_name.capitalize()
-#         data = disease_repo()
-
-#         data_two= disease_repo()
-        
-#         if data['name'].str.contains(disease_name).any():
-#             data= data[data.name == disease_name]
-#             data = data.to_dict()
-#             data = list(data.values())[1]
-#             data = list(data.values())[0]
-
-#             data_two = data_two.loc[data_two["name"]==disease_name]
-#             data_two= data_two.to_dict()
-#             data_two = list(data_two.values())[2]
-#             data_two = list(data_two.values())[0]
-#             for i in bad_chars:
-#                 data = data.replace(i,"")
-#                 data_two = data_two.replace(i,"")
-#             dispatcher.utter_message(response="utter_disease", data=data, data_two=data_two, disease_name=disease_name)
-#         else:
-#             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
-#         return []
 
 class DiseasesAndSymptoms(Action):
     
