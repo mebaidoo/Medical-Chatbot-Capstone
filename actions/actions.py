@@ -10,7 +10,7 @@ from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
 
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, utils
 from rasa_sdk.executor import CollectingDispatcher
 from terms import Terms
 from locations import hospitals, pharmacies, labs
@@ -44,7 +44,6 @@ class TermsAndDefinitions(Action):
             dispatcher.utter_message(response="utter_anything_next")
 
         return []
-<<<<<<< HEAD
         
 
 # class DiseasesAndSymptoms(Action):
@@ -79,8 +78,6 @@ class TermsAndDefinitions(Action):
 #         else:
 #             dispatcher.utter_message(response="utter_no_disease", disease_name=disease_name)
 #         return []
-=======
->>>>>>> 4795b8532b74657d5529f3b9154cdee351f96cb2
 
 class DiseasesAndSymptoms(Action):
     
@@ -275,11 +272,8 @@ class MapLocations(Action):
 
         return []
 
-#  knowledge based actions 
-class InMemoryKnowledgeBaseAction(ActionQueryKnowledgeBase):
-    def name(self) -> Text:
-        return "action_response_query"
 
+class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
     def __init__(self):
         knowledge_base = InMemoryKnowledgeBase("data.json")
         super().__init__(knowledge_base)
@@ -289,17 +283,22 @@ class InMemoryKnowledgeBaseAction(ActionQueryKnowledgeBase):
         dispatcher,
         object_type,
         objects,
-    ) -> None:
+    ):
         if objects:
             dispatcher.utter_message(text=f"Found the following {object_type}s:")
+            dispatcher.utter_message(text="\n")
             repr_function = await utils.call_potential_coroutine(
                 self.knowledge_base.get_representation_function_of_object(object_type)
             )
             for i, obj in enumerate(objects,1):
-                dispatcher.utter_message(text="{i}: {repr_function(obj)}")
+                dispatcher.utter_message(text=f"{i}: {repr_function(obj)}")
+            dispatcher.utter_message(text="\n")
+            dispatcher.utter_message(text="Which of them would you like directions for? \nPlease begin your statement with \"directions to\", e.g. directions to the first one.")
         else:
-            dispatcher.utter_message(text="I didn''t find any {object_type}s")
-    
+            dispatcher.utter_message(text=f"I didn't find any {object_type}")
+            dispatcher.utter_message(text="\n")
+            dispatcher.utter_message(response="utter_anything_next")
+
     def utter_attribute_value(
         self,
         dispatcher,
@@ -309,9 +308,13 @@ class InMemoryKnowledgeBaseAction(ActionQueryKnowledgeBase):
     ) -> None:
         if attribute_value:
             dispatcher.utter_message(
-                text=f"{object_name}'s {attribute_name} is {attribute_value}."
+                text=f"This is the link to the google map location of {object_name}: {attribute_value}. Hope you find what you need."
             )
+            dispatcher.utter_message(text="\n")
+            dispatcher.utter_message(response="utter_anything_next")
         else:
             dispatcher.utter_message(
-                text=f"I didn't find {object_name}'s {attribute_name}."
+                text=f"I didn't find a map location for {object_name}."
             )
+            dispatcher.utter_message(text="\n")
+            dispatcher.utter_message(response="utter_anything_next")

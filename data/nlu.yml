@@ -101,6 +101,7 @@ nlu:
     - I'm okay
     - am okay
     - I am okay
+    - [good](good)
 - intent: mood_bad
   examples: |
     - I am [sick](bad)
@@ -176,104 +177,14 @@ nlu:
     - I want a location
     - I want to locate
     - I want to locate a place
-- intent: locate_pharm
-  examples: |
-    - Pharmacy
-    - drug store
-    - drug shop
-    - pharm
-    - pharmacy
-    - I would like to locate a pharmacy
-    - I would like to locate a drug store
-    - I want to locate a pharmacy
-    - I want to locate a drug store
-    - locate pharmacy
-    - locate drug store
-- intent: locate_hosp
-  examples: |
-    - Health Centre
-    - Health Center
-    - health centre
-    - health center
-    - hospital
-    - I would like to locate a health centre
-    - I would like to locate a health center
-    - I want to locate a health centre
-    - I want to locate a health center
-    - locate health centre
-    - locate health center
-- intent: locate_lab
-  examples: |
-    - Lab
-    - laboratory
-    - lab
-    - medical lab
-    - medical laboratory
-    - I would like to locate a lab
-    - I would like to locate a laboratory
-    - I would like to locate a medical laboratory
-    - I want to locate a lab
-    - I want to locate a laboratory
-    - I want to locate a medical laboratory
-    - locate lab
-    - locate laboratory
-    - locate medical lab
-- intent: hospital_name
-  examples: |
-    - [takoradi hospital](hosp_name)
-    - [g.p.h.a clinic](hosp_name)
-    - [end point homeopathic clinic](hosp_name)
-    - [end point homeopathic clinic][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
-    - [takoradi hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
-    - [s.d.a hospital](hosp_name)
-    - [effia nkwanta hospital](hosp_name)
-    - [kwesimintsim hospital](hosp_name)
-    - [grace spring mission hospital](hosp_name)
-    - [family health specialist hospital](hosp_name)
-    - [jemima crentsil hospital](hosp_name)
-    - [bethel methodist medical hospital](hosp_name)
-    - [s.d.a hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
-    - [grace spring mission hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
-    - [end point homeopathic clinic][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
-    - [kwesimintsim hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
-    - [jemima crentsil hospital][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
-    - [g.p.h.a clinic][{"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}, {"entity": "hosp_name"}]
-- intent: pharmacy_name
-  examples: |
-    - [kendicks pharmacy](pharm_name)
-    - [akan chemist](pharm_name)
-    - [kendicks pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
-    - [day by day pharmacy](pharm_name)
-    - [medrugs pharmacy](pharm_name)
-    - [abuakwa pharmacy](pharm_name)
-    - [eff-ess pharmacy](pharm_name)
-    - [day by day pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
-    - [eff-ess pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
-    - [akan chemist][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
-    - [medrugs pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
-    - [abuakwa pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
-    - [kendicks pharmacy][{"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}, {"entity": "pharm_name"}]
-- intent: laboratory_name
-  examples: |
-    - [mediwest laboratory](lab_name)
-    - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
-    - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}]
-    - [oasis medical laboratory](lab_name)
-    - [blue waves diagnostic laboratory](lab_name)
-    - [diascan laboratory](lab_name)
-    - [diascan laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
-    - [oasis medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
-    - [blue waves diagnostic laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
-    - [mediwest laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
-    - [solar medical laboratory][{"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}, {"entity": "lab_name"}]
 - intent: gen_terms
   examples: |
     - Get definitions to medical terms
     - get definitions to medical terms
     - general terms
-    - [medical terms](get_definitions)
+    - [medical terms](get_definition)
     - get definitions
-    - [definitions](get_definitions)
+    - [definitions](get_definition)
     - [definition](get_definition)
     - I need definitions
     - I want definitions
@@ -327,20 +238,41 @@ nlu:
     - am I talking to a human?
 - intent: query_knowledge_base
   examples: |
-    - List [hospitals](object_type)
-    - List [pharmacies](object_type)
-    - List [labs](object_type)
-    - [First](mention)
-    - [last](mention) 
-    - map [location](attribute)
-    - [area](attribute)
-
-- synonym: "1"
-  examples: |
-    - The first one
-    - First
-    - Number one
-
+    - locate [hospitals]{"entity": "object_type", "value": "hospital"}
+    - find [hospitals]{"entity": "object_type", "value": "hospital"}
+    - [hospitals]{"entity": "object_type", "value": "hospital"}
+    - locate [pharmacies]{"entity": "object_type", "value": "pharmacy"}
+    - find [pharmacies]{"entity": "object_type", "value": "pharmacy"}
+    - [pharmacies]{"entity": "object_type", "value": "pharmacy"}
+    - locate [labs]{"entity": "object_type", "value": "lab"}
+    - find [labs]{"entity": "object_type", "value": "lab"}
+    - [labs]{"entity": "object_type", "value": "lab"}
+    - [first]{"entity": "mention", "value": "1"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [first]{"entity": "mention", "value": "1"}
+    - [second]{"entity": "mention", "value": "2"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [second]{"entity": "mention", "value": "2"}
+    - [third]{"entity": "mention", "value": "3"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [third]{"entity": "mention", "value": "3"}
+    - [fourth]{"entity": "mention", "value": "4"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [fourth]{"entity": "mention", "value": "4"}
+    - [fifth]{"entity": "mention", "value": "5"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [fifth]{"entity": "mention", "value": "5"}
+    - [sixth]{"entity": "mention", "value": "6"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [sixth]{"entity": "mention", "value": "6"}
+    - [seventh]{"entity": "mention", "value": "7"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [seventh]]{"entity": "mention", "value": "7"}
+    - [eighth]{"entity": "mention", "value": "8"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [eighth]{"entity": "mention", "value": "8"}
+    - [ninth]{"entity": "mention", "value": "9"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [ninth]{"entity": "mention", "value": "9"}
+    - [tenth]{"entity": "mention", "value": "10"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [tenth]{"entity": "mention", "value": "10"}
+    - [last]{"entity": "mention", "value": "LAST"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [last]{"entity": "mention", "value": "LAST"}
+    - [any]{"entity": "mention", "value": "ANY"}{"entity": "attribute", "value": "map_location"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to [any]{"entity": "mention", "value": "ANY"}
+    - [directions]{"entity": "attribute", "value": "map_location"} to the [first]{"entity": "mention", "value": "1"} one
+    - [directions]{"entity": "attribute", "value": "map_location"} to [any]{"entity": "mention", "value": "ANY"} of them
 - intent: drug_name
   examples: |
     - [&paracetamol](name_of_drug)
@@ -354,17 +286,112 @@ nlu:
     - [&aspirin](name_of_drug)
     - [&sodium valproate](name_of_drug)
     - [&tadalafil][{"entity": "name_of_drug"}, {"entity": "name_of_drug"}]
-- intent: query_knowlegde_base
+- synonym: hospital
   examples: |
-    - list [pharmacies](pharm)
-    - [first]{"entity": "mention", "value": "1"}
-    - list [hospitals](hosp)
-    - list [labs](lab)
+    - hospitals
+    - Hospitals
+- synonym: pharmacy
+  examples: |
+    - pharmacies
+    - Pharmacies
+- synonym: lab
+  examples: |
+    - labs
+    - Labs
+    - Laboratories
+    - laboratories
 - synonym: '1'
   examples: |
     - first
+    - the first one
+    - number one
+    - one
+    - 1st
+- synonym: map_location
+  examples: |
+    - directions
+- synonym: '2'
+  examples: |
+    - second
+    - the second one
+    - number two
+    - number 2
+    - two
+    - 2nd
+- synonym: '3'
+  examples: |
+    - third
+    - the third one
+    - number three
+    - number 3
+    - three
+    - 3rd
+- synonym: '4'
+  examples: |
+    - fourth
+    - the fourth one
+    - number four
+    - number 4
+    - four
+    - 4th
+- synonym: '5'
+  examples: |
+    - fifth
+    - the fifth one
+    - number five
+    - number 5
+    - five
+    - 5th
+- synonym: '6'
+  examples: |
+    - sixth
+    - the sixth one
+    - number six
+    - number 6
+    - six
+    - 6th
+- synonym: '7'
+  examples: |
+    - seventh
+    - the seventh one
+    - number seven
+    - number 7
+    - seven
+    - 7th
+- synonym: '8'
+  examples: |
+    - eighth
+    - the eighth one
+    - number eight
+    - number 8
+    - eight
+    - 8th
+- synonym: '9'
+  examples: |
+    - ninth
+    - the ninth one
+    - number nine
+    - number 9
+    - nine
+    - 9th
+- synonym: '10'
+  examples: |
+    - tenth
+    - the tenth one
+    - number ten
+    - number 10
+    - ten
+    - 10th
+- synonym: LAST
+  examples: |
+    - last
+- synonym: ANY
+  examples: |
+    - any
+    - any of them
 - regex: bad
   examples: |
+    - .*bad.*
     - .*don't.*
     - .*dont.*
     - .*dying.*
@@ -373,39 +400,12 @@ nlu:
     - .*unwell.*
     - .+\snot\s.+
     - not\s.+
-    - .*bad.*
 - regex: disease
   examples: |
     - _.+
-- regex: hosp_name
-  examples: |
-    - .+Clinic
-    - .+Clinic
-    - .+Hospital
-    - .+Hospital
-    - .+clinic
-    - .+clinic
-    - .+hospital
-    - .+hospital
-- regex: lab_name
-  examples: |
-    - .+Laboratory
-    - .+Laboratory
-    - .+laboratory
-    - .+laboratory
 - regex: name_of_drug
   examples: |
     - &.+
-- regex: pharm_name
-  examples: |
-    - .+Chemist
-    - .+Chemist
-    - .+Pharmacy
-    - .+Pharmacy
-    - .+chemist
-    - .+chemist
-    - .+pharmacy
-    - .+pharmacy
 - regex: term_name
   examples: |
     - @.+

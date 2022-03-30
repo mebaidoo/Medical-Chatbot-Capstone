@@ -1,5 +1,5 @@
 {
-	"hospitals": [{
+	"hospital": [{
 			"id": 0,
 			"name": "S.D.A Hospital",
 			"area": "Takoradi-Liberation Road",
@@ -68,7 +68,7 @@
 		}
 	],
 
-	"pharmacies": [{
+	"pharmacy": [{
 			"id": 0,
 			"name": "Kendicks Pharmacy",
 			"area": "Takoradi-Market Circle",
@@ -109,7 +109,8 @@
 
 		}
 	],
-    "labs":[{
+
+    "lab": [{
             "id": 0,
             "name": "Mediwest Laboratory", 
             "area": "Sawmill", 
@@ -126,7 +127,18 @@
             "name": "Oasis Medical Laboratory", 
             "area": "Fijai", 
             "map_location": "https://goo.gl/maps/ouqNthQFFTM42nZF8"
-
-        }
+        },
+		{
+			"id": 3,
+			"name": "Blue Waves Diagnostic Laboratory",
+			"area": "Fijai",
+			"map_location": "https://goo.gl/maps/ouqNthQFFTM42nZF8"
+		},
+		{
+			"id": 4,
+			"name": "Diascan Laboratory",
+			"area": "Assakae Road",
+			"map_location": "https://goo.gl/maps/mhkyFT9t1XRDuyGw5"
+		}
     ]
 }

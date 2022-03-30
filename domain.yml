@@ -3,11 +3,13 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- locate
+- query_knowledge_base
+- mood_great
+- greet
+- thanks
 - gen_terms
 - mood_bad
-- greet
-- locate
-- mood_great
 - diseases
 - diseases_info
 - deny
@@ -22,16 +24,16 @@ intents:
 - locate_lab
 - hospital_name
 - locate_hosp
-- thanks
 - goodbye
 - med_history
 - medical_terms
 - bot_challenge
 - nlu_fallback
-- query_knowledge_base
 entities:
+- attribute
 - bad
 - disease
+- get_definition
 - good
 - help
 - hosp
@@ -40,14 +42,11 @@ entities:
 - lab_name
 - mention
 - name_of_drug
+- object_type
 - pharm
 - pharm_name
+- pharmacies
 - term_name
-- object_type
-- mention 
-- attribute
-
-
 slots:
   object_type:
     type: any
@@ -67,28 +66,6 @@ slots:
     mappings:
     - type: from_entity
       entity: attribute
-  # knowledge_base_last_object:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: knowledge_base_last_object
-  # knowledge_base_last_object_type:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: knowledge_base_last_object_type
-  # knowledge_base_listed_objects:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: mention
-  # knowledge_base_objects:
-  #   type: any
-  #   mappings:
-  #   - type: from_entity
-  #     entity: knowledge_base_objects
-
-- get_definition
 responses:
   utter_greet:
   - text: Hey! how are you today?
@@ -105,7 +82,7 @@ responses:
       Locate a pharmacy/hospital/lab
       Get definitions to medical terms or
       Get information on diseases
-    channel: whatsapp
+    channel: twilio
   - text: What can I do for you today?
     buttons:
     - title: Locate a pharmacy/hospital/lab
@@ -118,18 +95,16 @@ responses:
   - text: |
       Which of these places would you like to locate?
 
-      Pharmacy
-      Health Centre or
-      Lab
-    channel: whatsapp
+      pharmacies, hospitals or labs
+    channel: twilio
   - text: Which of these places would you like to locate?
     buttons:
     - title: Pharmacy
-      payload: /locate_pharm
-    - title: Health Centre
-      payload: /locate_hosp
+      payload: /pharmacies
+    - title: Hospital
+      payload: /hospitals
     - title: Lab
-      payload: /locate_lab
+      payload: /labs
   utter_goodbye:
   - text: Bye, have a nice day.
   utter_alright:
@@ -169,18 +144,34 @@ responses:
       {title}: {data}
   utter_no_disease:
   - text: '{disease_name} was not found in my database, please check your spelling!'
+  utter_adverse:
+  - text: Would you like to know about the adverse reaction of any drug?
+  utter_what_drug:
+  - text: What drug would you like to know about?
+  utter_adverse_info:
+  - text: |
+      This is some information on the adverse reaction of {drug}:
 
+      {data}
+  utter_no_drug:
+  - text: Sorry, no such drug.
+  utter_ask_rephrase:
+  - text: Sorry, I'm not sure I understand. Could you rephrase it?
+  - text: Could you please rephrase your message? I didn't quite get that.
 actions:
 - action_adverse_drug
 - action_disease_checker
 - action_map_location
 - action_places_list
+- action_query_knowledge_base
+- action_response_query
 - action_term_api
 - utter_adverse
 - utter_adverse_info
 - utter_alright
 - utter_anything_next
 - utter_ask_quest
+- utter_ask_rephrase
 - utter_definition
 - utter_disease
 - utter_goodbye
@@ -199,4 +190,4 @@ actions:
 - utter_term
 - utter_thanks
 - utter_what_disease
-- action_response_query
+- utter_what_drug

@@ -13,6 +13,10 @@ pipeline:
   - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: RegexEntityExtractor
+    # use lookup tables to extract entities
+    use_lookup_tables: True
+    # use regexes to extract entities
+    use_regexes: True
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
