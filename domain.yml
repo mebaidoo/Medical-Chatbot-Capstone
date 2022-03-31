@@ -77,13 +77,13 @@ responses:
   utter_ask_quest:
   - text: |
       What can I do for you today? Would you like to:
-      Get a location
+      Get location
       Get definitions to medical terms or
       Get information on diseases
     channel: twilio
   - text: What can I do for you today?
     buttons:
-    - title: Get a location
+    - title: Get location
       payload: /locate
     - title: Get definitions to medical terms
       payload: /gen_terms

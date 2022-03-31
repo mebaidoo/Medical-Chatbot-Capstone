@@ -326,7 +326,7 @@ nlu:
   examples: |
     - directions
     - direction
-- synonym: "1"
+- synonym: '1'
   examples: |
     - first
     - the first
