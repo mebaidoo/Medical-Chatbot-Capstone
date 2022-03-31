@@ -144,18 +144,6 @@ stories:
   - intent: quit_bot
   - action: utter_alright
 
-- story: knowledge base happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: query_knowledge_base
-  - action: action_query_knowledge_base
-  - intent: goodbye
-  - action: utter_goodbye
- 
 - story: interactive_story_disease_1
   steps:
   - intent: greet
@@ -216,32 +204,7 @@ stories:
     - disease: _diabetes
   - action: action_disease_checker
   - intent: deny
-  - action: utter_alright
-
-- story: interactive_story_bad_mood 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_bad
-    entities:
-    - bad: not good
-  - action: utter_mood_bad
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-
-- story: interactive_story_bad_mood 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_bad
-    entities:
-    - bad: I'm sick
-    - bad: sick
-  - action: utter_mood_bad
-  - action: utter_ask_quest
-  - intent: gen_terms
-  - action: utter_term
+  - action: utter_anything_next
 
 - story: interactive_story_locate_pharm 1
   steps:
@@ -251,6 +214,62 @@ stories:
     entities:
     - good: good
   - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: query_knowledge_base
+    entities:
+    - object_type: pharmacy
+  - slot_was_set:
+    - object_type: pharmacy
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: pharmacy
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - knowledge_base_last_object: null
+  - slot_was_set:
+    - knowledge_base_last_object_type: pharmacy
+  - slot_was_set:
+    - knowledge_base_listed_objects:
+      - 4
+      - 2
+      - 1
+      - 5
+      - 3
+  - intent: query_knowledge_base
+    entities:
+    - attribute: map_location
+    - mention: '1'
+  - slot_was_set:
+    - mention: '1'
+  - slot_was_set:
+    - attribute: map_location
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: pharmacy
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - knowledge_base_last_object: 4
+  - slot_was_set:
+    - knowledge_base_last_object_type: pharmacy
+  - intent: thanks
+  - action: utter_thanks
+
+- story: interactive_story_locate_pharm 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
+    entities:
+    - bad: bad
+  - action: utter_mood_bad
   - action: utter_ask_quest
   - intent: locate
   - action: utter_locate
@@ -355,6 +374,62 @@ stories:
   - intent: thanks
   - action: utter_thanks
 
+- story: interactive_story_locate_hosp_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
+    entities:
+    - bad: bad
+  - action: utter_mood_bad
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: query_knowledge_base
+    entities:
+    - object_type: hospital
+  - slot_was_set:
+    - object_type: hospital
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: hospital
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - knowledge_base_last_object: null
+  - slot_was_set:
+    - knowledge_base_last_object_type: hospital
+  - slot_was_set:
+    - knowledge_base_listed_objects:
+      - 1
+      - 0
+      - 2
+      - 4
+      - 6
+  - intent: query_knowledge_base
+    entities:
+    - attribute: map_location
+    - mention: '1'
+  - slot_was_set:
+    - mention: '1'
+  - slot_was_set:
+    - attribute: map_location
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: hospital
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - knowledge_base_last_object: 1
+  - slot_was_set:
+    - knowledge_base_last_object_type: hospital
+  - intent: thanks
+  - action: utter_thanks
+
 - story: interactive_story_locate_lab_1
   steps:
   - intent: greet
@@ -363,6 +438,60 @@ stories:
     entities:
     - good: good
   - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: query_knowledge_base
+    entities:
+    - object_type: lab
+  - slot_was_set:
+    - object_type: lab
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: lab
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - knowledge_base_last_object: null
+  - slot_was_set:
+    - knowledge_base_last_object_type: lab
+  - slot_was_set:
+    - knowledge_base_listed_objects:
+      - 4
+      - 0
+      - 1
+      - 3
+      - 2
+  - intent: query_knowledge_base
+    entities:
+    - attribute: map_location
+    - mention: ANY
+  - slot_was_set:
+    - mention: ANY
+  - slot_was_set:
+    - attribute: map_location
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: lab
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - knowledge_base_last_object: 4
+  - slot_was_set:
+    - knowledge_base_last_object_type: lab
+
+- story: interactive_story_locate_lab_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
+    entities:
+    - bad: bad
+  - action: utter_mood_bad
   - action: utter_ask_quest
   - intent: locate
   - action: utter_locate

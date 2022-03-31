@@ -22,7 +22,7 @@ rules:
 - rule: deny drug
   steps:
   - intent: deny
-  - action: utter_alright
+  - action: utter_anything_next
 
 
 - rule: anything next 1

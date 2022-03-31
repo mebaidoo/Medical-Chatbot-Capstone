@@ -105,34 +105,64 @@ nlu:
 - intent: mood_bad
   examples: |
     - I am [sick](bad)
-    - not feeling well
+    - [not feeling well](bad)
+    - [I am not good](bad)
     - feeling nauseous
     - feeling feverish
-    - I'm very sick
-    - I'm [dying](bad)
+    - [I'm very sick](bad)
+    - [I'm dying](bad)
+    - [dying](bad)
+    - [I'm dying right now](bad)
     - [not](bad) so good
     - [sick](bad)
     - I'm [ill](bad)
+    - [I am ill](bad)
+    - [am ill today](bad)
     - I [don't](bad) feel very well
+    - [I don't feel well](bad)
+    - [don't feel well](bad)
+    - I [dont](bad) feel very well
+    - [I dont feel well](bad)
+    - [dont feel well](bad)
     - not good
+    - [not fine](bad)
     - not very good
     - I'm [unwell](bad)
+    - [unwell](bad)
+    - [am unwell today](bad)
     - [bad](bad)
-    - very bad
+    - [very bad](bad)
+    - [very bad today](bad)
     - [not good](bad)
-    - I'm sick
+    - [I'm sick today](bad)
     - help me
+    - help
 - intent: thanks
   examples: |
     - thanks
     - thank you
     - that's helpful
+    - that is helpful
+    - that was helpful
+    - that was really helpful
+    - that was very helpful
     - awesome, thanks
     - thanks for helping me
     - thanks for your help
+    - thanks for today
+    - thank you for today
     - thanks for the help
+    - thank you very much
     - grateful
     - appreciate your help
+    - thank you for the information
+    - thank you for the info
+    - thanks for the information
+    - thanks for the info
+    - wow, thanks
+    - wow, thank you
+    - you are the best
+    - gracias
 - intent: return_main_menu
   examples: |
     - return
@@ -166,8 +196,10 @@ nlu:
     - that will be all
 - intent: locate
   examples: |
-    - Locate a pharmacy/hospital/lab
-    - locate a pharmacy/hospital/lab
+    - Get a location
+    - get a location
+    - Get location
+    - get location
     - I need a location
     - I need to locate a place
     - locate
@@ -247,32 +279,18 @@ nlu:
     - locate [labs]{"entity": "object_type", "value": "lab"}
     - find [labs]{"entity": "object_type", "value": "lab"}
     - [labs]{"entity": "object_type", "value": "lab"}
-    - [first]{"entity": "mention", "value": "1"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [first]{"entity": "mention", "value": "1"}
-    - [second]{"entity": "mention", "value": "2"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [second]{"entity": "mention", "value": "2"}
-    - [third]{"entity": "mention", "value": "3"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [third]{"entity": "mention", "value": "3"}
-    - [fourth]{"entity": "mention", "value": "4"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [fourth]{"entity": "mention", "value": "4"}
-    - [fifth]{"entity": "mention", "value": "5"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [fifth]{"entity": "mention", "value": "5"}
-    - [sixth]{"entity": "mention", "value": "6"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [sixth]{"entity": "mention", "value": "6"}
-    - [seventh]{"entity": "mention", "value": "7"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [seventh]]{"entity": "mention", "value": "7"}
-    - [eighth]{"entity": "mention", "value": "8"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [eighth]{"entity": "mention", "value": "8"}
-    - [ninth]{"entity": "mention", "value": "9"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [ninth]{"entity": "mention", "value": "9"}
-    - [tenth]{"entity": "mention", "value": "10"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [tenth]{"entity": "mention", "value": "10"}
-    - [last]{"entity": "mention", "value": "LAST"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [last]{"entity": "mention", "value": "LAST"}
-    - [any]{"entity": "mention", "value": "ANY"}{"entity": "attribute", "value": "map_location"}
     - [directions]{"entity": "attribute", "value": "map_location"} to [any]{"entity": "mention", "value": "ANY"}
-    - [directions]{"entity": "attribute", "value": "map_location"} to the [first]{"entity": "mention", "value": "1"} one
-    - [directions]{"entity": "attribute", "value": "map_location"} to [any]{"entity": "mention", "value": "ANY"} of them
 - intent: drug_name
   examples: |
     - [&paracetamol](name_of_drug)
@@ -290,30 +308,37 @@ nlu:
   examples: |
     - hospitals
     - Hospitals
+    - a hospital
 - synonym: pharmacy
   examples: |
     - pharmacies
     - Pharmacies
+    - a pharmacy
 - synonym: lab
   examples: |
     - labs
     - Labs
     - Laboratories
     - laboratories
-- synonym: '1'
+    - a lab
+    - a laboratory
+- synonym: map_location
+  examples: |
+    - directions
+    - direction
+- synonym: "1"
   examples: |
     - first
+    - the first
     - the first one
     - number one
     - one
     - 1st
-- synonym: map_location
-  examples: |
-    - directions
 - synonym: '2'
   examples: |
     - second
     - the second one
+    - the second
     - number two
     - number 2
     - two
@@ -322,6 +347,7 @@ nlu:
   examples: |
     - third
     - the third one
+    - the third
     - number three
     - number 3
     - three
@@ -330,6 +356,7 @@ nlu:
   examples: |
     - fourth
     - the fourth one
+    - the fourth
     - number four
     - number 4
     - four
@@ -338,6 +365,7 @@ nlu:
   examples: |
     - fifth
     - the fifth one
+    - the fifth
     - number five
     - number 5
     - five
@@ -346,6 +374,7 @@ nlu:
   examples: |
     - sixth
     - the sixth one
+    - the sixth
     - number six
     - number 6
     - six
@@ -354,6 +383,7 @@ nlu:
   examples: |
     - seventh
     - the seventh one
+    - the seventh
     - number seven
     - number 7
     - seven
@@ -362,6 +392,7 @@ nlu:
   examples: |
     - eighth
     - the eighth one
+    - the eighth
     - number eight
     - number 8
     - eight
@@ -370,6 +401,7 @@ nlu:
   examples: |
     - ninth
     - the ninth one
+    - the ninth
     - number nine
     - number 9
     - nine
@@ -378,6 +410,7 @@ nlu:
   examples: |
     - tenth
     - the tenth one
+    - the tenth
     - number ten
     - number 10
     - ten
@@ -385,6 +418,8 @@ nlu:
 - synonym: LAST
   examples: |
     - last
+    - the last one
+    - the last
 - synonym: ANY
   examples: |
     - any

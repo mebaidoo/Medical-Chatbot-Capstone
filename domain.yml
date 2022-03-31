@@ -63,7 +63,7 @@ slots:
     type: any
     influence_conversation: false
     mappings:
-    - type: custom
+    - type: from_entity
       entity: attribute
 responses:
   utter_greet:
@@ -77,13 +77,13 @@ responses:
   utter_ask_quest:
   - text: |
       What can I do for you today? Would you like to:
-      Locate a pharmacy/hospital/lab
+      Get a location
       Get definitions to medical terms or
       Get information on diseases
     channel: twilio
   - text: What can I do for you today?
     buttons:
-    - title: Locate a pharmacy/hospital/lab
+    - title: Get a location
       payload: /locate
     - title: Get definitions to medical terms
       payload: /gen_terms
@@ -143,7 +143,7 @@ responses:
   utter_no_disease:
   - text: Sorry, no such disease.
   utter_ask_rephrase:
-  - text: Sorry, I'm not sure I understand. Could you rephrase it?
+  - text: Sorry, I'm not sure I understand. Please rephrase it?
   - text: Could you please rephrase your message? I didn't quite get that.
   utter_default:
   - text: Sorry I didn't get that. Can you rephrase?
@@ -152,7 +152,7 @@ responses:
   utter_what_drug:
   - text: What drug would you like to know about? Please add & before the name of the disease. e.g. &paracetamol
   utter_no_drug:
-  - text: Sorry, no such drug.
+  - text: Sorry, there is no such drug.
   utter_adverse_info:
   - text: |
       Adverse reaction of {drug}:
