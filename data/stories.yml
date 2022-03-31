@@ -7,6 +7,8 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
+    entities:
+    - good: good
   - action: utter_mood_great
   - action: utter_ask_quest
   - checkpoint: quest_asked
@@ -16,159 +18,11 @@ stories:
   - intent: greet
   - action: utter_greet
   - intent: mood_bad
+    entities:
+    - bad: bad
   - action: utter_mood_bad
   - action: utter_ask_quest
   - checkpoint: quest_asked
-
-- story: locate hospital
-  steps:
-  - checkpoint: quest_asked
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
-  - action: action_map_location
-
-- story: locate pharmacy
-  steps:
-  - checkpoint: quest_asked
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-  - action: action_map_location
-
-- story: locate lab
-  steps:
-  - checkpoint: quest_asked
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-  - action: action_map_location
-
-- story: interactive_story_pharmacy_return
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: kendicks pharmacy
-    - pharm_name: kendicks pharmacy
-    - pharm_name: kendicks pharmacy
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-
-- story: interactive_story_hospital_return
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
-    entities:
-    - hosp_name: end point homeopathic clinic
-    - hosp_name: end point homeopathic clinic
-    - hosp_name: end point homeopathic clinic
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-
-- story: interactive_story_lab_return
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-
-- story: interactive_story_pharmacy_quit
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: kendicks pharmacy
-    - pharm_name: kendicks pharmacy
-    - pharm_name: kendicks pharmacy
-  - action: action_map_location
-  - intent: quit_bot
-  - action: utter_alright
-
-- story: interactive_story_hospital_quit
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
-    entities:
-    - hosp_name: takoradi hospital
-    - hosp_name: takoradi hospital
-    - hosp_name: takoradi hospital
-  - action: action_map_location
-  - intent: quit_bot
-  - action: utter_alright
-
-- story: interactive_story_lab_quit
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: laboratory
-  - action: action_map_location
-  - intent: quit_bot
-  - action: utter_alright
 
 - story: get term definition 1
   steps:
@@ -290,15 +144,7 @@ stories:
   - intent: quit_bot
   - action: utter_alright
 
-- story: get_diseases 1
-  steps:
-  - checkpoint: quest_asked
-  - intent: diseases_info
-  - action: utter_what_disease
-  - intent: diseases
-  - action: action_disease_checker
-
-- story: interactive_story_diseases 1
+- story: interactive_story_disease_1
   steps:
   - intent: greet
   - action: utter_greet
@@ -309,10 +155,18 @@ stories:
   - action: utter_what_disease
   - intent: diseases
     entities:
-    - disease: malaria
+    - disease: _polio
   - action: action_disease_checker
+  - intent: affirm
+  - action: utter_what_drug
+  - intent: drug_name
+    entities:
+    - name_of_drug: '&clonazepam'
+  - action: action_adverse_drug
+  - intent: return_main_menu
+  - action: utter_ask_quest
 
-- story: disease_story_1
+- story: interactive_story_disease_2
   steps:
   - intent: greet
   - action: utter_greet
@@ -323,503 +177,363 @@ stories:
   - action: utter_what_disease
   - intent: diseases
     entities:
-    - disease: Malaria
-    - disease: Malaria
+    - disease: _meningitis
   - action: action_disease_checker
+  - intent: affirm
+  - action: utter_what_drug
+  - intent: drug_name
+    entities:
+    - name_of_drug: '&tadalafil'
+    - name_of_drug: '&tadalafil'
+  - action: action_adverse_drug
+  - intent: return_main_menu
+  - action: utter_ask_quest
+
+- story: interactive_story_disease_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: diseases_info
+  - action: utter_what_disease
   - intent: diseases
     entities:
-    - disease: malaria
-    - disease: malaria
+    - disease: _diabetes
+    - disease: _diabetes
   - action: action_disease_checker
-  - intent: diseases
+  - intent: deny
+  - action: utter_anything_next
+
+- story: interactive_story_locate_pharm 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
     entities:
-    - disease: Baby acne
-    - disease: Baby acne
-  - action: action_disease_checker
+    - good: good
+  - action: utter_mood_great
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: query_knowledge_base
+    entities:
+    - object_type: pharmacy
+  - slot_was_set:
+    - object_type: pharmacy
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: pharmacy
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - knowledge_base_last_object: null
+  - slot_was_set:
+    - knowledge_base_last_object_type: pharmacy
+  - slot_was_set:
+    - knowledge_base_listed_objects:
+      - 4
+      - 2
+      - 1
+      - 5
+      - 3
+  - intent: query_knowledge_base
+    entities:
+    - attribute: map_location
+    - mention: '1'
+  - slot_was_set:
+    - mention: '1'
+  - slot_was_set:
+    - attribute: map_location
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: pharmacy
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - knowledge_base_last_object: 4
+  - slot_was_set:
+    - knowledge_base_last_object_type: pharmacy
   - intent: thanks
   - action: utter_thanks
 
+- story: interactive_story_locate_pharm 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
+    entities:
+    - bad: bad
+  - action: utter_mood_bad
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: query_knowledge_base
+    entities:
+    - object_type: pharmacy
+  - slot_was_set:
+    - object_type: pharmacy
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: pharmacy
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - knowledge_base_last_object: null
+  - slot_was_set:
+    - knowledge_base_last_object_type: pharmacy
+  - slot_was_set:
+    - knowledge_base_listed_objects:
+      - 4
+      - 2
+      - 1
+      - 5
+      - 3
+  - intent: query_knowledge_base
+    entities:
+    - attribute: map_location
+    - mention: '1'
+  - slot_was_set:
+    - mention: '1'
+  - slot_was_set:
+    - attribute: map_location
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: pharmacy
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - knowledge_base_last_object: 4
+  - slot_was_set:
+    - knowledge_base_last_object_type: pharmacy
+  - intent: thanks
+  - action: utter_thanks
 
-- story: disease_story_2
+- story: interactive_story_locate_hosp_1
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
+    entities:
+    - good: good
   - action: utter_mood_great
   - action: utter_ask_quest
-  - intent: diseases_info
-  - action: utter_what_disease
-  - intent: diseases
+  - intent: locate
+  - action: utter_locate
+  - intent: query_knowledge_base
     entities:
-    - disease
-  - action: action_disease_checker
-  - action: utter_anything_next
-  - intent: affirm
-  - action: utter_ask_quest
-  - intent: diseases_info
-  - action: utter_what_disease
-  - intent: diseases
+    - object_type: hospital
+  - slot_was_set:
+    - object_type: hospital
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: hospital
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - knowledge_base_last_object: null
+  - slot_was_set:
+    - knowledge_base_last_object_type: hospital
+  - slot_was_set:
+    - knowledge_base_listed_objects:
+      - 1
+      - 0
+      - 2
+      - 4
+      - 6
+  - intent: query_knowledge_base
     entities:
-    - disease
-  - action: action_disease_checker
+    - attribute: map_location
+    - mention: '1'
+  - slot_was_set:
+    - mention: '1'
+  - slot_was_set:
+    - attribute: map_location
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: hospital
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - knowledge_base_last_object: 1
+  - slot_was_set:
+    - knowledge_base_last_object_type: hospital
+  - intent: thanks
+  - action: utter_thanks
 
-- story: happy mood
+- story: interactive_story_locate_hosp_2
   steps:
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: diseases_info
-  - action: utter_what_disease
-  - intent: diseases
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_bad
     entities:
-    - disease
-  - action: action_disease_checker
+    - bad: bad
+  - action: utter_mood_bad
+  - action: utter_ask_quest
+  - intent: locate
+  - action: utter_locate
+  - intent: query_knowledge_base
+    entities:
+    - object_type: hospital
+  - slot_was_set:
+    - object_type: hospital
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: hospital
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - knowledge_base_last_object: null
+  - slot_was_set:
+    - knowledge_base_last_object_type: hospital
+  - slot_was_set:
+    - knowledge_base_listed_objects:
+      - 1
+      - 0
+      - 2
+      - 4
+      - 6
+  - intent: query_knowledge_base
+    entities:
+    - attribute: map_location
+    - mention: '1'
+  - slot_was_set:
+    - mention: '1'
+  - slot_was_set:
+    - attribute: map_location
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: hospital
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - knowledge_base_last_object: 1
+  - slot_was_set:
+    - knowledge_base_last_object_type: hospital
+  - intent: thanks
+  - action: utter_thanks
 
-
-- story: interactive_story_pharmacy_return
+- story: interactive_story_locate_lab_1
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
+    entities:
+    - good: good
   - action: utter_mood_great
   - action: utter_ask_quest
   - intent: locate
   - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
+  - intent: query_knowledge_base
     entities:
-    - pharm_name: day by day pharmacy
-    - pharm_name: day by day pharmacy
-    - pharm_name: day by day pharmacy
-    - pharm_name: day by day pharmacy
-    - pharm_name: day by day pharmacy
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
+    - object_type: lab
+  - slot_was_set:
+    - object_type: lab
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: lab
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - knowledge_base_last_object: null
+  - slot_was_set:
+    - knowledge_base_last_object_type: lab
+  - slot_was_set:
+    - knowledge_base_listed_objects:
+      - 4
+      - 0
+      - 1
+      - 3
+      - 2
+  - intent: query_knowledge_base
     entities:
-    - pharm_name: eff-ess pharmacy
-    - pharm_name: eff-ess pharmacy
-    - pharm_name: eff-ess pharmacy
-    - pharm_name: eff-ess pharmacy
-    - pharm_name: eff-ess pharmacy
-  - action: action_map_location
+    - attribute: map_location
+    - mention: ANY
+  - slot_was_set:
+    - mention: ANY
+  - slot_was_set:
+    - attribute: map_location
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: lab
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - knowledge_base_last_object: 4
+  - slot_was_set:
+    - knowledge_base_last_object_type: lab
 
-- story: interactive_story_hospital_return
+- story: interactive_story_locate_lab_2
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
+  - intent: mood_bad
+    entities:
+    - bad: bad
+  - action: utter_mood_bad
   - action: utter_ask_quest
   - intent: locate
   - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
+  - intent: query_knowledge_base
     entities:
-    - hosp_name: s.d.a hospital
-    - hosp_name: s.d.a hospital
-    - hosp_name: s.d.a hospital
-    - hosp_name: s.d.a hospital
-    - hosp_name: s.d.a hospital
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
+    - object_type: lab
+  - slot_was_set:
+    - object_type: lab
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: lab
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - knowledge_base_last_object: null
+  - slot_was_set:
+    - knowledge_base_last_object_type: lab
+  - slot_was_set:
+    - knowledge_base_listed_objects:
+      - 4
+      - 0
+      - 1
+      - 3
+      - 2
+  - intent: query_knowledge_base
     entities:
-    - hosp_name: grace spring mission hospital
-    - hosp_name: grace spring mission hospital
-    - hosp_name: grace spring mission hospital
-    - hosp_name: grace spring mission hospital
-    - hosp_name: grace spring mission hospital
-  - action: action_map_location
-
-- story: interactive_story_lab_return
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: diascan laboratory
-    - lab_name: diascan laboratory
-    - lab_name: diascan laboratory
-    - lab_name: diascan laboratory
-    - lab_name: diascan laboratory
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: oasis medical laboratory
-    - lab_name: oasis medical laboratory
-    - lab_name: oasis medical laboratory
-    - lab_name: oasis medical laboratory
-    - lab_name: oasis medical laboratory
-  - action: action_map_location
-
-- story: interactive_story_pharm_return_hosp
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: akan chemist
-    - pharm_name: akan chemist
-    - pharm_name: akan chemist
-    - pharm_name: akan chemist
-    - pharm_name: akan chemist
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
-    entities:
-    - hosp_name: end point homeopathic clinic
-    - hosp_name: end point homeopathic clinic
-    - hosp_name: end point homeopathic clinic
-    - hosp_name: end point homeopathic clinic
-    - hosp_name: end point homeopathic clinic
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-  - action: action_map_location
-
-- story: interactive_story_hosp_return_pharm
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
-    entities:
-    - hosp_name: kwesimintsim hospital
-    - hosp_name: kwesimintsim hospital
-    - hosp_name: kwesimintsim hospital
-    - hosp_name: kwesimintsim hospital
-    - hosp_name: kwesimintsim hospital
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-  - action: action_map_location
-
-- story: interactive_story_hosp_return_lab
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
-    entities:
-    - hosp_name: jemima crentsil hospital
-    - hosp_name: jemima crentsil hospital
-    - hosp_name: jemima crentsil hospital
-    - hosp_name: jemima crentsil hospital
-    - hosp_name: jemima crentsil hospital
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: blue waves diagnostic laboratory
-    - lab_name: blue waves diagnostic laboratory
-    - lab_name: blue waves diagnostic laboratory
-    - lab_name: blue waves diagnostic laboratory
-    - lab_name: blue waves diagnostic laboratory
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-  - action: action_map_location
-
-- story: interactive_story_lab_return_hosp
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
-    entities:
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-  - action: action_map_location
-
-- story: interactive_story_pharm_return_lab
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: abuakwa pharmacy
-    - pharm_name: abuakwa pharmacy
-    - pharm_name: abuakwa pharmacy
-    - pharm_name: abuakwa pharmacy
-    - pharm_name: abuakwa pharmacy
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-    - lab_name: solar medical laboratory
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
-    entities:
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-  - action: action_map_location
-
-- story: interactive_story_lab_return_pharm
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_lab
-  - action: action_places_list
-  - intent: laboratory_name
-    entities:
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-    - lab_name: mediwest laboratory
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: kendicks pharmacy
-    - pharm_name: kendicks pharmacy
-    - pharm_name: kendicks pharmacy
-    - pharm_name: kendicks pharmacy
-    - pharm_name: kendicks pharmacy
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_hosp
-  - action: action_places_list
-  - intent: hospital_name
-    entities:
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-    - hosp_name: g.p.h.a clinic
-  - action: action_map_location
-
-- story: interactive_story_term_return_pharm
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: gen_terms
-  - action: utter_term
-  - intent: terms
-    entities:
-    - term_name: '@aneurysm'
-    - term_name: '@aneurysm'
-  - action: action_term_api
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-    - pharm_name: medrugs pharmacy
-  - action: action_map_location
-
-- story: interactive_story_pharm_return_term
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_mood_great
-  - action: utter_ask_quest
-  - intent: locate
-  - action: utter_locate
-  - intent: locate_pharm
-  - action: action_places_list
-  - intent: pharmacy_name
-    entities:
-    - pharm_name: abuakwa pharmacy
-    - pharm_name: abuakwa pharmacy
-    - pharm_name: abuakwa pharmacy
-    - pharm_name: abuakwa pharmacy
-    - pharm_name: abuakwa pharmacy
-  - action: action_map_location
-  - intent: return_main_menu
-  - action: utter_ask_quest
-  - intent: gen_terms
-  - action: utter_term
-  - intent: terms
-    entities:
-    - term_name: '@lesion'
-    - term_name: '@lesion'
-  - action: action_term_api
+    - attribute: map_location
+    - mention: ANY
+  - slot_was_set:
+    - mention: ANY
+  - slot_was_set:
+    - attribute: map_location
+  - action: action_query_knowledge_base
+  - slot_was_set:
+    - object_type: lab
+  - slot_was_set:
+    - attribute: null
+  - slot_was_set:
+    - mention: null
+  - slot_was_set:
+    - knowledge_base_last_object: 4
+  - slot_was_set:
+    - knowledge_base_last_object_type: lab

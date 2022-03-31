@@ -1,12 +1,12 @@
-name: okteto-rasa-mdbot
+name: rasa
 autocreate: true
-image: okteto.dev/rasa-server-okteto:latest
+image: okteto.dev/rasa-server-bot:latest
 command: bash
 volumes:
 - /root/.cache/pip
 sync:
 - .:/app
 forward:
-- 5006:5006
+- 5005:5005
 reverse:
-- 9000:9000
+- 8000:8000

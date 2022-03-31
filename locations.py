@@ -28,7 +28,3 @@ lab = [{'name': 'Mediwest Laboratory', 'area': 'Sawmill', 'map_location': 'https
 hospitals = pd.DataFrame(hosp)
 pharmacies = pd.DataFrame(pharm)
 labs = pd.DataFrame(lab)
-
-map = hospitals.map_location[hospitals['name'] == "End Point Homeopathic Clinic"]
-map = map.to_list()
-print(map[0])

@@ -4,45 +4,67 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - locate
-- return_main_menu
-- pharmacy_name
-- gen_terms
-- locate_pharm
-- greet
+- query_knowledge_base
 - mood_great
+- greet
+- thanks
+- gen_terms
+- mood_bad
+- diseases
+- diseases_info
+- deny
+- return_main_menu
+- drug_name
+- affirm
+- quit_bot
+- pharmacy_name
+- locate_pharm
 - terms
 - laboratory_name
 - locate_lab
 - hospital_name
 - locate_hosp
-- diseases
-- diseases_info
-- thanks
-- affirm
 - goodbye
-- deny
-- mood_bad
 - med_history
 - medical_terms
 - bot_challenge
-- quit_bot
 - nlu_fallback
-- query_knowledge_base
 entities:
+- attribute
 - bad
 - disease
+- get_definition
 - good
 - help
 - hosp_name
 - lab_name
+- mention
+- name_of_drug
 - pharm_name
+- pharmacies
 - term_name
-- pharm 
-- mention 
-- hosp
-- lab
+- object_type 
 
 
+slots:
+  object_type:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: object_type
+  mention:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: mention
+  attribute:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: attribute
 responses:
   utter_greet:
   - text: Hey! how are you today?
@@ -53,27 +75,34 @@ responses:
   utter_thanks:
   - text: My pleasure
   utter_ask_quest:
-  - text: What can I do for you today? Would you like to locate a pharmacy/hospital/lab (1), get medical information (2), or get your medical history (3). Enter 1, 2, or 3.
-    channel: whatsapp
+  - text: |
+      What can I do for you today? Would you like to:
+      Get location
+      Get definitions to medical terms or
+      Get information on diseases
+    channel: twilio
   - text: What can I do for you today?
     buttons:
-    - title: Locate a pharmacy/hospital/lab
+    - title: Get location
       payload: /locate
     - title: Get definitions to medical terms
       payload: /gen_terms
     - title: Get information on diseases
       payload: /diseases_info
   utter_locate:
-  - text: Which of these places would you like to locate? Pharmacy (p), Hospital (h) or Lab (l). Enter p, h, or l.
-    channel: whatsapp
+  - text: |
+      Which of these places would you like to locate?
+
+      pharmacies, hospitals or labs
+    channel: twilio
   - text: Which of these places would you like to locate?
     buttons:
     - title: Pharmacy
-      payload: /locate_pharm
-    - title: Health Centre
-      payload: /locate_hosp
+      payload: /pharmacies
+    - title: Hospital
+      payload: /hospitals
     - title: Lab
-      payload: /locate_lab
+      payload: /labs
   utter_goodbye:
   - text: Bye, have a nice day.
   utter_alright:
@@ -86,8 +115,6 @@ responses:
   - text: No such medical term. Sorry.
   utter_definition:
   - text: '{term} is {definition}'
-  utter_correct_term:
-  - text: Sorry, no such medical term. Kindly check your spelling. Would you like to try again?
   utter_anything_next:
   - text: Would you like to return to the menu options or quit :(?
   utter_hospitals:
@@ -106,25 +133,43 @@ responses:
   - text: |
       This is a link to the google map location of {place_name}. Hope you get what you're looking for.
       {map_link}
-  utter_correct_name:
-  - text: The name you entered is incorrect. Would you like to try again?
   utter_what_disease:
-  - text: What disease would you like to learn more about? Please enter the name of the disease.
+  - text: What disease would you like to learn more about? Please add _(underscore) before the name of the disease. e.g. _malaria
+  utter_pre_disease:
+  - text: This is some information on {disease}.
   utter_disease:
   - text: |
       {title}: {data}
   utter_no_disease:
-  - text: '{disease_name} was not found in my database, please check your spelling!'
+  - text: Sorry, no such disease.
+  utter_ask_rephrase:
+  - text: Sorry, I'm not sure I understand. Please rephrase it?
+  - text: Could you please rephrase your message? I didn't quite get that.
+  utter_default:
+  - text: Sorry I didn't get that. Can you rephrase?
+  utter_adverse:
+  - text: Would you like to know about the adverse reaction of any drug?
+  utter_what_drug:
+  - text: What drug would you like to know about? Please add & before the name of the disease. e.g. &paracetamol
+  utter_no_drug:
+  - text: Sorry, there is no such drug.
+  utter_adverse_info:
+  - text: |
+      Adverse reaction of {drug}:
+      {data}
 actions:
+- action_adverse_drug
 - action_disease_checker
 - action_map_location
 - action_places_list
+- action_query_knowledge_base
 - action_term_api
+- utter_adverse
+- utter_adverse_info
 - utter_alright
 - utter_anything_next
 - utter_ask_quest
-- utter_correct_name
-- utter_correct_term
+- utter_ask_rephrase
 - utter_definition
 - utter_disease
 - utter_goodbye
@@ -136,8 +181,11 @@ actions:
 - utter_mood_bad
 - utter_mood_great
 - utter_no_disease
+- utter_no_drug
 - utter_no_term
 - utter_pharmacies
+- utter_pre_disease
 - utter_term
 - utter_thanks
 - utter_what_disease
+- utter_what_drug

@@ -14,6 +14,17 @@ rules:
   - intent: thanks
   - action: utter_thanks
 
+- rule: affirm drug
+  steps:
+  - intent: affirm
+  - action: utter_what_drug
+
+- rule: deny drug
+  steps:
+  - intent: deny
+  - action: utter_anything_next
+
+
 - rule: anything next 1
   steps:
   - intent: return_main_menu
@@ -30,36 +41,6 @@ rules:
   - intent: greet
   - action: utter_greet
 
-- rule: places_list pharm
-  steps:
-  - intent: locate_pharm
-  - action: action_places_list
-
-- rule: places_list hosp
-  steps:
-  - intent: locate_hosp
-  - action: action_places_list
-
-- rule: places_list lab
-  steps:
-  - intent: locate_lab
-  - action: action_places_list
-
-- rule: map location pharm
-  steps:
-  - intent: pharmacy_name
-  - action: action_map_location
-
-- rule: map location hosp
-  steps:
-  - intent: hospital_name
-  - action: action_map_location
-
-- rule: map location lab
-  steps:
-  - intent: laboratory_name
-  - action: action_map_location
-
 - rule: terms
   steps:
   - intent: terms
@@ -74,3 +55,26 @@ rules:
   steps:
   - intent: gen_terms
   - action: utter_term
+
+- rule: what disease
+  steps:
+  - intent: diseases_info
+  - action: utter_what_disease
+
+- rule: disease 
+  steps:
+  - intent: diseases
+  - action: action_disease_checker
+
+- rule: drug
+  steps:
+  - intent: drug_name
+  - action: action_adverse_drug
+
+- rule: knowledge base
+  steps:
+  - intent: query_knowledge_base
+  - action: action_query_knowledge_base
+
+
+

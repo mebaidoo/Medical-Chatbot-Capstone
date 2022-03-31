@@ -1,0 +1,50 @@
+[
+  {
+    "name": "bad",
+    "pattern": ".*bad.*"
+  },
+  {
+    "name": "bad",
+    "pattern": ".*don't.*"
+  },
+  {
+    "name": "bad",
+    "pattern": ".*dont.*"
+  },
+  {
+    "name": "bad",
+    "pattern": ".*dying.*"
+  },
+  {
+    "name": "bad",
+    "pattern": ".*ill.*"
+  },
+  {
+    "name": "bad",
+    "pattern": ".*sick.*"
+  },
+  {
+    "name": "bad",
+    "pattern": ".*unwell.*"
+  },
+  {
+    "name": "bad",
+    "pattern": ".+\\snot\\s.+"
+  },
+  {
+    "name": "bad",
+    "pattern": "not\\s.+"
+  },
+  {
+    "name": "disease",
+    "pattern": "_.+"
+  },
+  {
+    "name": "name_of_drug",
+    "pattern": "&.+"
+  },
+  {
+    "name": "term_name",
+    "pattern": "@.+"
+  }
+]
