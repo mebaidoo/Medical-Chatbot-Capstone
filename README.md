@@ -26,7 +26,7 @@ After the chatbot provides the user with the information they required, it gives
 The rasa default fallback intent and action was used, so in cases where a user enters a wrong/non-existent medical facility/disease name, or when they deviate, the bot gives them the option to correct it and the conversation continues.
 
 **Deployment on social media apps:**
-The bot was finally deployed on Facebook and Whatsapp to make it accessible to users. Facebook supports the use of buttons and therefore the user only needs to select an option where there are buttons unlike Whatsapp where the user needs to manually enter their inputs.
+The bot was finally deployed on Facebook and Whatsapp to make it accessible to users. Facebook supports the use of buttons and therefore the user only needs to select an option where there are buttons unlike Whatsapp where the user needs to type their message.
 
 ## Chatbot deployed on Facebook Messenger
 ![1](https://github.com/SeyramDiaba/Medical-Chatbot-Capstone/blob/main/pics/Screenshot_20220330_073929_com.facebook.orca.jpg?raw=true)

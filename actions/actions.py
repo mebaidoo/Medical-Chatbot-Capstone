@@ -5,7 +5,6 @@
 # https://rasa.com/docs/rasa/custom-actions
 from rasa_sdk.knowledge_base.storage import InMemoryKnowledgeBase
 from rasa_sdk.knowledge_base.actions import ActionQueryKnowledgeBase
-# This is a simple example for a custom action which utters "Hello World!"
 
 from typing import Any, Text, Dict, List
 
@@ -18,7 +17,7 @@ from bs4 import BeautifulSoup
 import re
 import requests
 
-#Action for returning the medical terms definitions
+#Action for dispatching definitions to medical terms using Merriam-Webster medical dictionary API
 class TermsAndDefinitions(Action):
 
     def name(self) -> Text:
@@ -32,6 +31,7 @@ class TermsAndDefinitions(Action):
         term = term[1:] #Taking out the @ character
         term = term.lower()
         try:
+            #Using the Terms function from terms.py
             definition = str(Terms(term))
             dispatcher.utter_message(response="utter_definition", term=term, definition=definition)
             dispatcher.utter_message(text = "\n")
@@ -42,7 +42,8 @@ class TermsAndDefinitions(Action):
             dispatcher.utter_message(response="utter_anything_next")
 
         return []
-        
+
+#Action for dispatching disease information
 class DiseasesAndSymptoms(Action):
     
     def name(self) -> Text:
@@ -88,7 +89,7 @@ class DiseasesAndSymptoms(Action):
 
         return []
 
-#Action for adverse drug reaction
+#Action for dispatching adverse drug reaction information for a specific drug
 class AdverseDrugReactions(Action):
     
     def name(self) -> Text:
@@ -226,7 +227,7 @@ class AdverseDrugReactions(Action):
 
 #         return []
 
-#Knowledge-based action for dispatching location information
+#Default knowledge-based action for dispatching location information
 class MyKnowledgeBaseAction(ActionQueryKnowledgeBase):
     def __init__(self):
         knowledge_base = InMemoryKnowledgeBase("data.json")
