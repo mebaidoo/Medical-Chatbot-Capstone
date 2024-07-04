@@ -30,5 +30,4 @@ The bot was finally deployed on Facebook and Whatsapp to make it accessible to u
 
 ## Chatbot deployed on Facebook Messenger
 ![1](https://github.com/SeyramDiaba/Medical-Chatbot-Capstone/blob/main/pics/Screenshot_20220330_073929_com.facebook.orca.jpg?raw=true)
-![1](https://github.com/SeyramDiaba/Medical-Chatbot-Capstone/blob/main/pics/Screenshot_20220330_073936_com.facebook.orca.jpg?raw=true)
 ![1](https://github.com/SeyramDiaba/Medical-Chatbot-Capstone/blob/main/pics/Screenshot_20220330_073945_com.facebook.orca.jpg?raw=true)
